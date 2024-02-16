@@ -4,9 +4,6 @@ import axios from 'axios';
 const Admin = () => {
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
-  const [showForgotPassword, setShowForgotPassword] = useState(false);
-  const [forgotPasswordEmail, setForgotPasswordEmail] = useState('');
-  const [pass, setPass] = useState('');
 
   const handleLogin = async () => {
     try {
@@ -21,57 +18,31 @@ const Admin = () => {
     }
   };
 
-  const handleForgotPassword = async () => {
-    try {
-      const response = await axios.post('http://localhost:8080/recover-password', {
-        email: forgotPasswordEmail,
-      });
-
-      const responseString = response.data;
-
-      // Use regex to extract email and password
-      const emailMatch = responseString.match(/Email: (.+?),/);
-      const passwordMatch = responseString.match(/Password: (.+)$/);
-
-      // Check if matches are found
-      const newForgetEmail = emailMatch ? emailMatch[1] : null;
-      const newForgetPassword = passwordMatch ? passwordMatch[1] : null;
-
-      // Now you have email and password as separate variables
-      console.log('Email:', newForgetEmail);
-      console.log('Password:', newForgetPassword);
-
-      setPass(newForgetPassword);
-
-    } catch (error) {
-      console.error('Forgot password request failed:', error.message);
-      // Handle error, e.g., show an error message to the user
-    }
-  };
-
   return (
-    <div style={{ background: 'radial-gradient(circle,#f6dae4 0%, #d4f0f7 35%, #d0d5f7 75%, #b8cfec 100%)', paddingBottom: '20px', paddingTop: '20px' }}>
+    <div style={{ paddingBottom: '20px', paddingTop: '20px',}}>
       {/* Login Form */}
       <div
         style={{
-          maxWidth: '350px',
+          maxWidth: '525px',
           height: '500px',
-          margin: '20px auto',
+          margin: '0 auto', // Center the form horizontally
+          marginRight: '120px', // Add margin to shift it to the right
           padding: '20px',
-          border: '5px solid #000',
+          marginTop: '100px',
+          border: '2px solid #000',
           borderRadius: '8px',
-          background: 'linear-gradient(#f6dae4 ,#d0d5f7)',
+          
         }}
       >
-        <h3>Admin Login</h3> <br />
+        <h2>Admin Login</h2> <br />
         <div>
-          <div style={{ marginBottom: '10px' }}>
+          <div style={{ marginBottom: '5px' }}>
             <label htmlFor="loginEmail" style={{ marginBottom: '5px' }}>
               <b>Email</b>
             </label>
             <input
               type="email"
-              placeholder='Enter your Email Address'
+              placeholder="Enter your Email Address"
               id="loginEmail"
               name="loginEmail"
               style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
@@ -88,74 +59,32 @@ const Admin = () => {
               type="password"
               id="loginPassword"
               name="loginPassword"
-              placeholder='******'
+              placeholder="Enter password"
               style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
               value={loginPassword}
               onChange={(e) => setLoginPassword(e.target.value)}
             />
           </div>
 
-          {showForgotPassword ? (
-            <div>
-              {/* Forgot Password form fields */}
-              <div style={{ marginBottom: '10px' }}>
-                <label htmlFor="forgotPasswordEmail" style={{ marginBottom: '5px' }}>
-                  <b>Enter your email to recover password</b>
-                </label>
-                <input
-                  type="email"
-                  id="forgotPasswordEmail"
-                  name="forgotPasswordEmail"
-                  placeholder='Enter your Email Address'
-                  style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
-                  value={forgotPasswordEmail}
-                  onChange={(e) => setForgotPasswordEmail(e.target.value)}
-                />
-              </div>
+          <div>
+            <a href="/show">
               <button
                 type="button"
                 style={{
                   width: '50%',
                   padding: '10px',
-                  background: 'linear-gradient(#957dad ,#d291bc)',
                   marginTop: '20px',
-                  marginLeft: '70px',
                   border: 'solid',
                   borderRadius: '8px',
                   cursor: 'pointer',
+                  marginLeft:'25%'
                 }}
-                onClick={handleForgotPassword}
+                onClick={handleLogin}
               >
-                Recover Password
+                Sign in
               </button>
-            </div>
-          ) : (
-            <div>
-              <a href='/show'>
-                <button
-                  type="button"
-                  style={{
-                    width: '50%',
-                    padding: '10px',
-                    background: 'linear-gradient(#957dad ,#d291bc)',
-                    marginTop: '20px',
-                    marginLeft: '70px',
-                    border: 'solid',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                  }}
-                  onClick={handleLogin}
-                >
-                  Sign in
-                </button>
-              </a>
-              <br />
-              <br />
-              <a href="#!" onClick={() => setShowForgotPassword(!showForgotPassword)}>
-                <b> Forgotten Your Password ?</b>
-              </a>
-            </div>
-          )}
+            </a>
+          </div>
         </div>
       </div>
     </div>

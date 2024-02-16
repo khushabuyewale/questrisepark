@@ -35,7 +35,7 @@ const Home = () => {
       <nav style={{ backgroundColor: 'white', paddingBottom: '20px', paddingTop: '20px' }}>
         <div className="container mt-5" >
 
-          <Container>
+          <Container style={{marginTop:'100px'}}>
             <Carousel style={{ height: '300px', marginBottom: '250px', paddingTop: '20px' }}>
 
               <Carousel.Item>
@@ -74,7 +74,7 @@ const Home = () => {
               {/* Add more Carousel.Items as needed */}
             </Carousel>
           </Container>
-
+ <p>Lorem</p>
           <Container>
             <Row className="animate__animated animate__fadeIn">
               <Col>
@@ -87,26 +87,7 @@ const Home = () => {
                   </Card.Body>
                 </Card>
               </Col>
-              <Col>
-                <Card style={{ backgroundImage: 'url(https://placehold.it/400x200)', backgroundSize: 'cover', height: '200px' }}>
-                  <Card.Body>
-                    <Card.Title>Adult</Card.Title>
-                    <Card.Text>
-                      Information about the Adult package.
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col>
-                <Card style={{ backgroundImage: 'url(https://placehold.it/400x200)', backgroundSize: 'cover', height: '200px' }}>
-                  <Card.Body>
-                    <Card.Title>Family</Card.Title>
-                    <Card.Text>
-                      Information about the Family package.
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
+              
               <Col>
                 <Card style={{ backgroundImage: 'url(https://placehold.it/400x200)', backgroundSize: 'cover', height: '200px' }}>
                   <Card.Body>

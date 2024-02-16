@@ -4,19 +4,18 @@ const Booking = () => {
   
 
   return (
-    <>
-      <nav style={{ background: 'radial-gradient(circle,#f6dae4 0%, #d4f0f7 35%, #d0d5f7 75%, #b8cfec 100%)', paddingBottom: '20px', paddingTop: '20px' }}>
-        <div
-          style={{
-            maxWidth: '300px',
-            height: '400px',
-            margin: '20px auto',
-            padding: '20px',
-            border: '5px solid #000',
-            borderRadius: '8px',
-            background: 'linear-gradient(#f6dae4 ,#d0d5f7)',
-           
-          }}
+    <div style={{ paddingBottom: '20px', paddingTop: '20px' }}>
+ <div
+        style={{
+          maxWidth: '525px',
+          height: '400px',
+          margin: '0 auto', // Center the form horizontally
+          marginRight: '120px', // Add margin to shift it to the right
+          padding: '20px',
+          marginTop:'100px',
+          border: '2px solid #000',
+          borderRadius: '8px',
+        }}
         >
           <section
             style={{
@@ -25,7 +24,7 @@ const Booking = () => {
             }}
           >
             <div style={{ marginBottom: '10px' }}>
-              <label htmlFor="bookingDate" style={{ marginBottom: '5px' }}><b>Booking Date</b></label>
+              <label htmlFor="bookingDate" style={{ marginBottom: '2px' }}><b>Booking Date</b></label>
               <input
                 type="date"
                 id="bookingDate"
@@ -62,8 +61,8 @@ const Booking = () => {
               style={{
                 width: '50%',
                 padding: '10px',
-                background: 'linear-gradient(#957dad ,#d291bc)',
-                marginLeft: '70px',
+                background: '',/*add background color*/
+                marginLeft: '25%',
                 border: 'solid',
                 borderRadius: '8px',
                 cursor: 'pointer',
@@ -80,8 +79,8 @@ const Booking = () => {
               style={{
                 width: '50%',
                 padding: '10px',
-                background: 'linear-gradient(#957dad ,#d291bc)',
-                marginLeft: '70px',
+                background: '',/*add background color*/
+                marginLeft: '25%',
                 border: 'solid',
                 borderRadius: '8px',
                 cursor: 'pointer',
@@ -95,10 +94,7 @@ const Booking = () => {
               </a>
           </section>
         </div>
-      </nav>
-
-      
-    </>
+    </div>
   );
 };
 

@@ -24,19 +24,20 @@ const ContactUs = () => {
   };
 
   return (
-    <div style={{ background: 'radial-gradient(circle,#f6dae4 0%, #d4f0f7 35%, #d0d5f7 75%, #b8cfec 100%)', paddingBottom: '20px', paddingTop: '20px' }}>
-         <div
+    
+    <div style={{ paddingBottom: '20px', paddingTop: '20px' }}>
+      <div
         style={{
-          maxWidth: '550px',
+          maxWidth: '525px',
           height: '500px',
-          margin: '20px auto',
+          margin: '0 auto', // Center the form horizontally
+          marginRight: '120px', // Add margin to shift it to the right
           padding: '20px',
-          border: '5px solid #000',
+          marginTop:'100px',
+          border: '2px solid #000',
           borderRadius: '8px',
-          background: 'linear-gradient(#f6dae4 ,#d0d5f7)',
         }}
-      >
-   
+        >
       <h2>Contact Us</h2><br/>
       <form ref={form} onSubmit={sendEmail}> 
         <div className="mb-3">
@@ -53,10 +54,10 @@ const ContactUs = () => {
             style={{
               width: '50%',
               padding: '10px',
-              background: 'linear-gradient(#957dad ,#d291bc)',
+              background: '',
               marginTop: '20px',
-              marginLeft: '90px',
-              border: 'solid',
+              marginLeft: '25%',
+              border: '2px solid',
               borderRadius: '8px',
               cursor: 'pointer',
             }}
@@ -64,8 +65,8 @@ const ContactUs = () => {
           >
           Send Feedback
         </button>
-      </form>
-    </div>
+        </form>
+        </div>
     </div>
    
   );

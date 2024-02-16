@@ -1,20 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import icon from '../assets/icon.png';
+import icon from '../assets/QuestRiseLogo.png';
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light" style={{ background: 'linear-gradient(#f6dae4 ,#d0d5f7)', marginBottom: '5px' }}>
+    <nav className="navbar navbar-expand-lg navbar-light" style={{marginBottom: '5px', position:'fixed', zIndex:1000, background:'white', width:'100%',height:'100px' }}>
       <div className="container">
         {/* Left side with website name and icon */}
         <div className="navbar-brand">
           <img
             src={icon}
-            alt="Icon"
-            style={{ width: '70px' }}
+            alt="QuestRiseLogo"
+            style={{ width: '200px' }}
           />
-
-          <span style={{ fontWeight: 'bold', fontSize: '2.0rem' }}>    Quest-Rise </span>
         </div>
 
 

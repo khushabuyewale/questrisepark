@@ -1,10 +1,10 @@
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
-
+import icon from '../assets/QuestRiseLogo.png';
 const Footer = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: 'grey', marginTop: '10px' }}>
-      <MDBFooter className=' text-center text-white' style={{ width: '100%' }}>
+    <nav className="navbar navbar-expand-lg navbar-light" style={{ marginTop: '10px' }}>
+      {<MDBFooter className=' text-center text-white' style={{ width: '100%' }}>
         <MDBContainer className='d-flex justify-content-between p-4 pb-0' style={{ width: '100%' }}>
           <section className="text-left" style={{ color: 'black', width: '50%', textAlign: 'left' }}>
             <div>
@@ -95,10 +95,10 @@ const Footer = () => {
           </section>
         </MDBContainer>
 
-        <div className='text-center p-3' style={{ backgroundColor: 'black' }}>
-          © 2024 Copyright : <a className='text-blue' href='https://thequestrisepark.com/'>  theQuestRisePark.com </a>
+        <div className='text-center p-3' style={{ backgroundColor: 'grey' }}>
+          © 2024 Copyright : <a className='text-white' href='https://thequestrisepark.com/'> QuestRisePark.com </a>
         </div>
-      </MDBFooter>
+      </MDBFooter>}
 
     </nav>
   );
