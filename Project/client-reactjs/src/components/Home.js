@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <>
-      <nav style={{ background: 'radial-gradient(circle,#f6dae4 0%, #d4f0f7 35%, #d0d5f7 75%, #b8cfec 100%)', paddingBottom: '20px', paddingTop: '20px' }}>
+      <nav style={{ backgroundColor: 'white', paddingBottom: '20px', paddingTop: '20px' }}>
         <div className="container mt-5" >
 
           <Container>
@@ -121,25 +121,7 @@ const Home = () => {
           </Container>
 
 
-          <Container style={{ backgroundColor: '#d8cfe5', paddingBottom: '20px', paddingTop: '20px', marginBottom: '50px', marginTop: '50px' }}>
-            <Row className="animate__animated animate__fadeIn">
-              <Col >
-                <div style={{ padding: '10px' }}>
-                  <img
-                    src={aboutUs}
-                    alt="About Us"
-                    style={{ width: 'auto' }}
-                  />
-                </div>
-              </Col>
-              <Col >
-                <div style={{ padding: '10px' }}>
-                  <h2>About Us</h2>
-                  <p>Some information about your company.</p>
-                </div>
-              </Col>
-            </Row>
-          </Container>
+
 
           <Container>
             <Slider {...carouselSettings} style={{ marginBottom: '50px', paddingTop: '5px' }}>
@@ -197,6 +179,30 @@ const Home = () => {
 
             {/* Additional styling */}
             <br />
+          </Container>
+
+          <Container style={{ backgroundColor: '#d8cfe5', paddingBottom: '20px', paddingTop: '20px', marginBottom: '50px', marginTop: '50px' }}>
+            <Row className="animate__animated animate__fadeIn">
+              <Col >
+                <div style={{ padding: '10px' }}>
+                  <img
+                    src={aboutUs}
+                    alt="About Us"
+                    style={{ width: 'auto' }}
+                  />
+                </div>
+              </Col>
+              <Col >
+                <div style={{ padding: '10px' }}>
+                  <h2>About Us</h2>
+                  <p>The fantastic thing about Imagicaa theme park is "There's a Whole Lot for Every Lot!". A wide range of Imagicaa's themed rides and attractions include Kiddie rides, Family rides, rides for Grown up's. Right from Nitro's adrenaline-pumping experience to getting family and friends to help rescue Mr. India from Mogambo's terror, Imagicaa Amusement park engages you in interesting ways.
+
+                    And for the kids, you can fly high with Tubbby Takes Off or indulge in some fun water splashing aboard Splash Ahoy.
+
+                  </p>
+                </div>
+              </Col>
+            </Row>
           </Container>
         </div>
       </nav>

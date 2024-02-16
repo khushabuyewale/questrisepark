@@ -10,6 +10,7 @@ import SelectPack from "./components/SelectPack";
 import ShowDetails from "./components/ShowDetails";
 import AddDetails from "./components/AddDetails";
 import DeleteDetails from "./components/DeleteDetails";
+import UpdateDetails from "./components/UpdateDetails";
 
 const customeRouter = createBrowserRouter([
   {
@@ -41,16 +42,20 @@ const customeRouter = createBrowserRouter([
 
   },
   {
-    path: "/showDetails",
+    path: "/show",
     element: <ShowDetails />
   },
   {
-    path: "/addDetails",
+    path: "/add",
     element: <AddDetails />
   },
 
   {
-    path: "/deleteDetails",
+    path: "/delete",
     element: <DeleteDetails />
+  },
+  {
+    path: "/update",
+    element: <UpdateDetails />
   },
 ]); export default customeRouter;

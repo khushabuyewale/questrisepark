@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-const DeleteDetails = () => {
+const UpdateDetails = () => {
     const [sidebarVisible, setSidebarVisible] = useState(true);
     const adminName = 'Unnati';
 
@@ -109,7 +109,7 @@ const DeleteDetails = () => {
                     }}
                 >
                     <div style={{ marginTop: '100px' }}>
-                        <h2 style={{ textAlign: 'center' }}>Delete Details</h2>
+                        <h2 style={{ textAlign: 'center' }}>Update Details</h2>
                         {/* Add more content as needed */}
                     </div>
                 </div>
@@ -142,4 +142,4 @@ const DeleteDetails = () => {
     );
 };
 
-export default DeleteDetails;
+export default UpdateDetails;

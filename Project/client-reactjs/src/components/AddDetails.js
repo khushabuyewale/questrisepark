@@ -20,7 +20,7 @@ const AddDetails = () => {
                 style={{
                     width: sidebarVisible ? '250px' : '30px',
                     transition: 'width 0.3s ease',
-                    background: 'linear-gradient(#957dad, #d291bc, #f6dae4, #d4f0f7, #d0d5f7, #b8cfec)',
+                    background: 'white',
                 }}
             >
                 {/* Toggle button for collapsing/expanding sidebar */}
@@ -42,7 +42,7 @@ const AddDetails = () => {
                         borderRadius: '8px',
                         transition: 'background-color 0.3s ease, border-color 0.3s ease',
                     }}>
-                        <a href="#show" style={{ textDecoration: 'none', color: 'black', display: 'block' }}>
+                        <a href="/show" style={{ textDecoration: 'none', color: 'black', display: 'block' }}>
                             <h3>Show</h3>
                         </a>
                     </li>
@@ -53,7 +53,7 @@ const AddDetails = () => {
                         borderRadius: '8px',
                         transition: 'background-color 0.3s ease, border-color 0.3s ease',
                     }}>
-                        <a href="#add" style={{ textDecoration: 'none', color: 'black', display: 'block' }}>
+                        <a href="/add" style={{ textDecoration: 'none', color: 'black', display: 'block' }}>
                             <h3>Add</h3>
                         </a>
                     </li>
@@ -64,7 +64,7 @@ const AddDetails = () => {
                         borderRadius: '8px',
                         transition: 'background-color 0.3s ease, border-color 0.3s ease',
                     }}>
-                        <a href="#update" style={{ textDecoration: 'none', color: 'black', display: 'block' }}>
+                        <a href="/update" style={{ textDecoration: 'none', color: 'black', display: 'block' }}>
                             <h3>Update</h3>
                         </a>
                     </li>
@@ -75,7 +75,7 @@ const AddDetails = () => {
                         borderRadius: '8px',
                         transition: 'background-color 0.3s ease, border-color 0.3s ease',
                     }}>
-                        <a href="#delete" style={{ textDecoration: 'none', color: 'black', display: 'block' }}>
+                        <a href="/delete" style={{ textDecoration: 'none', color: 'black', display: 'block' }}>
                             <h3>Delete</h3>
                         </a>
                     </li>
@@ -109,7 +109,7 @@ const AddDetails = () => {
                     }}
                 >
                     <div style={{ marginTop: '100px' }}>
-                        <h2 style={{ textAlign: 'center' }}>Show Details</h2>
+                        <h2 style={{ textAlign: 'center' }}>Add Details</h2>
                         {/* Add more content as needed */}
                     </div>
                 </div>
