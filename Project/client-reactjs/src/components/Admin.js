@@ -63,7 +63,7 @@ const Admin = () => {
           background: 'linear-gradient(#f6dae4 ,#d0d5f7)',
         }}
       >
-        <h3>Admin Login</h3> <br/>
+        <h3>Admin Login</h3> <br />
         <div>
           <div style={{ marginBottom: '10px' }}>
             <label htmlFor="loginEmail" style={{ marginBottom: '5px' }}>
@@ -131,28 +131,28 @@ const Admin = () => {
             </div>
           ) : (
             <div>
-                <a href='/showDetails'>
-              <button
-                type="button"
-                style={{
-                  width: '50%',
-                  padding: '10px',
-                  background: 'linear-gradient(#957dad ,#d291bc)',
-                  marginTop: '20px',
-                  marginLeft: '70px',
-                  border: 'solid',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                }}
-                onClick={handleLogin}
-              >
-                Sign in
-              </button>
+              <a href='/show'>
+                <button
+                  type="button"
+                  style={{
+                    width: '50%',
+                    padding: '10px',
+                    background: 'linear-gradient(#957dad ,#d291bc)',
+                    marginTop: '20px',
+                    marginLeft: '70px',
+                    border: 'solid',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                  }}
+                  onClick={handleLogin}
+                >
+                  Sign in
+                </button>
               </a>
-              <br/>
+              <br />
               <br />
               <a href="#!" onClick={() => setShowForgotPassword(!showForgotPassword)}>
-               <b> Forgotten Your Password ?</b> 
+                <b> Forgotten Your Password ?</b>
               </a>
             </div>
           )}

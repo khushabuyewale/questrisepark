@@ -3,13 +3,13 @@ import { MDBFooter, MDBContainer, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
 
 const Footer = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: '#add8e6', marginTop: '10px' }}>
+    <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: 'grey', marginTop: '10px' }}>
       <MDBFooter className=' text-center text-white' style={{ width: '100%' }}>
         <MDBContainer className='d-flex justify-content-between p-4 pb-0' style={{ width: '100%' }}>
-        <section className="text-left" style={{ color: 'black', width: '50%', textAlign: 'left' }}>
+          <section className="text-left" style={{ color: 'black', width: '50%', textAlign: 'left' }}>
             <div>
               <b>Contact Us:</b>
-              <p>Phone: 123-467-891<br/>Email: questrise@gmail.com<br/>Address: Jalgaon-425001</p>
+              <p>Phone: 123-467-891<br />Email: questrise@gmail.com<br />Address: Jalgaon-425001</p>
             </div>
           </section>
 
@@ -95,11 +95,11 @@ const Footer = () => {
           </section>
         </MDBContainer>
 
-        <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+        <div className='text-center p-3' style={{ backgroundColor: 'black' }}>
           © 2024 Copyright : <a className='text-blue' href='https://thequestrisepark.com/'>  theQuestRisePark.com </a>
         </div>
       </MDBFooter>
-   
+
     </nav>
   );
 };

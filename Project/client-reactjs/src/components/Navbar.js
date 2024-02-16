@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 import icon from '../assets/icon.png';
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light" style={{ background: 'linear-gradient(#f6dae4 ,#d0d5f7)', marginBottom: '10px' }}>
+    <nav className="navbar navbar-expand-lg navbar-light" style={{ background: 'linear-gradient(#f6dae4 ,#d0d5f7)', marginBottom: '5px' }}>
       <div className="container">
         {/* Left side with website name and icon */}
         <div className="navbar-brand">
           <img
             src={icon}
-            alt="About Us"
-            style={{ width: '100px' }}
+            alt="Icon"
+            style={{ width: '70px' }}
           />
 
-          <span style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>The Quest-Rise Amusement Park</span>
+          <span style={{ fontWeight: 'bold', fontSize: '2.0rem' }}>    Quest-Rise </span>
         </div>
 
 
@@ -33,7 +33,7 @@ const Navbar = () => {
               </div>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/home">Home</Link>
+              <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/booking">Booking</Link>
