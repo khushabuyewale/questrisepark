@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Booking = () => {
-  
+
 
   return (
     <div style={{ paddingBottom: '20px', paddingTop: '20px' }}>
@@ -74,7 +74,7 @@ const Booking = () => {
             </a>
             <br />
            
-           <a href='/home'> <button
+           <a href='/selectPack'> <button
               type="submit"
               style={{
                 width: '50%',
