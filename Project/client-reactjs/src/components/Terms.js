@@ -15,7 +15,7 @@ const Terms = () => {
         All tickets are non-transferable and non-refundable. The park reserves the right to refuse entry.
       </p>
 
-      <h6>3. Code of Conduct</h6>
+      <h6>3. Code of Conduct...........................................</h6>
       <p>
         Guests must follow the park's code of conduct. Any behavior deemed inappropriate may result in expulsion from the park.
       </p>
