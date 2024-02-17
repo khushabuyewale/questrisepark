@@ -1,6 +1,5 @@
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
-import icon from '../assets/QuestRiseLogo.png';
 const Footer = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light" style={{ marginTop: '10px' }}>
