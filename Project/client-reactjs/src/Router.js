@@ -11,6 +11,9 @@ import ShowDetails from "./components/ShowDetails";
 import AddDetails from "./components/AddDetails";
 import DeleteDetails from "./components/DeleteDetails";
 import UpdateDetails from "./components/UpdateDetails";
+import Meal from "./components/Meal";
+import Terms from "./components/Terms";
+
 
 const customeRouter = createBrowserRouter([
   {
@@ -36,6 +39,14 @@ const customeRouter = createBrowserRouter([
       {
         path: "/selectPack",
         element: <SelectPack />
+      },
+      {
+        path: "/meal",
+        element: <Meal />
+      },
+      {
+        path: "/terms",
+        element: <Terms />
       },
 
     ]

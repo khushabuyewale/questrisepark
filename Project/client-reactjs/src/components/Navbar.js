@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
 
           <ul className="navbar-nav">
-            <li>
+            <li >
               <div className="navbar-search">
                 <div className="input-group">
                   <input type="text" className="form-control" placeholder="Search" />
