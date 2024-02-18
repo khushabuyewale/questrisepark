@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import icon from '../assets/QuestRiseLogo-removebg-preview.png';
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light" style={{marginBottom: '5px', position:'fixed', zIndex:1000, background:'#649eff', width:'100%',height:'80px' }}>
+    <nav className="navbar navbar-expand-lg navbar-light" style={{marginBottom: '5px', position:'fixed', zIndex:1000, background:'#dddddd', width:'100%',height:'80px' }}>
       <div className="container" >
         {/* Left side with website name and icon */}
         <div className="navbar-brand">
           <img
             src={icon}
             alt="QuestRiseLogo"
-            style={{ width: '200px' }}
+            style={{ width: '85px' }}
           />
         </div>
 
@@ -20,16 +20,16 @@ const Navbar = () => {
 
           <b><ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/" style={{fontSize:'20px', color:'white', margin:'10px'}}>Home</Link>
+              <Link className="nav-link" to="/" style={{fontSize:'20px', color:'black', margin:'10px'}}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/booking" style={{fontSize:'20px', color:'white', margin:'10px'}}>Booking</Link>
+              <Link className="nav-link" to="/booking" style={{fontSize:'20px', color:'black', margin:'10px'}}>Booking</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/admin" style={{fontSize:'20px', color:'white', margin:'10px'}}>Admin</Link>
+              <Link className="nav-link" to="/admin" style={{fontSize:'20px', color:'black', margin:'10px'}}>Admin</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contactUs" style={{fontSize:'20px', color: 'white', margin:'10px'}}>Contact Us</Link>
+              <Link className="nav-link" to="/contactUs" style={{fontSize:'20px', color: 'black', margin:'10px'}}>Contact Us</Link>
             </li>
           </ul></b>
         </div>

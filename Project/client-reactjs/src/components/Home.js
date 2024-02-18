@@ -44,7 +44,7 @@ const Home = () => {
         <div className="container mt-5 " >
 
           <Container style={{ marginTop: '100px' }}>
-            <Carousel style={{ height: '300px', marginBottom: '250px', paddingTop: '20px' }}>
+            <Carousel style={{ height: '300px', marginBottom: '150px', paddingTop: '20px' }}>
 
               <Carousel.Item>
                 <img
@@ -182,21 +182,21 @@ const Home = () => {
             <br />
           </Container>
 
-          <Container style={{ backgroundColor: '#d8cfe5', paddingBottom: '20px', paddingTop: '20px', marginBottom: '50px', marginTop: '50px' }}>
+          <Container style={{ backgroundColor: '#f5f5f5', paddingBottom: '20px', paddingTop: '20px', marginBottom: '50px', marginTop: '50px' }}>
             <Row className="animate__animated animate__fadeIn">
               <Col >
                 <div style={{ padding: '10px' }}>
                   <img
                     src={aboutUs}
                     alt="About Us"
-                    style={{ width: 'auto' }}
+                    style={{ width: '400px' }}
                   />
                 </div>
               </Col>
               <Col >
-                <div style={{ padding: '10px' }}>
+                <div style={{ padding: '10px', marginLeft:'-100px' }}>
                   <h2>About Us</h2>
-                  <p>The fantastic thing about Imagicaa theme park is "There's a Whole Lot for Every Lot!". A wide range of Imagicaa's themed rides and attractions include Kiddie rides, Family rides, rides for Grown up's. Right from Nitro's adrenaline-pumping experience to getting family and friends to help rescue Mr. India from Mogambo's terror, Imagicaa Amusement park engages you in interesting ways.
+                  <p>The fantastic thing about Quest Rise Amusement Park is "There's a Whole Lot for Every Lot!". A wide range of themed rides and attractions include Kiddie rides, Family rides, rides for Grown up's. Right from Nitro's adrenaline-pumping experience to getting family and friends to help rescue Mr. India from Mogambo's terror, Quest Rise Amusement park engages you in interesting ways.
 
                     And for the kids, you can fly high with Tubbby Takes Off or indulge in some fun water splashing aboard Splash Ahoy.
 
