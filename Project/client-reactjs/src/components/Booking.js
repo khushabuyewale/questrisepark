@@ -76,7 +76,7 @@ const Booking = () => {
           />
         </b></div>
     </div>
-    <div style={containerStyle}>
+    <div  style={containerStyle}>
        
       <Card title="Theme Park" content="Content for Card 1" onClick={handleCard1Click} style={{marginRight:'-60px'}}/>
       <Card title="Water Park" content="Content for Card 2" onClick={handleCard2Click} style={{marginLeft:'-60px'}}/>
