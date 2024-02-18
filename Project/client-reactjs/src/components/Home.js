@@ -7,6 +7,12 @@ import studentBanner from '../assets/StudentBanner.png';
 import SlideImg2 from '../assets/SlideImg2.png';
 import cardImg01 from '../assets/WaterSlideBanner.png';
 import cardImg02 from '../assets/WSBann02.png';
+import SnowWorldBanner from '../assets/Snow World.png';
+import food1 from '../assets/Capture.jpg';
+import food2 from '../assets/Capture2.jpg';
+import food3 from '../assets/Capture3.jpg';
+import food4 from '../assets/Capture4.jpg';
+import food5 from '../assets/Capture5.jpg';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -57,7 +63,7 @@ const Home = () => {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="https://placehold.it/800x300"
+                  src={SnowWorldBanner}
                   alt="Third slide"
                 />
               </Carousel.Item>
@@ -78,14 +84,14 @@ const Home = () => {
           <Container>
             <Row className="animate__animated animate__fadeIn">
               <Col>
-                <Card style={{backgroundSize: 'cover', height: '200px' }}>
+                <Card style={{ height: '200px' }}>
                   <Card.Img src={cardImg01} alt="image" style={{height:'200px'}}>
                   </Card.Img>
                 </Card>
               </Col>
 
               <Col>
-                <Card style={{backgroundSize: 'cover', height: '200px' }}>
+                <Card style={{height: '200px' }}>
                 <Card.Img src={cardImg02} alt="image" style={{height:'200px'}}>
                   </Card.Img>
                 </Card>
@@ -99,29 +105,39 @@ const Home = () => {
             maxWidth: '1000px',
             textAlign: 'center',
           }}>
-            <h4>   Simple do’s for a smooth ride!</h4>
+            <h3>   Simple do’s for a smooth ride!</h3>
             <p>Plan and book tickets online to save time.<br />
               Dress comfortably and wear suitable footwear.<br />
               Arrive early to make the most of your time.<br />
               Prioritize safety by following park guidelines.<br />
               Pack essentials like sunscreen for sun protection.<br />
               Use locker and changing room facilities for convenience.</p>
-
+          <hr></hr>
+          <h2 style={{marginTop:'50px', marginBottom:'-50px'}}>Multi-cuisine restaurants</h2>
           </div>
           <Container>
-            <Slider {...carouselSettings} style={{ marginBottom: '50px', paddingTop: '5px' }}>
+            <Slider {...carouselSettings} style={{ marginBottom: '50px', paddingTop: '5px'}}>
               <img
-                src="https://placehold.it/800x300"
-                alt="Slide 1"
+                src={food1}
+                alt="Image"
               />
               <img
-                src="https://placehold.it/800x300"
-                alt="Slide 2"
+                src={food2}
+                alt="Image"
               />
               <img
-                src="https://placehold.it/800x300"
-                alt="Slide 3"
+                src={food3}
+                alt="Image"
               />
+              <img
+                src={food4}
+                alt="Image"
+              />
+              <img
+                src={food5}
+                alt="Image"
+              />
+              
               {/* Add more images as needed */}
             </Slider>
           </Container>
@@ -133,9 +149,9 @@ const Home = () => {
             <Card style={{ marginBottom: '20px' }}>
               <Card.Body>
                 <Card.Title>Unnati</Card.Title>
-                <StarRating rating={1} /> {/* Example rating: 4 */}
+                <StarRating rating={4} /> {/* Example rating: 4 */}
                 <Card.Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec tristique justo.
+                  Fun environment, food is excellent!
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -144,9 +160,9 @@ const Home = () => {
             <Card style={{ marginBottom: '20px' }}>
               <Card.Body>
                 <Card.Title>Anutosh</Card.Title>
-                <StarRating rating={3} /> {/* Example rating: 3 */}
+                <StarRating rating={5} /> {/* Example rating: 3 */}
                 <Card.Text>
-                  Nullam tincidunt justo vitae sapien varius, vel efficitur justo aliquam.
+                  One of the best amusement parks i have visited!
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -157,7 +173,7 @@ const Home = () => {
                 <Card.Title>Khushi</Card.Title>
                 <StarRating rating={5} /> {/* Example rating: 5 */}
                 <Card.Text>
-                  Sed consectetur sem vitae nisl convallis, nec malesuada ligula vestibulum.
+                  Loved it! 
                 </Card.Text>
               </Card.Body>
             </Card>
