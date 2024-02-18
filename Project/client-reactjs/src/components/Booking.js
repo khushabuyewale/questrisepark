@@ -28,7 +28,7 @@ const Card = ({ title, content }) => {
     <div style={cardStyle}>
       <h2 style={titleStyle}>{title}</h2>
       <p>{content}</p>
-      <a href="/meal">
+      <a href="/selectPack">
     <button style={{buttonStyle,
                   width: '50%',
                   padding: '10px',
@@ -78,8 +78,8 @@ const Booking = () => {
     </div>
     <div style={containerStyle}>
        
-      <Card title="Card 1" content="Content for Card 1" onClick={handleCard1Click} style={{marginRight:'-60px'}}/>
-      <Card title="Card 2" content="Content for Card 2" onClick={handleCard2Click} style={{marginLeft:'-60px'}}/>
+      <Card title="Theme Park" content="Content for Card 1" onClick={handleCard1Click} style={{marginRight:'-60px'}}/>
+      <Card title="Water Park" content="Content for Card 2" onClick={handleCard2Click} style={{marginLeft:'-60px'}}/>
     </div>
     </div>
     </div>

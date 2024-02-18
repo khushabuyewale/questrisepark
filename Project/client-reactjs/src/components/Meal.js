@@ -27,18 +27,7 @@ const Meal = () => {
         />
         <br/>
         <p><b>Total Price: Rs {calculatePrice(firstCount, 329)}</b></p>
-        <a href='/meal'>
-        <button onClick={() => handleProceed('First')}
-        
-        style={{
-          width: '50%',
-          padding: '5px',
-          marginTop: '100px',
-          border: 'solid',
-          borderRadius: '3px',
-          cursor: 'pointer',
-          
-        }}>Proceed</button></a>
+    
       </div>
  {/* Breakfast Lunch and HiTea price 399, */}
       <div className="pricing-card second-card">
@@ -52,28 +41,8 @@ const Meal = () => {
         />
         <br/>
         <p><b>Total Price: Rs {calculatePrice(secondCount, 399)}</b></p>
-        <a href='/meal'>
-        <button
-          onClick={() => {
-            if (secondCount >= 5) {
-              handleProceed('Second');
-            } else {
-              alert('Minimum 5 people required for Group Ticket');
-            }
-          }}
         
-          style={{
-            width: '50%',
-            padding: '5px',
-            marginTop: '100px',
-            border: 'solid',
-            borderRadius: '3px',
-            cursor: 'pointer',
-            
-          }}
-        >
-          Proceed
-        </button></a>
+          
       </div>
   {/* Lunch HiTea and Dinner price 449, */}
       <div className="pricing-card third-card">
@@ -87,18 +56,7 @@ const Meal = () => {
         />
         <br/>
         <p><b>Total Price: Rs {calculatePrice(thirdCount, 449)}</b></p>
-        <a href='/terms'>
-        <button onClick={() => handleProceed('Third')}
-        style={{
-          width: '50%',
-          padding: '5px',
-          marginTop: '100px',
-          border: 'solid',
-          borderRadius: '3px',
-          cursor: 'pointer',
-          
-        }}
-        >Proceed</button></a>
+       
       </div>
 
     {/*  Breakfast Lunch HiTea and Dinner price 519 */}
@@ -114,7 +72,7 @@ const Meal = () => {
         />
         <br/>
         <p><b>Total Price: Rs {calculatePrice(fourthCount, 519)}</b></p>
-        <a href='/terms'>
+        <a href='/pay'>
         <button onClick={() => handleProceed('Fourth')}
         style={{
           width: '50%',

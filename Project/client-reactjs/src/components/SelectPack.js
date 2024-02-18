@@ -25,7 +25,7 @@ const SelectPack = () => {
         />
         <br/>
         <p><b>Total Price: Rs {calculatePrice(regularCount, 900)}</b></p>
-        <a href='/meal'>
+        <a href='/terms'>
         <button onClick={() => handleProceed('Regular')}
         
         style={{
@@ -50,7 +50,7 @@ const SelectPack = () => {
         />
         <br/>
         <p><b>Total Price: Rs {calculatePrice(groupCount, 800)}</b></p>
-        <a href='/meal'>
+        <a href='/terms'>
         <button
           onClick={() => {
             if (groupCount >= 5) {

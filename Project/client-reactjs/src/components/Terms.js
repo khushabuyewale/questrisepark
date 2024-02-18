@@ -54,6 +54,16 @@ const Terms = () => {
       <p>
         For questions or concerns regarding these terms, contact us at support@amusementpark.com.
       </p>
+
+      <a href="/meal">
+    <button style={{
+                  width: '50%',
+                  padding: '10px',
+                  marginTop: '200px',
+                  border: 'solid',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  marginLeft:'25%'}}>Proceed</button></a>
     </div>
   );
 }
