@@ -152,11 +152,13 @@ const styles = `
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
   }
 
   .pricing-card {
     width: 250px;
     height: 300px;
+    margin-top:120px;
     padding: 20px;
     margin: 5px;
     text-align: center;
@@ -198,6 +200,7 @@ const styles = `
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top:200px;
   }
 
   .h2, h3 {
