@@ -13,7 +13,6 @@ import DeleteDetails from "./components/DeleteDetails";
 import UpdateDetails from "./components/UpdateDetails";
 import Meal from "./components/Meal";
 import Terms from "./components/Terms";
-import Pay from "./components/Pay";
 
 
 const customeRouter = createBrowserRouter([
@@ -48,10 +47,6 @@ const customeRouter = createBrowserRouter([
       {
         path: "/terms",
         element: <Terms />
-      },
-      {
-        path: "/pay",
-        element: <Pay/>
       }
 
     ]
