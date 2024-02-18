@@ -25,7 +25,7 @@ const SelectPack = () => {
         />
         <br/>
         <p><b>Total Price: Rs {calculatePrice(regularCount, 900)}</b></p>
-        <a href='/terms'>
+        <a href='/enterData'>
         <button onClick={() => handleProceed('Regular')}
         
         style={{
@@ -50,7 +50,7 @@ const SelectPack = () => {
         />
         <br/>
         <p><b>Total Price: Rs {calculatePrice(groupCount, 800)}</b></p>
-        <a href='/terms'>
+        <a href='/enterData'>
         <button
           onClick={() => {
             if (groupCount >= 5) {
@@ -85,7 +85,7 @@ const SelectPack = () => {
         />
         <br/>
         <p><b>Total Price: Rs {calculatePrice(studentCount, 500)}</b></p>
-        <a href='/terms'>
+        <a href='/enterStudData'>
         <button onClick={() => handleProceed('Student')}
         style={{
           width: '50%',
