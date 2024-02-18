@@ -1,10 +1,10 @@
 import React from 'react';
 import Slider from 'react-slick';
-
 import { Carousel, Container, Row, Col, Card } from 'react-bootstrap';
 
 import aboutUs from '../assets/th.jpeg';
-
+import studentBanner from '../assets/StudentBanner.png';
+import SlideImg2 from '../assets/SlideImg2.png';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -41,18 +41,14 @@ const Home = () => {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="https://placehold.it/800x300"
+                  src={studentBanner}
                   alt="First slide"
                 />
-                <Carousel.Caption>
-                  <h3>Slide 1</h3>
-                  <p>Some description for the first slide.</p>
-                </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="https://placehold.it/800x300"
+                  src={SlideImg2}
                   alt="Second slide"
                 />
                 <Carousel.Caption>
@@ -113,8 +109,8 @@ A life of fun is what everyone deserves, so come on down to the Quest Rise close
           <Container>
             <Slider {...carouselSettings} style={{ marginBottom: '50px', paddingTop: '5px' }}>
               <img
-                src="https://placehold.it/800x300"
-                alt="Slide 1"
+                src=""
+                
               />
               <img
                 src="https://placehold.it/800x300"
