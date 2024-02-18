@@ -3,7 +3,7 @@ import React from 'react';
 const Terms = () => {
   return (
     <div>
-      <h1>=============Amusement Park Terms and Conditions====================</h1>
+      <h1>Amusement Park Terms and Conditions</h1>
       
       <h6>1. General Information</h6>
       <p>
