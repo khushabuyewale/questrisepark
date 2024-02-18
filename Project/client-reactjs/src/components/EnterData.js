@@ -76,7 +76,7 @@ const EnterData = () => {
                     borderRadius: '8px',
                 }}>
                     <h2>Enter Details</h2>
-                    <form onSubmit={handleSubmit}>
+                    <div onSubmit={handleSubmit}>
                         <label>
                             Phone:
                             <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
@@ -115,7 +115,7 @@ const EnterData = () => {
 
                         <a href="/meal">
                             <button type="submit">Submit</button></a>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

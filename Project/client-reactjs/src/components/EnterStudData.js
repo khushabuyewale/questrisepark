@@ -119,6 +119,7 @@ const EnterStudData = () => {
                     <hr />
                     {formData.names.map((name, index) => (
                         <div key={index}>
+                            
                             <label>
                                 Name {index + 1}:
                                 <input type="text" value={name} onChange={(e) => handleNameChange(e, index)} required />
