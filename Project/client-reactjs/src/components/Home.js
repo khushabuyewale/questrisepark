@@ -35,7 +35,7 @@ const Home = () => {
       <nav style={{ backgroundColor: 'white', paddingBottom: '20px', paddingTop: '20px' }}>
         <div className="container mt-5" >
 
-          <Container style={{marginTop:'100px'}}>
+          <Container style={{ marginTop: '100px' }}>
             <Carousel style={{ height: '300px', marginBottom: '250px', paddingTop: '20px' }}>
 
               <Carousel.Item>
@@ -62,13 +62,17 @@ const Home = () => {
               {/* Add more Carousel.Items as needed */}
             </Carousel>
           </Container>
- <div style={{margin:'0 auto', marginBottom:'80px'}}>
-  <h1>QUEST RISE - The Largest Amusement Park In Jalgaon</h1>
-  <h3>Step into a world of magic, where joy springs to life!</h3>
-  <hr></hr>
-  <h6>We are so much more than an amusement park - a world where everyone comes together and enjoys the little moments.
-A life of fun is what everyone deserves, so come on down to the Quest Rise closest to you!</h6>
- </div>
+          <div style={{
+            margin: '0 auto',
+            marginBottom: '80px',
+            maxWidth: '1000px',
+            textAlign: 'center',
+          }}>
+            <h1>QUEST RISE - The Largest Amusement Park In Jalgaon</h1>
+            <h3>Step into a world of magic, where joy springs to life!</h3>
+            <hr />
+            <p>We are so much more than an amusement park - a world where everyone comes together and enjoys the little moments. A life of fun is what everyone deserves, so come on down to the Quest Rise closest to you!</p>
+          </div>
           <Container>
             <Row className="animate__animated animate__fadeIn">
               <Col>
@@ -81,7 +85,7 @@ A life of fun is what everyone deserves, so come on down to the Quest Rise close
                   </Card.Body>
                 </Card>
               </Col>
-              
+
               <Col>
                 <Card style={{ backgroundImage: 'url(https://placehold.it/400x200)', backgroundSize: 'cover', height: '200px' }}>
                   <Card.Body>
@@ -94,15 +98,27 @@ A life of fun is what everyone deserves, so come on down to the Quest Rise close
               </Col>
             </Row>
           </Container>
+          <div style={{
+            margin: '0 auto',
+            marginBottom: '80px',
+            marginTop: '50px',
+            maxWidth: '1000px',
+            textAlign: 'center',
+          }}>
+            <h4>   Simple do’s for a smooth ride!</h4>
+            <p>Plan and book tickets online to save time.<br />
+              Dress comfortably and wear suitable footwear.<br />
+              Arrive early to make the most of your time.<br />
+              Prioritize safety by following park guidelines.<br />
+              Pack essentials like sunscreen for sun protection.<br />
+              Use locker and changing room facilities for convenience.</p>
 
-
-
-
+          </div>
           <Container>
             <Slider {...carouselSettings} style={{ marginBottom: '50px', paddingTop: '5px' }}>
               <img
-                src=""
-                
+                src="https://placehold.it/800x300"
+                alt="Slide 1"
               />
               <img
                 src="https://placehold.it/800x300"
@@ -180,7 +196,7 @@ A life of fun is what everyone deserves, so come on down to the Quest Rise close
             </Row>
           </Container>
         </div>
-      </nav>
+      </nav >
     </>
   );
 };
