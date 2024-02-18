@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import icon from '../assets/QuestRiseLogo.png';
+import icon from '../assets/QuestRiseLogo-removebg-preview.png';
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light" style={{marginBottom: '5px', position:'fixed', zIndex:1000, background:'white', width:'100%',height:'100px' }}>
-      <div className="container">
+    <nav className="navbar navbar-expand-lg navbar-light" style={{marginBottom: '5px', position:'fixed', zIndex:1000, background:'#649eff', width:'100%',height:'80px' }}>
+      <div className="container" >
         {/* Left side with website name and icon */}
         <div className="navbar-brand">
           <img
@@ -15,34 +15,23 @@ const Navbar = () => {
           />
         </div>
 
-
         {/* Right side with navigation links */}
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
 
-          <ul className="navbar-nav">
-            <li >
-              <div className="navbar-search">
-                <div className="input-group">
-                  <input type="text" className="form-control" placeholder="Search" />
-                  <span className="input-group-text">
-                    <i className="fas fa-search"></i>
-                  </span>
-                </div>
-              </div>
+          <b><ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link" to="/" style={{fontSize:'20px', color:'white', margin:'10px'}}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link" to="/booking" style={{fontSize:'20px', color:'white', margin:'10px'}}>Booking</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/booking">Booking</Link>
+              <Link className="nav-link" to="/admin" style={{fontSize:'20px', color:'white', margin:'10px'}}>Admin</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/admin">Admin</Link>
+              <Link className="nav-link" to="/contactUs" style={{fontSize:'20px', color: 'white', margin:'10px'}}>Contact Us</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/contactUs">Contact Us</Link>
-            </li>
-          </ul>
+          </ul></b>
         </div>
       </div>
     </nav>

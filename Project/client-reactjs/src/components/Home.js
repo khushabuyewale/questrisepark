@@ -5,6 +5,8 @@ import { Carousel, Container, Row, Col, Card } from 'react-bootstrap';
 import aboutUs from '../assets/th.jpeg';
 import studentBanner from '../assets/StudentBanner.png';
 import SlideImg2 from '../assets/SlideImg2.png';
+import cardImg01 from '../assets/WaterSlideBanner.png';
+import cardImg02 from '../assets/WSBann02.png';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -33,7 +35,7 @@ const Home = () => {
   return (
     <>
       <nav style={{ backgroundColor: 'white', paddingBottom: '20px', paddingTop: '20px' }}>
-        <div className="container mt-5" >
+        <div className="container mt-5 " >
 
           <Container style={{ marginTop: '100px' }}>
             <Carousel style={{ height: '300px', marginBottom: '250px', paddingTop: '20px' }}>
@@ -68,7 +70,7 @@ const Home = () => {
             maxWidth: '1000px',
             textAlign: 'center',
           }}>
-            <h1>QUEST RISE - The Largest Amusement Park In Jalgaon</h1>
+            <h1 style={{color:'#0e2f44'}}>QUEST RISE - The Largest Amusement Park In Jalgaon</h1>
             <h3>Step into a world of magic, where joy springs to life!</h3>
             <hr />
             <p>We are so much more than an amusement park - a world where everyone comes together and enjoys the little moments. A life of fun is what everyone deserves, so come on down to the Quest Rise closest to you!</p>
@@ -76,24 +78,16 @@ const Home = () => {
           <Container>
             <Row className="animate__animated animate__fadeIn">
               <Col>
-                <Card style={{ backgroundImage: 'url(https://placehold.it/400x200)', backgroundSize: 'cover', height: '200px' }}>
-                  <Card.Body>
-                    <Card.Title>Children</Card.Title>
-                    <Card.Text>
-                      Information about the Children package.
-                    </Card.Text>
-                  </Card.Body>
+                <Card style={{backgroundSize: 'cover', height: '200px' }}>
+                  <Card.Img src={cardImg01} alt="image" style={{height:'200px'}}>
+                  </Card.Img>
                 </Card>
               </Col>
 
               <Col>
-                <Card style={{ backgroundImage: 'url(https://placehold.it/400x200)', backgroundSize: 'cover', height: '200px' }}>
-                  <Card.Body>
-                    <Card.Title>Friends</Card.Title>
-                    <Card.Text>
-                      Information about the Friends package.
-                    </Card.Text>
-                  </Card.Body>
+                <Card style={{backgroundSize: 'cover', height: '200px' }}>
+                <Card.Img src={cardImg02} alt="image" style={{height:'200px'}}>
+                  </Card.Img>
                 </Card>
               </Col>
             </Row>
