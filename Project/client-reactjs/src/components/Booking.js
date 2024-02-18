@@ -28,6 +28,7 @@ const Card = ({ title, content }) => {
     <div style={cardStyle}>
       <h2 style={titleStyle}>{title}</h2>
       <p>{content}</p>
+      <a href="/meal">
     <button style={{buttonStyle,
                   width: '50%',
                   padding: '10px',
@@ -35,7 +36,7 @@ const Card = ({ title, content }) => {
                   border: 'solid',
                   borderRadius: '8px',
                   cursor: 'pointer',
-                  marginLeft:'25%'}}>Proceed</button>
+                  marginLeft:'25%'}}>Proceed</button></a>
     </div>
   );
 };
