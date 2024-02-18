@@ -51,10 +51,6 @@ const Home = () => {
                   src={SlideImg2}
                   alt="Second slide"
                 />
-                <Carousel.Caption>
-                  <h3>Slide 2</h3>
-                  <p>Some description for the second slide.</p>
-                </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
                 <img
@@ -62,10 +58,6 @@ const Home = () => {
                   src="https://placehold.it/800x300"
                   alt="Third slide"
                 />
-                <Carousel.Caption>
-                  <h3>Slide 3</h3>
-                  <p>Some description for the third slide.</p>
-                </Carousel.Caption>
               </Carousel.Item>
               {/* Add more Carousel.Items as needed */}
             </Carousel>
