@@ -39,7 +39,7 @@ const Meal = ({ ticketPrice }) => {
         <h2>Do you want to add a meal to your package?</h2>
 
         <div >
-          <h3>Vegetarian Meal</h3>
+          <h3>Veg Meal</h3>
           <input
             type="number"
             value={vegetarianCount}
@@ -50,7 +50,7 @@ const Meal = ({ ticketPrice }) => {
         </div>
 
         <div>
-          <h3>Non-Vegetarian Meal</h3>
+          <h3>Non-Veg Meal</h3>
           <input
             type="number"
             value={nonVegetarianCount}
