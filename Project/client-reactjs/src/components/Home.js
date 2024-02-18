@@ -74,7 +74,13 @@ const Home = () => {
               {/* Add more Carousel.Items as needed */}
             </Carousel>
           </Container>
- <p>Lorem</p>
+ <div style={{margin:'0 auto', marginBottom:'80px'}}>
+  <h1>QUEST RISE - The Largest Amusement Park In Jalgaon</h1>
+  <h3>Step into a world of magic, where joy springs to life!</h3>
+  <hr></hr>
+  <h6>We are so much more than an amusement park - a world where everyone comes together and enjoys the little moments.
+A life of fun is what everyone deserves, so come on down to the Quest Rise closest to you!</h6>
+ </div>
           <Container>
             <Row className="animate__animated animate__fadeIn">
               <Col>
