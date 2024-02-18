@@ -71,12 +71,12 @@ const Pay = () => {
       <br />
       <label>
         Expiry Date:
-        <input type="text" value={expiry} onChange={(e) => setExpiry(e.target.value)} />
+        <input type="date" value={expiry} onChange={(e) => setExpiry(e.target.value)} />
       </label>
       <br />
       <label>
         CVC:
-        <input type="text" value={cvc} onChange={(e) => setCvc(e.target.value)} />
+        <input type="password" value={cvc} placeholder="* * *" onChange={(e) => setCvc(e.target.value)} />
       </label>
       <br />
 
