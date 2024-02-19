@@ -5,17 +5,18 @@ const Admin = () => {
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
 
-  const handleLogin = async () => {
-    try {
-      const response = await axios.post('http://localhost:8080/login', {
-        email: loginEmail,
-        password: loginPassword,
-      });
-
-      console.log(response.data); // Handle success response
-    } catch (error) {
-      console.error('Login failed:', error.message);
+  const handleLogin = () => {
+    const data = {
+      username: loginEmail,
+      password: loginPassword
     }
+
+    const url = 'https://localhost:44358/api/test/Login';
+    axios.post(url, data).then((result) => {
+      alert(result.data);
+    }).catch((error) => {
+      alert(error.message);
+     })
   };
 
   return (
