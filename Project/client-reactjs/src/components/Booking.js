@@ -68,7 +68,7 @@ const Booking = () => {
   };
 
   const handleCard2Click = () => {
-    const ticketCount = 0;
+    const ticketCount = 2;
     if (ticketCount > 0) {
       window.location.href = '/selectPack'; 
     }
@@ -103,7 +103,7 @@ const Booking = () => {
             onClick={handleCard2Click}
             backgroundColor="#66CDAA"
             imageUrl="https://placehold.it/600x300"
-            ticketCount={0} // Replace with the actual ticket count
+            ticketCount={2} // Replace with the actual ticket count
             style={{ marginLeft: '-60px' }}
           />
         </div>
