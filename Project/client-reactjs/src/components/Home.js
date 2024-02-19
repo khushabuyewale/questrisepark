@@ -7,7 +7,7 @@ import studentBanner from '../assets/StudentBanner.png';
 import SlideImg2 from '../assets/SlideImg2.png';
 import cardImg01 from '../assets/WaterSlideBanner.png';
 import cardImg02 from '../assets/WSBann02.png';
-import SnowWorldBanner from '../assets/Snow World.png';
+import SnowWorldBanner from '../assets/SnowWorld.png';
 import food1 from '../assets/Capture.jpg';
 import food2 from '../assets/Capture2.jpg';
 import food3 from '../assets/Capture3.jpg';
