@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const EnterStudData = () => {
     const [phone, setPhone] = useState('');
@@ -9,32 +10,39 @@ const EnterStudData = () => {
     const [cllgName, setCllgName] = useState('');
     const [records, setRecords] = useState([]);
     const [recordCount, setRecordCount] = useState(1);
+    const [showAlert, setShowAlert] = useState(false);
 
     const addRecord = () => {
         // Validation for the first entry
-        if (recordCount === 1 && (!phone || !email)) {
-            alert('Phone number and email are required for the first entry!');
-            return;
-        }
-
-        // Validation for subsequent entries
-        if (recordCount > 1 && (!name || !age || !regno || !cllgName)) {
-            alert('Name and age are required for subsequent entries!');
-            return;
-        }
-
-        // Validation for phone number and email
-        if (recordCount === 1 && (!phone || !email)) {
-            alert('Phone number and email are required for the first entry!');
+        if (recordCount === 1 && (!phone || !email || !name || !age)) {
+            setShowAlert(true);
+            alert('All Details are required for the first entry!');
             return;
         }
 
         // Validation for subsequent entries
         if (recordCount > 1 && (!name || !age)) {
-            alert('Name and age are required for subsequent entries!');
+            setShowAlert(true);
+            alert('Member Details are required for subsequent entries!');
             return;
         }
 
+        // Validate name
+        if (!name) {
+            setShowAlert(true);
+            alert('Name is required!');
+            return;
+        }
+        if (!regno) {
+            setShowAlert(true);
+            alert('Registeration No. is required!');
+            return;
+        }
+        if (!cllgName) {
+            setShowAlert(true);
+            alert('College name is required!');
+            return;
+        }
         // Validate phone number
         const phoneRegex = /^[0-9]{10}$/; // Assuming a 10-digit phone number
         if (recordCount === 1 && !phoneRegex.test(phone)) {
@@ -48,10 +56,10 @@ const EnterStudData = () => {
             alert('Please enter a valid email address!');
             return;
         }
-
         // Validate age (between 5 and 90)
         const parsedAge = parseInt(age, 10);
         if (isNaN(parsedAge) || parsedAge < 5 || parsedAge > 90) {
+            setShowAlert(true);
             alert('Please enter a valid age between 5 and 90!');
             return;
         }
@@ -69,8 +77,8 @@ const EnterStudData = () => {
         setAge('');
         setRegno('');
         setCllgName('');
+        setShowAlert(false);
     };
-
 
     const removeRecord = (id) => {
         // Remove record from the state
@@ -83,52 +91,83 @@ const EnterStudData = () => {
         setRecords(updatedRecordsWithSerial);
     };
 
+    const navigate = useNavigate();
+
+    const handleSubmit = () => {
+        // Additional validation before navigating to the next page
+        if (records.length === 0) {
+            setShowAlert(true);
+            alert('Please add at least one record before submitting!');
+            return;
+        }
+
+        // Perform any other actions or navigation logic here
+        // For now, just log a message and navigate to "/meal"
+        console.log('Submitting data:');
+        navigate('/meal'); // Use navigate for navigation
+    };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '20px' }}>
+
             <div
                 style={{
                     maxWidth: '525px',
-                    height: '500px',
+                    height: '400px',
                     margin: '0 auto', // Center the form horizontally
                     marginRight: '120px', // Add margin to shift it to the right
                     padding: '20px',
-                    marginTop: '100px',
+                    marginTop: '120px',
                     border: '2px solid #000',
                     borderRadius: '8px',
                 }}
             >
-
-                <label htmlFor="phone">Phone Number:</label>
+                <h4 style={{ textAlign: 'center' }}>Member Details</h4>
+                <label htmlFor="phone">Ph.No.:</label>
                 <input type="text" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter phone number" /><br />
 
                 <label htmlFor="email">Email:</label>
                 <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" /><br />
-
+                <p><b>Note:</b> Please enter the Email to receive the ticket!</p>
+                {showAlert && <div style={{ color: 'red', marginTop: '10px' }}>Please fill in the required fields with valid values!</div>}
                 <hr />
-
+                <h4 style={{ textAlign: 'center' }}>Add Members</h4>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter name" /><br />
+                {showAlert && !name && <div style={{ color: 'red', marginTop: '10px' }}>Please enter a name!</div>}
 
                 <label htmlFor="age">Age:</label>
                 <input type="text" id="age" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Enter age" /><br />
+                {showAlert && !age && <div style={{ color: 'red', marginTop: '10px' }}>Please enter a valid age!</div>}
 
-                <label htmlFor="age">Regestration No.:</label>
-                <input type="text" id="regno" value={regno} onChange={(e) => setRegno(e.target.value)} placeholder="Enter Reg no." /><br />
+                <label htmlFor="regno">Registeration no.:</label>
+                <input type="text" id="regno" value={regno} onChange={(e) => setRegno(e.target.value)} placeholder="Enter Registeration no." /><br />
+                {showAlert && !regno && <div style={{ color: 'red', marginTop: '10px' }}>Please enter a Registeration no.!</div>}
 
-                <label htmlFor="age">College Name:</label>
-                <input type="text" id="cllgName" value={cllgName} onChange={(e) => setCllgName(e.target.value)} placeholder="Enter Collge Name" /><br />
+                <label htmlFor="cllgName">College Name:</label>
+                <input type="text" id="cllgName" value={cllgName} onChange={(e) => setCllgName(e.target.value)} placeholder="Enter College Name" /><br />
+                {showAlert && !cllgName && <div style={{ color: 'red', marginTop: '10px' }}>Please enter a College Name!</div>}
 
-                <button style={{ margin: '10px 0', backgroundColor: '#4CAF50', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px' }} onClick={addRecord}>
+                <button
+                    style={{
+                        margin: '10px',
+                        backgroundColor: '#4CAF50',
+                        color: 'white',
+                        border: 'none',
+                        padding: '10px 15px',
+                        borderRadius: '4px',
+                    }}
+                    onClick={addRecord}
+                >
                     Add
                 </button>
             </div>
 
-            <div style={{ width: '45%', textAlign: 'center' }}>
+            <div style={{ width: '45%', textAlign: 'center', paddingBottom: '20px', paddingTop: '20px' }}>
                 <div
                     style={{
                         maxWidth: '525px',
-                        height: '500px',
+                        height: '400px',
                         margin: '0 auto', // Center the form horizontally
                         marginRight: '120px', // Add margin to shift it to the right
                         padding: '20px',
@@ -137,8 +176,15 @@ const EnterStudData = () => {
                         borderRadius: '8px',
                     }}
                 >
-                    <div style={{ maxHeight: '400px', overflowY: 'scroll' }}>
-                        <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px', fontFamily: 'Arial, sans-serif', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                    <div style={{ maxHeight: '360px', overflowY: 'scroll' }}>
+                        <table
+                            style={{
+                                width: '100%',
+                                borderCollapse: 'collapse',
+                                fontFamily: 'Arial, sans-serif',
+                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                            }}
+                        >
                             <thead style={{ backgroundColor: 'grey', color: 'white' }}>
                                 <tr>
                                     <th style={{ padding: '12px', textAlign: 'left' }}>Sr. No</th>
@@ -158,7 +204,17 @@ const EnterStudData = () => {
                                         <td style={{ padding: '10px' }}>{record.regno}</td>
                                         <td style={{ padding: '10px' }}>{record.cllgName}</td>
                                         <td style={{ padding: '10px' }}>
-                                            <button style={{ backgroundColor: '#e74c3c', color: 'white', border: 'none', padding: '8px 12px', borderRadius: '4px', cursor: 'pointer' }} onClick={() => removeRecord(record.id)}>
+                                            <button
+                                                style={{
+                                                    backgroundColor: '#e74c3c',
+                                                    color: 'white',
+                                                    border: 'none',
+                                                    padding: '8px 12px',
+                                                    borderRadius: '4px',
+                                                    cursor: 'pointer',
+                                                }}
+                                                onClick={() => removeRecord(record.id)}
+                                            >
                                                 Remove
                                             </button>
                                         </td>
@@ -169,17 +225,31 @@ const EnterStudData = () => {
                     </div>
                 </div>
 
-                <div style={{ marginTop: '20px', textAlign: 'center' }}>
-                    <a href="/meal">
-                        <button style={{ backgroundColor: '#2196F3', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px' }} >
+                <div style={{ marginTop: '20px', textAlign: 'center', marginRight: '100px' }}>
+                    <a href="/meal" onClick={(e) => {
+                        e.preventDefault();
+                        if (records.length > 0) {
+                            handleSubmit();
+                        } else {
+                            setShowAlert(true);
+                            alert('Please add at least one record before submitting!');
+                        }
+                    }}>
+                        <button
+                            style={{
+                                backgroundColor: '#2196F3',
+                                color: 'white',
+                                border: 'none',
+                                padding: '10px 15px',
+                                borderRadius: '4px',
+                            }}
+                        >
                             Submit
                         </button>
                     </a>
                 </div>
-
             </div>
         </div>
-
     );
 };
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const EnterGrpData = () => {
     const [phone, setPhone] = useState('');
@@ -7,31 +8,29 @@ const EnterGrpData = () => {
     const [age, setAge] = useState('');
     const [records, setRecords] = useState([]);
     const [recordCount, setRecordCount] = useState(1);
+    const [showAlert, setShowAlert] = useState(false);
 
     const addRecord = () => {
         // Validation for the first entry
         if (recordCount === 1 && (!phone || !email)) {
+            setShowAlert(true);
             alert('Phone number and email are required for the first entry!');
             return;
         }
 
         // Validation for subsequent entries
         if (recordCount > 1 && (!name || !age)) {
+            setShowAlert(true);
             alert('Name and age are required for subsequent entries!');
             return;
         }
-
-        // Validation for phone number and email
-        if (recordCount === 1 && (!phone || !email)) {
-            alert('Phone number and email are required for the first entry!');
+        // Validate name
+        if (!name) {
+            setShowAlert(true);
+            alert('Name is required!');
             return;
         }
 
-        // Validation for subsequent entries
-        if (recordCount > 1 && (!name || !age)) {
-            alert('Name and age are required for subsequent entries!');
-            return;
-        }
 
         // Validate phone number
         const phoneRegex = /^[0-9]{10}$/; // Assuming a 10-digit phone number
@@ -50,6 +49,7 @@ const EnterGrpData = () => {
         // Validate age (between 5 and 90)
         const parsedAge = parseInt(age, 10);
         if (isNaN(parsedAge) || parsedAge < 5 || parsedAge > 90) {
+            setShowAlert(true);
             alert('Please enter a valid age between 5 and 90!');
             return;
         }
@@ -65,6 +65,7 @@ const EnterGrpData = () => {
         setEmail('');
         setName('');
         setAge('');
+        setShowAlert(false);
     };
 
     const removeRecord = (id) => {
@@ -78,6 +79,8 @@ const EnterGrpData = () => {
         setRecords(updatedRecordsWithSerial);
     };
 
+    const navigate = useNavigate();
+
     const handleSubmit = () => {
         // Validation for a minimum of 5 members
         if (records.length < 5) {
@@ -87,6 +90,7 @@ const EnterGrpData = () => {
 
         // Logic for submitting the data, you can replace this with your actual submission logic
         console.log('Submitting data:', records);
+        navigate('/meal');
     };
 
     return (
@@ -94,47 +98,70 @@ const EnterGrpData = () => {
             <div
                 style={{
                     maxWidth: '525px',
-                    height: '500px',
+                    height: '400px',
                     margin: '0 auto', // Center the form horizontally
                     marginRight: '120px', // Add margin to shift it to the right
                     padding: '20px',
-                    marginTop: '100px',
+                    marginTop: '120px',
                     border: '2px solid #000',
                     borderRadius: '8px',
                 }}
             >
-                <label htmlFor="phone">Phone Number:</label>
+                <h4 style={{ textAlign: 'center' }}>Member Details</h4>
+                <label htmlFor="phone">Ph.No.:</label>
                 <input type="text" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter phone number" /><br />
 
                 <label htmlFor="email">Email:</label>
                 <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" /><br />
-
+                <p><b>Note:</b> Please enter the Email to receive the ticket!</p>
+                {showAlert && <div style={{ color: 'red', marginTop: '10px' }}>Please fill in the required fields with valid values!</div>}
                 <hr />
 
+                <h4 style={{ textAlign: 'center' }}>Add Members</h4>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter name" /><br />
+                {showAlert && !name && <div style={{ color: 'red', marginTop: '10px' }}>Please enter a name!</div>}
 
                 <label htmlFor="age">Age:</label>
                 <input type="text" id="age" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Enter age" /><br />
+                {showAlert && !age && <div style={{ color: 'red', marginTop: '10px' }}>Please enter a valid age!</div>}
 
-                <button style={{ margin: '10px 0', backgroundColor: '#4CAF50', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px' }} onClick={addRecord}>
+                <button
+                    style={{
+                        margin: '10px',
+                        backgroundColor: '#4CAF50',
+                        color: 'white',
+                        border: 'none',
+                        padding: '10px 15px',
+                        borderRadius: '4px',
+                    }}
+                    onClick={addRecord}
+                >
                     Add
                 </button>
             </div>
 
-            <div style={{ width: '45%', textAlign: 'center' }}>
+            <div style={{ width: '45%', textAlign: 'center', paddingBottom: '20px', paddingTop: '20px' }}>
                 <div
                     style={{
                         maxWidth: '525px',
-                        height: '500px',
-                        margin: '0 auto',
+                        height: '400px',
+                        margin: '0 auto', // Center the form horizontally
+                        marginRight: '120px', // Add margin to shift it to the right
                         padding: '20px',
                         marginTop: '100px',
                         border: '2px solid #000',
-                        borderRadius: '8px'
-                    }}>
-                    <div style={{ maxHeight: '400px', overflowY: 'scroll' }}>
-                        <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px', fontFamily: 'Arial, sans-serif', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                        borderRadius: '8px',
+                    }}
+                ><div style={{ maxHeight: '360px', overflowY: 'scroll' }}>
+                        <table
+                            style={{
+                                width: '100%',
+                                borderCollapse: 'collapse',
+                                fontFamily: 'Arial, sans-serif',
+                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                            }}
+                        >
                             <thead style={{ backgroundColor: 'grey', color: 'white' }}>
                                 <tr>
                                     <th style={{ padding: '12px', textAlign: 'left' }}>Sr. No</th>
@@ -150,7 +177,17 @@ const EnterGrpData = () => {
                                         <td style={{ padding: '10px' }}>{record.name}</td>
                                         <td style={{ padding: '10px' }}>{record.age}</td>
                                         <td style={{ padding: '10px' }}>
-                                            <button style={{ backgroundColor: '#e74c3c', color: 'white', border: 'none', padding: '8px 12px', borderRadius: '4px', cursor: 'pointer' }} onClick={() => removeRecord(record.id)}>
+                                            <button
+                                                style={{
+                                                    backgroundColor: '#e74c3c',
+                                                    color: 'white',
+                                                    border: 'none',
+                                                    padding: '8px 12px',
+                                                    borderRadius: '4px',
+                                                    cursor: 'pointer',
+                                                }}
+                                                onClick={() => removeRecord(record.id)}
+                                            >
                                                 Remove
                                             </button>
                                         </td>
@@ -161,9 +198,25 @@ const EnterGrpData = () => {
                     </div>
                 </div>
 
-                <div style={{ marginTop: '20px', textAlign: 'center' }}>
-                    <a href="/meal">
-                        <button style={{ backgroundColor: '#2196F3', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px' }} onClick={handleSubmit}>
+                <div style={{ marginTop: '20px', textAlign: 'center', marginRight: '100px' }}>
+                    <a href="/meal" onClick={(e) => {
+                        e.preventDefault();
+                        if (records.length > 0) {
+                            handleSubmit();
+                        } else {
+                            setShowAlert(true);
+                            alert('Please add at least one record before submitting!');
+                        }
+                    }}>
+                        <button
+                            style={{
+                                backgroundColor: '#2196F3',
+                                color: 'white',
+                                border: 'none',
+                                padding: '10px 15px',
+                                borderRadius: '4px',
+                            }}
+                        >
                             Submit ({records.length} Members)
                         </button>
                     </a>
