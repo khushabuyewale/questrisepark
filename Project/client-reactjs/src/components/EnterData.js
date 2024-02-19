@@ -61,8 +61,6 @@ const EnterData = () => {
         setRecordCount(recordCount + 1);
 
         // Clear input fields
-        setPhone('');
-        setEmail('');
         setName('');
         setAge('');
     };
@@ -82,55 +80,54 @@ const EnterData = () => {
 
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '20px' }}>
             <div
                 style={{
                     maxWidth: '525px',
-                    height: '500px',
-                    margin: '0 auto', // Center the form horizontally
-                    marginRight: '120px', // Add margin to shift it to the right
-                    padding: '20px',
-                    marginTop: '100px',
-                    border: '2px solid #000',
-                    borderRadius: '8px',
+          height: '400px',
+          margin: '0 auto', // Center the form horizontally
+          marginRight: '120px', // Add margin to shift it to the right
+          padding: '20px',
+          marginTop:'120px',
+          border: '2px solid #000',
+          borderRadius: '8px',
                 }}
             >
-
-                <label htmlFor="phone">Phone Number:</label>
+                <h4 style={{textAlign:'center'}}>Member Details</h4>
+                <label htmlFor="phone">Ph.No.:</label>
                 <input type="text" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter phone number" /><br />
 
                 <label htmlFor="email">Email:</label>
                 <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" /><br />
-
+                <p><b>Note:</b> Please enter the Email to receive the ticket!</p>
                 <hr />
-
+                <h4 style={{textAlign:'center'}}>Add Members</h4>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter name" /><br />
 
                 <label htmlFor="age">Age:</label>
                 <input type="text" id="age" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Enter age" /><br />
-
-                <button style={{ margin: '10px 0', backgroundColor: '#4CAF50', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px' }} onClick={addRecord}>
+                <button style={{ margin: '10px', backgroundColor: '#4CAF50', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px', }} onClick={addRecord}>
                     Add
                 </button>
             </div>
 
-            <div style={{ width: '45%', textAlign: 'center' }}>
+            <div style={{ width: '45%', textAlign: 'center', paddingBottom: '20px', paddingTop: '20px'  }}>
                 <div
                     style={{
                         maxWidth: '525px',
-                        height: '500px',
-                        margin: '0 auto', // Center the form horizontally
-                        marginRight: '120px', // Add margin to shift it to the right
-                        padding: '20px',
-                        marginTop: '100px',
-                        border: '2px solid #000',
-                        borderRadius: '8px',
+          height: '400px',
+          margin: '0 auto', // Center the form horizontally
+          marginRight: '120px', // Add margin to shift it to the right
+          padding: '20px',
+          marginTop:'100px',
+          border: '2px solid #000',
+          borderRadius: '8px',
                     }}
                 >
-                    <div style={{ maxHeight: '400px', overflowY: 'scroll' }}>
-                        <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px', fontFamily: 'Arial, sans-serif', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-                            <thead style={{ backgroundColor: 'grey', color: 'white' }}>
+                    <div style={{ maxHeight: '360px', overflowY: 'scroll' }}>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'Arial, sans-serif', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                            <thead style={{ backgroundColor: 'grey', color: 'white'}}>
                                 <tr>
                                     <th style={{ padding: '12px', textAlign: 'left' }}>Sr. No</th>
                                     <th style={{ padding: '12px', textAlign: 'left' }}>Name</th>
@@ -156,7 +153,7 @@ const EnterData = () => {
                     </div>
                 </div>
 
-                <div style={{ marginTop: '20px', textAlign: 'center' }}>
+                <div style={{ marginTop: '20px', textAlign: 'center', marginRight:'100px'}}>
                     <a href="/meal">
                         <button style={{ backgroundColor: '#2196F3', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px' }} >
                             Submit
