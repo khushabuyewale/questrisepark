@@ -16,6 +16,7 @@ import Terms from "./components/Terms";
 import Pay from "./components/Pay";
 import EnterData from "./components/EnterData";
 import EnterStudData from "./components/EnterStudData";
+import EnterGrpData from "./components/EnterGrpData";
 
 
 const customeRouter = createBrowserRouter([
@@ -59,6 +60,10 @@ const customeRouter = createBrowserRouter([
       {
         path: "/enterData",
         element: <EnterData/>
+      },
+      {
+        path: "/enterGrpData",
+        element: <EnterGrpData/>
       },
       {
         path: "/enterStudData",
