@@ -162,9 +162,11 @@ const EnterGrpData = () => {
                 </div>
 
                 <div style={{ marginTop: '20px', textAlign: 'center' }}>
-                    <a href="/meal"> <button style={{ backgroundColor: '#2196F3', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px' }} onClick={handleSubmit}>
-                        Submit ({records.length} Members)
-                    </button></a>
+                    <a href="/meal">
+                        <button style={{ backgroundColor: '#2196F3', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px' }} onClick={handleSubmit}>
+                            Submit ({records.length} Members)
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
