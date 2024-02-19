@@ -1,95 +1,91 @@
 import React, { useState } from 'react';
 
 const EnterStudData = () => {
-    const [formData, setFormData] = useState({
-        phone: '',
-        email: '',
-        names: [],
-        ages: [],
-        studentIds: [],
-        collegeNames: [],
-    });
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [age, setAge] = useState('');
+    const [regno, setRegno] = useState('');
+    const [cllgName, setCllgName] = useState('');
+    const [records, setRecords] = useState([]);
+    const [recordCount, setRecordCount] = useState(1);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
+    const addRecord = () => {
+        // Validation for the first entry
+        if (recordCount === 1 && (!phone || !email)) {
+            alert('Phone number and email are required for the first entry!');
+            return;
+        }
+
+        // Validation for subsequent entries
+        if (recordCount > 1 && (!name || !age || !regno || !cllgName)) {
+            alert('Name and age are required for subsequent entries!');
+            return;
+        }
+
+        // Validation for phone number and email
+        if (recordCount === 1 && (!phone || !email)) {
+            alert('Phone number and email are required for the first entry!');
+            return;
+        }
+
+        // Validation for subsequent entries
+        if (recordCount > 1 && (!name || !age)) {
+            alert('Name and age are required for subsequent entries!');
+            return;
+        }
+
+        // Validate phone number
+        const phoneRegex = /^[0-9]{10}$/; // Assuming a 10-digit phone number
+        if (recordCount === 1 && !phoneRegex.test(phone)) {
+            alert('Please enter a valid 10-digit phone number!');
+            return;
+        }
+
+        // Validate email address
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (recordCount === 1 && !emailRegex.test(email)) {
+            alert('Please enter a valid email address!');
+            return;
+        }
+
+        // Validate age (between 5 and 90)
+        const parsedAge = parseInt(age, 10);
+        if (isNaN(parsedAge) || parsedAge < 5 || parsedAge > 90) {
+            alert('Please enter a valid age between 5 and 90!');
+            return;
+        }
+
+        // Add record to the state
+        setRecords([...records, { id: recordCount, name, age, regno, cllgName }]);
+
+        // Increment record count
+        setRecordCount(recordCount + 1);
+
+        // Clear input fields
+        setPhone('');
+        setEmail('');
+        setName('');
+        setAge('');
+        setRegno('');
+        setCllgName('');
     };
 
-    const handleNameChange = (e, index) => {
-        const newNames = [...formData.names];
-        newNames[index] = e.target.value;
-        setFormData((prevData) => ({
-            ...prevData,
-            names: newNames,
-        }));
+
+    const removeRecord = (id) => {
+        // Remove record from the state
+        const updatedRecords = records.filter(record => record.id !== id);
+
+        // Update serial numbers based on the remaining records
+        const updatedRecordsWithSerial = updatedRecords.map((record, index) => ({ ...record, id: index + 1 }));
+
+        // Update the state
+        setRecords(updatedRecordsWithSerial);
     };
 
-    const handleAgeChange = (e, index) => {
-        const newAges = [...formData.ages];
-        newAges[index] = e.target.value;
-        setFormData((prevData) => ({
-            ...prevData,
-            ages: newAges,
-        }));
-    };
-    const handleIdChange = (e, index) => {
-        const newStudentIds = [...formData.studentIds];
-        newStudentIds[index] = e.target.value;
-        setFormData((prevData) => ({
-            ...prevData,
-            studentIds: newStudentIds,
-        }));
-    };
-
-    const handleCllgChange = (e, index) => {
-        const newCollegeNames = [...formData.collegeNames];
-        newCollegeNames[index] = e.target.value;
-        setFormData((prevData) => ({
-            ...prevData,
-            collegeNames: newCollegeNames,
-        }));
-    };
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission logic here
-        console.log('Form Data Submitted:', formData);
-    };
-
-    const add = () => {
-        setFormData((prevData) => ({
-            ...prevData,
-            names: [...prevData.names, ''],
-            ages: [...prevData.ages, ''],
-            studentIds: [...prevData.studentIds, ''],
-            collegeNames: [...prevData.collegeNames, ''],
-        }));
-    };
-
-    const remove = (index) => {
-        const newNames = [...formData.names];
-        const newAges = [...formData.ages];
-        const newStudentIds = [...formData.studentIds];
-        const newCollegeNames = [...formData.collegeNames];
-
-        newNames.splice(index, 1);
-        newAges.splice(index, 1);
-        newStudentIds.splice(index, 1);
-        newCollegeNames.splice(index, 1);
-
-        setFormData((prevData) => ({
-            ...prevData,
-            names: newNames,
-            ages: newAges,
-            studentIds: newStudentIds,
-            collegeNames: newCollegeNames,
-        }));
-    };
 
     return (
-        <div style={{ paddingBottom: '20px', paddingTop: '20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
             <div
                 style={{
                     maxWidth: '525px',
@@ -102,60 +98,88 @@ const EnterStudData = () => {
                     borderRadius: '8px',
                 }}
             >
-                <h2>Enter Details</h2>
-                <div onSubmit={handleSubmit}>
 
-                    <label>
-                        Phone:
-                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
-                    </label>
-                    <br />
+                <label htmlFor="phone">Phone Number:</label>
+                <input type="text" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter phone number" /><br />
 
-                    <label>
-                        Email:
-                        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-                    </label>
-                    <br />
-                    <hr />
-                    {formData.names.map((name, index) => (
-                        <div key={index}>
-                            
-                            <label>
-                                Name {index + 1}:
-                                <input type="text" value={name} onChange={(e) => handleNameChange(e, index)} required />
-                                <button type="button" onClick={() => remove(index)}>
-                                    Remove
-                                </button>
-                            </label>
-                            <br />
-                            <label>
-                                Age {index + 1}:
-                                <input type="number" value={formData.ages[index]} onChange={(e) => handleAgeChange(e, index)} required />
-                            </label>
-                            <br />
+                <label htmlFor="email">Email:</label>
+                <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" /><br />
 
-                            <label>
-                                Student ID {index + 1}:
-                                <input type="text" value={formData.studentIds[index]} onChange={(e) => handleIdChange(e, index)} required />
-                            </label>
-                            <br />
+                <hr />
 
-                            <label>
-                                College Name {index + 1}:
-                                <input type="text" value={formData.collegeNames[index]} onChange={(e) => handleCllgChange(e, index)} required />
-                            </label>
-                            <br />
-                        </div>
-                    ))}
-                    <button type="button" onClick={add}>
-                        Add
-                    </button>
-                    <hr />
-                    <a href="/meal">
-                        <button type="submit">Submit</button></a>
+                <label htmlFor="name">Name:</label>
+                <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter name" /><br />
+
+                <label htmlFor="age">Age:</label>
+                <input type="text" id="age" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Enter age" /><br />
+
+                <label htmlFor="age">Regestration No.:</label>
+                <input type="text" id="regno" value={regno} onChange={(e) => setRegno(e.target.value)} placeholder="Enter Reg no." /><br />
+
+                <label htmlFor="age">College Name:</label>
+                <input type="text" id="cllgName" value={cllgName} onChange={(e) => setCllgName(e.target.value)} placeholder="Enter Collge Name" /><br />
+
+                <button style={{ margin: '10px 0', backgroundColor: '#4CAF50', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px' }} onClick={addRecord}>
+                    Add
+                </button>
+            </div>
+
+            <div style={{ width: '45%', textAlign: 'center' }}>
+                <div
+                    style={{
+                        maxWidth: '525px',
+                        height: '500px',
+                        margin: '0 auto', // Center the form horizontally
+                        marginRight: '120px', // Add margin to shift it to the right
+                        padding: '20px',
+                        marginTop: '100px',
+                        border: '2px solid #000',
+                        borderRadius: '8px',
+                    }}
+                >
+                    <div style={{ maxHeight: '400px', overflowY: 'scroll' }}>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px', fontFamily: 'Arial, sans-serif', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                            <thead style={{ backgroundColor: 'grey', color: 'white' }}>
+                                <tr>
+                                    <th style={{ padding: '12px', textAlign: 'left' }}>Sr. No</th>
+                                    <th style={{ padding: '12px', textAlign: 'left' }}>Name</th>
+                                    <th style={{ padding: '12px', textAlign: 'left' }}>Age</th>
+                                    <th style={{ padding: '12px', textAlign: 'left' }}>Regestration No.</th>
+                                    <th style={{ padding: '12px', textAlign: 'left' }}>College Name</th>
+                                    <th style={{ padding: '12px' }}>Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {records.map(record => (
+                                    <tr key={record.id} style={{ borderBottom: '1px solid #ecf0f1' }}>
+                                        <td style={{ padding: '10px' }}>{record.id}</td>
+                                        <td style={{ padding: '10px' }}>{record.name}</td>
+                                        <td style={{ padding: '10px' }}>{record.age}</td>
+                                        <td style={{ padding: '10px' }}>{record.regno}</td>
+                                        <td style={{ padding: '10px' }}>{record.cllgName}</td>
+                                        <td style={{ padding: '10px' }}>
+                                            <button style={{ backgroundColor: '#e74c3c', color: 'white', border: 'none', padding: '8px 12px', borderRadius: '4px', cursor: 'pointer' }} onClick={() => removeRecord(record.id)}>
+                                                Remove
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+
+                <div style={{ marginTop: '20px', textAlign: 'center' }}>
+                    <a href="/meal">
+                        <button style={{ backgroundColor: '#2196F3', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px' }} >
+                            Submit
+                        </button>
+                    </a>
+                </div>
+
             </div>
         </div>
+
     );
 };
 

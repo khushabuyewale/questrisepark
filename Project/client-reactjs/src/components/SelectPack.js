@@ -29,11 +29,14 @@ const SelectPack = () => {
   const handleStudCardClick = (price) => {
     navigate('/enterStudData');
   };
+  const handleGrpCardClick = (price) => {
+    navigate('/enterGrpData');
+  };
 
   return (
     <div className="select-pack-container">
       <PricingCard cardType="regular" price={900} onClick={handleCardClick} />
-      <PricingCard cardType="group" price={800} onClick={handleCardClick} />
+      <PricingCard cardType="group" price={800} onClick={handleGrpCardClick} />
       <PricingCard cardType="student" price={500} onClick={handleStudCardClick} />
     </div>
   );

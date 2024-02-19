@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const EnterData = () => {
+const EnterGrpData = () => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
@@ -21,38 +21,38 @@ const EnterData = () => {
             return;
         }
 
-            // Validation for phone number and email
-    if (recordCount === 1 && (!phone || !email)) {
-        alert('Phone number and email are required for the first entry!');
-        return;
-    }
+        // Validation for phone number and email
+        if (recordCount === 1 && (!phone || !email)) {
+            alert('Phone number and email are required for the first entry!');
+            return;
+        }
 
-    // Validation for subsequent entries
-    if (recordCount > 1 && (!name || !age)) {
-        alert('Name and age are required for subsequent entries!');
-        return;
-    }
+        // Validation for subsequent entries
+        if (recordCount > 1 && (!name || !age)) {
+            alert('Name and age are required for subsequent entries!');
+            return;
+        }
 
-    // Validate phone number
-    const phoneRegex = /^[0-9]{10}$/; // Assuming a 10-digit phone number
-    if (recordCount === 1 && !phoneRegex.test(phone)) {
-        alert('Please enter a valid 10-digit phone number!');
-        return;
-    }
+        // Validate phone number
+        const phoneRegex = /^[0-9]{10}$/; // Assuming a 10-digit phone number
+        if (recordCount === 1 && !phoneRegex.test(phone)) {
+            alert('Please enter a valid 10-digit phone number!');
+            return;
+        }
 
-    // Validate email address
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (recordCount === 1 && !emailRegex.test(email)) {
-        alert('Please enter a valid email address!');
-        return;
-    }
+        // Validate email address
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (recordCount === 1 && !emailRegex.test(email)) {
+            alert('Please enter a valid email address!');
+            return;
+        }
 
-    // Validate age (between 5 and 90)
-    const parsedAge = parseInt(age, 10);
-    if (isNaN(parsedAge) || parsedAge < 5 || parsedAge > 90) {
-        alert('Please enter a valid age between 5 and 90!');
-        return;
-    }
+        // Validate age (between 5 and 90)
+        const parsedAge = parseInt(age, 10);
+        if (isNaN(parsedAge) || parsedAge < 5 || parsedAge > 90) {
+            alert('Please enter a valid age between 5 and 90!');
+            return;
+        }
 
         // Add record to the state
         setRecords([...records, { id: recordCount, name, age }]);
@@ -67,19 +67,27 @@ const EnterData = () => {
         setAge('');
     };
 
-
     const removeRecord = (id) => {
         // Remove record from the state
         const updatedRecords = records.filter(record => record.id !== id);
-    
+
         // Update serial numbers based on the remaining records
         const updatedRecordsWithSerial = updatedRecords.map((record, index) => ({ ...record, id: index + 1 }));
-    
+
         // Update the state
         setRecords(updatedRecordsWithSerial);
     };
 
+    const handleSubmit = () => {
+        // Validation for a minimum of 5 members
+        if (records.length < 5) {
+            alert('Minimum 5 members required!');
+            return;
+        }
 
+        // Logic for submitting the data, you can replace this with your actual submission logic
+        console.log('Submitting data:', records);
+    };
 
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
@@ -95,7 +103,6 @@ const EnterData = () => {
                     borderRadius: '8px',
                 }}
             >
-
                 <label htmlFor="phone">Phone Number:</label>
                 <input type="text" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter phone number" /><br />
 
@@ -120,14 +127,12 @@ const EnterData = () => {
                     style={{
                         maxWidth: '525px',
                         height: '500px',
-                        margin: '0 auto', // Center the form horizontally
-                        marginRight: '120px', // Add margin to shift it to the right
+                        margin: '0 auto',
                         padding: '20px',
                         marginTop: '100px',
                         border: '2px solid #000',
-                        borderRadius: '8px',
-                    }}
-                >
+                        borderRadius: '8px'
+                    }}>
                     <div style={{ maxHeight: '400px', overflowY: 'scroll' }}>
                         <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px', fontFamily: 'Arial, sans-serif', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
                             <thead style={{ backgroundColor: 'grey', color: 'white' }}>
@@ -157,17 +162,13 @@ const EnterData = () => {
                 </div>
 
                 <div style={{ marginTop: '20px', textAlign: 'center' }}>
-                    <a href="/meal">
-                        <button style={{ backgroundColor: '#2196F3', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px' }} >
-                            Submit
-                        </button>
-                    </a>
+                    <a href="/meal"> <button style={{ backgroundColor: '#2196F3', color: 'white', border: 'none', padding: '10px 15px', borderRadius: '4px' }} onClick={handleSubmit}>
+                        Submit ({records.length} Members)
+                    </button></a>
                 </div>
-
             </div>
         </div>
-
     );
 };
 
-export default EnterData;
+export default EnterGrpData;
