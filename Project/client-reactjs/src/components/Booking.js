@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ThemeParkCardImg from '../assets/Capture.jpg';
 import WaterParkCardImg from '../assets/Capture2.jpg';
 
@@ -62,17 +62,17 @@ const containerStyle = {
 const currentDate = new Date().toISOString().split('T')[0];
 
 const Booking = () => {
-  const handleCard1Click = () => {
-    const ticketCount = 1;
-    if (ticketCount > 0) {
-      window.location.href = '/selectPack'; 
-    }
+  const [selectedDate, setSelectedDate] = useState('');
+
+  const handleDateChange = (event) => {
+    setSelectedDate(event.target.value);
   };
 
-  const handleCard2Click = () => {
-    const ticketCount = 2;
-    if (ticketCount > 0) {
-      window.location.href = '/selectPack'; 
+  const handleCardClick = (ticketCount) => {
+    if (selectedDate === '') {
+      alert('Please select a date before booking.');
+    } else if (ticketCount > 0) {
+      window.location.href = '/selectPack';
     }
   };
 
@@ -87,6 +87,7 @@ const Booking = () => {
                 type="date"
                 style={{ marginBottom: '20px', marginTop: '120px' }}
                 min={currentDate}
+                onChange={handleDateChange}
               />
             </b>
           </div>
@@ -94,19 +95,18 @@ const Booking = () => {
         <div style={containerStyle}>
           <Card
             title="Theme Park"
-            onClick={handleCard1Click}
+            onClick={() => handleCardClick(1)}
             backgroundColor="#ff7518"
-            back
             imageUrl={ThemeParkCardImg}
-            ticketCount={1} // Replace with the actual ticket count
-            style={{ marginRight: '-60px'}}
+            ticketCount={1}
+            style={{ marginRight: '-60px' }}
           />
-          <Card
+           <Card
             title="Water Park"
-            onClick={handleCard2Click}
+            onClick={() => handleCardClick(2)}
             backgroundColor="#3cb4c4"
             imageUrl={WaterParkCardImg}
-            ticketCount={2} // Replace with the actual ticket count
+            ticketCount={2}
             style={{ marginLeft: '-60px' }}
           />
         </div>
