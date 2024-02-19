@@ -63,14 +63,14 @@ const Booking = () => {
   const handleCard1Click = () => {
     const ticketCount = 1;
     if (ticketCount > 0) {
-      window.location.href = '/ContactUs'; 
+      window.location.href = '/selectPack'; 
     }
   };
 
   const handleCard2Click = () => {
     const ticketCount = 0;
     if (ticketCount > 0) {
-      window.location.href = '/ContactUs'; 
+      window.location.href = '/selectPack'; 
     }
   };
 
