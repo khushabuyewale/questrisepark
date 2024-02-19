@@ -1,4 +1,6 @@
 import React from 'react';
+import ThemeParkCardImg from '../assets/Capture.jpg';
+import WaterParkCardImg from '../assets/Capture2.jpg';
 
 const Card = ({ title, content, onClick, backgroundColor, imageUrl, ticketCount }) => {
   const isSoldOut = ticketCount === 0;
@@ -25,7 +27,7 @@ const Card = ({ title, content, onClick, backgroundColor, imageUrl, ticketCount 
     maxWidth: '100%',
     height: 'auto',
     borderRadius: '8px',
-    marginBottom:'20px'
+    marginBottom:'15px'
   };
 
   const ticketCountStyle = {
@@ -93,16 +95,17 @@ const Booking = () => {
           <Card
             title="Theme Park"
             onClick={handleCard1Click}
-            backgroundColor="#FFD700"
-            imageUrl="https://placehold.it/600x300"
+            backgroundColor="#ff7518"
+            back
+            imageUrl={ThemeParkCardImg}
             ticketCount={1} // Replace with the actual ticket count
-            style={{ marginRight: '-60px' }}
+            style={{ marginRight: '-60px'}}
           />
           <Card
             title="Water Park"
             onClick={handleCard2Click}
-            backgroundColor="#66CDAA"
-            imageUrl="https://placehold.it/600x300"
+            backgroundColor="#3cb4c4"
+            imageUrl={WaterParkCardImg}
             ticketCount={2} // Replace with the actual ticket count
             style={{ marginLeft: '-60px' }}
           />
