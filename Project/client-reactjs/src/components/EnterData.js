@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const EnterData = () => {
     const [formData, setFormData] = useState({
-        names: [''], // Array to store names
-        ages: [''],  // Array to store ages
+        names: ['Name 1'],
+        ages: ['Age 1'],
         phone: '',
         email: '',
-
+        ticketCount: 1,
     });
+
+    const navigate = useNavigate();
 
     const handleNameChange = (e, index) => {
         const newNames = [...formData.names];
@@ -28,10 +31,11 @@ const EnterData = () => {
     };
 
     const addNameAndAge = () => {
+        const { names, ages } = formData;
         setFormData((prevData) => ({
             ...prevData,
-            names: [...prevData.names, ''],
-            ages: [...prevData.ages, ''],
+            names: [...names, ''],
+            ages: [...ages, ''],
         }));
     };
 
@@ -49,6 +53,61 @@ const EnterData = () => {
         }));
     };
 
+    const tableHeaderStyle = {
+        backgroundColor: '#f2f2f2',
+        padding: '10px',
+        textAlign: 'left',
+        border: '1px solid #ddd',
+    };
+
+    const tableRowStyle = {
+        borderBottom: '1px solid #ddd',
+    };
+
+    const tableCellStyle = {
+        padding: '10px',
+        border: '1px solid #ddd',
+    };
+
+    const removeButtonStyle = {
+        backgroundColor: '#ff0000',
+        color: '#fff',
+        padding: '5px 10px',
+        cursor: 'pointer',
+        border: 'none',
+        borderRadius: '4px',
+    };
+
+    const labelStyle = {
+        display: 'block',
+    };
+
+    const inputStyle = {
+        width: '100%',
+        padding: '8px',
+        boxSizing: 'border-box',
+        marginBottom: '5px',
+    };
+
+    const buttonStyle = {
+        backgroundColor: '#4CAF50',
+        color: 'white',
+        padding: '10px 15px',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+        marginBottom: '5px',
+    };
+
+    const submitBtnStyle = {
+        backgroundColor: '#007BFF',
+        color: 'white',
+        padding: '10px 15px',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+    };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -59,67 +118,82 @@ const EnterData = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission logic here
         console.log('Form Data Submitted:', formData);
+        navigate('/meal');
     };
-    return (
-        <div>
-            <div style={{ paddingBottom: '20px', paddingTop: '20px' }}>
-                <div style={{
-                    maxWidth: '525px',
-                    height: '500px',
-                    margin: '0 auto', // Center the form horizontally
-                    marginRight: '120px', // Add margin to shift it to the right
-                    padding: '20px',
-                    marginTop: '100px',
-                    border: '2px solid #000',
-                    borderRadius: '8px',
-                }}>
-                    <h2>Enter Details</h2>
-                    <div onSubmit={handleSubmit}>
-                        <label>
-                            Phone:
-                            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
-                        </label>
-                        <br />
 
-                        <label>
+    return (
+        <div style={{ display: 'flex' }}>
+            {/* Left side with the table of names and ages */}
+            <div style={{ flex: 1, marginLeft: '20px' }}>
+                <div style={{ maxWidth: '525px', height: '500px', margin: '0 auto', padding: '20px', marginTop: '100px', border: '2px solid #000', borderRadius: '8px' }}>
+                    <h3>Entered Names and Ages:</h3>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px' }}>
+                        <thead>
+                            <tr>
+                                <th style={tableHeaderStyle}>Sr.no</th>
+                                <th style={tableHeaderStyle}>Name</th>
+                                <th style={tableHeaderStyle}>Age</th>
+                                <th style={tableHeaderStyle}>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {formData.names.map((name, index) => (
+                                <tr key={index} style={tableRowStyle}>
+                                    <td style={tableCellStyle}>{index + 1}</td>
+                                    <td style={tableCellStyle}>{name}</td>
+                                    <td style={tableCellStyle}>{formData.ages[index]}</td>
+                                    <td style={tableCellStyle}>
+                                        <button type="button" onClick={() => removeNameAndAge(index)} style={removeButtonStyle}>
+                                            Remove
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            {/* Right side with the form */}
+            <div style={{ flex: 1, marginLeft: '20px' }}>
+                <div style={{ maxWidth: '525px', height: '500px', margin: '0 auto', padding: '20px', marginTop: '100px', border: '2px solid #000', borderRadius: '8px' }}>
+                    <h2 style={{ marginBottom: '20px' }}>Enter Details</h2>
+                    <form onSubmit={handleSubmit} style={{ textAlign: 'left' }}>
+                        <label style={labelStyle}>
+                            Phone:
+                            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required style={inputStyle} />
+                        </label>
+
+                        <label style={labelStyle}>
                             Email:
-                            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+                            <input type="email" name="email" value={formData.email} onChange={handleChange} required style={inputStyle} />
                         </label>
                         <br />
                         <hr />
                         {formData.names.map((name, index) => (
-                            <div key={index}>
-
-                                <label>
+                            <div key={index} style={{ marginBottom: '15px' }}>
+                                <label style={labelStyle}>
                                     Name {index + 1}:
-                                    <input type="text" value={name} onChange={(e) => handleNameChange(e, index)} required />
-                                    <button type="button" onClick={() => removeNameAndAge(index)}>
-                                        Remove
-                                    </button>
+                                    <input type="text" value={name} onChange={(e) => handleNameChange(e, index)} required style={inputStyle} />
                                 </label>
-                                <br />
-                                <label>
+                                <label style={labelStyle}>
                                     Age {index + 1}:
-                                    <input type="number" value={formData.ages[index]} onChange={(e) => handleAgeChange(e, index)} required />
+                                    <input type="number" value={formData.ages[index]} onChange={(e) => handleAgeChange(e, index)} required style={inputStyle} />
                                 </label>
-                                <br />
                             </div>
                         ))}
-                        <button type="button" onClick={addNameAndAge}>
-                            Add Name and Age
+                        <button type="button" onClick={() => addNameAndAge()} style={buttonStyle}>
+                            Add Member
                         </button>
                         <hr />
-
-
-                        <a href="/meal">
-                            <button type="submit">Submit</button></a>
-                    </div>
+                        <button type="submit" style={submitBtnStyle}>
+                            Submit
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
-
     );
 };
 
