@@ -36,6 +36,7 @@ const Meal = () => {
        {/* Breakfast  149, */}
         <div className="pricing-card first-card">
           <h2>Breakfast</h2>
+          <p>₹149/-</p>
           <br />
           <input
             type="number"
@@ -50,6 +51,7 @@ const Meal = () => {
         {/*  Lunch 399, */}
         <div className="pricing-card second-card">
           <h2> Lunch </h2>
+          <p>₹399/-</p>
           <br />
           <input
             type="number"
@@ -65,6 +67,7 @@ const Meal = () => {
         {/* Snacks 99 */}
         <div className="pricing-card third-card">
           <h2>Snacks</h2>
+          <p>₹99/-</p>
           <br />
           <input
             type="number"
@@ -81,6 +84,7 @@ const Meal = () => {
 
         <div className="pricing-card fourth-card">
           <h2>Dinner</h2>
+          <p>₹499/-</p>
           <br />
           <input
             type="number"
