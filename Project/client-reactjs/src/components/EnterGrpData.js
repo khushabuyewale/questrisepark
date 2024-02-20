@@ -12,25 +12,25 @@ const EnterGrpData = () => {
 
     const addRecord = () => {
         // Validation for the first entry
-        if (recordCount === 1 && (!phone || !email)) {
+        if (recordCount === 1 && (!phone || !email || !name || !age)) {
             setShowAlert(true);
-            alert('Phone number and email are required for the first entry!');
+            alert('All Details are required for the first entry!');
             return;
         }
 
         // Validation for subsequent entries
         if (recordCount > 1 && (!name || !age)) {
             setShowAlert(true);
-            alert('Name and age are required for subsequent entries!');
+            alert('Member Details are required for subsequent entries!');
             return;
         }
+
         // Validate name
         if (!name) {
             setShowAlert(true);
             alert('Name is required!');
             return;
         }
-
 
         // Validate phone number
         const phoneRegex = /^[0-9]{10}$/; // Assuming a 10-digit phone number
@@ -48,9 +48,9 @@ const EnterGrpData = () => {
 
         // Validate age (between 5 and 90)
         const parsedAge = parseInt(age, 10);
-        if (isNaN(parsedAge) || parsedAge < 5 || parsedAge > 90) {
+        if (isNaN(parsedAge) || parsedAge < 10 || parsedAge > 90) {
             setShowAlert(true);
-            alert('Please enter a valid age between 5 and 90!');
+            alert('Please enter a valid age between 10 and 90!');
             return;
         }
 
@@ -61,7 +61,7 @@ const EnterGrpData = () => {
         setRecordCount(recordCount + 1);
 
         // Clear input fields
-        
+
         setName('');
         setAge('');
         setShowAlert(false);
@@ -93,37 +93,39 @@ const EnterGrpData = () => {
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '20px' }}>
             <div
                 style={{
-                    maxWidth: '525px',
-                    height: '400px',
-                    margin: '0 auto', // Center the form horizontally
+                    maxWidth: '400px',
+                    height: '620px',
+                    margin: '0 auto',
                     marginRight: '120px', // Add margin to shift it to the right
                     padding: '20px',
                     marginTop: '120px',
                     border: '2px solid #000',
                     borderRadius: '8px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between', // Adjust the alignment vertically
                 }}
             >
                 <h4 style={{ textAlign: 'center' }}>Member Details</h4>
-                <label htmlFor="phone">Ph.No.:</label>
+
                 <input type="text" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter phone number" /><br />
 
-                <label htmlFor="email">Email:</label>
+
                 <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" /><br />
                 <p><b>Note:</b> Please enter the Email to receive the ticket!</p>
-                {showAlert && <div style={{ color: 'red', marginTop: '10px' }}>Please fill in the required fields with valid values!</div>}
+                {showAlert && <div style={{ color: 'red', marginBottom: '5px' }}>Please fill in the required fields with valid values!</div>}
                 <hr />
 
                 <h4 style={{ textAlign: 'center' }}>Add Members</h4>
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter name" /><br />
-                {showAlert && !name && <div style={{ color: 'red', marginTop: '10px' }}>Please enter a name!</div>}
 
-                <label htmlFor="age">Age:</label>
+                <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter name" /><br />
+                {showAlert && !name && <div style={{ color: 'red', marginTop: '-25px', marginBottom: '5px' }}>Please enter a name!</div>}
+
                 <input type="text" id="age" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Enter age" /><br />
-                {showAlert && !age && <div style={{ color: 'red', marginTop: '10px' }}>Please enter a valid age!</div>}
+                {showAlert && !age && <div style={{ color: 'red', marginTop: '-25px', marginBottom: '5px' }}>Please enter a valid age!</div>}
 
                 <button
                     style={{
@@ -140,10 +142,10 @@ const EnterGrpData = () => {
                 </button>
             </div>
 
-            <div style={{ width: '45%', textAlign: 'center', paddingBottom: '20px', paddingTop: '20px' }}>
+            <div style={{ width: '58%', textAlign: 'center', paddingBottom: '20px', paddingTop: '20px' }}>
                 <div
                     style={{
-                        maxWidth: '525px',
+                        Width: '550px',
                         height: '400px',
                         margin: '0 auto', // Center the form horizontally
                         marginRight: '120px', // Add margin to shift it to the right
@@ -207,17 +209,20 @@ const EnterGrpData = () => {
                             alert('Please add at least one record before submitting!');
                         }
                     }}>
-                        <button
-                            style={{
-                                backgroundColor: '#2196F3',
-                                color: 'white',
-                                border: 'none',
-                                padding: '10px 15px',
-                                borderRadius: '4px',
-                            }}
-                        >
-                            Submit ({records.length} Members)
-                        </button>
+                        <div style={{ marginTop: '20px', textAlign: 'center', marginRight: '100px' }}>
+
+                            <button
+                                style={{
+                                    backgroundColor: '#2196F3',
+                                    color: 'white',
+                                    border: 'none',
+                                    padding: '10px 15px',
+                                    borderRadius: '4px',
+                                }}
+                            >
+                                Submit ({records.length} Members)
+                            </button>
+                        </div>
                     </a>
                 </div>
             </div>

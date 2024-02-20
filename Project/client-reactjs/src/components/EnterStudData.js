@@ -14,14 +14,14 @@ const EnterStudData = () => {
 
     const addRecord = () => {
         // Validation for the first entry
-        if (recordCount === 1 && (!phone || !email || !name || !age)) {
+        if (recordCount === 1 && (!phone || !email || !name || !age || !regno || !cllgName)) {
             setShowAlert(true);
             alert('All Details are required for the first entry!');
             return;
         }
 
         // Validation for subsequent entries
-        if (recordCount > 1 && (!name || !age)) {
+        if (recordCount > 1 && (!name || !age || !regno || !cllgName)) {
             setShowAlert(true);
             alert('Member Details are required for subsequent entries!');
             return;
@@ -58,9 +58,9 @@ const EnterStudData = () => {
         }
         // Validate age (between 5 and 90)
         const parsedAge = parseInt(age, 10);
-        if (isNaN(parsedAge) || parsedAge < 5 || parsedAge > 90) {
+        if (isNaN(parsedAge) || parsedAge < 10 || parsedAge > 90) {
             setShowAlert(true);
-            alert('Please enter a valid age between 5 and 90!');
+            alert('Please enter a valid age between 10 and 90!');
             return;
         }
 
@@ -71,7 +71,7 @@ const EnterStudData = () => {
         setRecordCount(recordCount + 1);
 
         // Clear input fields
-      
+
         setName('');
         setAge('');
         setRegno('');
@@ -124,30 +124,28 @@ const EnterStudData = () => {
                 }}
             >
                 <h4 style={{ textAlign: 'center' }}>Member Details</h4>
-                <label htmlFor="phone">Ph.No.:</label>
+
                 <input type="text" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Enter phone number" /><br />
 
-                <label htmlFor="email">Email:</label>
+
                 <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" /><br />
                 <p><b>Note:</b> Please enter the Email to receive the ticket!</p>
-                {showAlert && <div style={{ color: 'red', marginTop: '10px' }}>Please fill in the required fields with valid values!</div>}
+                {showAlert && <div style={{ color: 'red', marginBottom: '5px' }}>Please fill in the required fields with valid values!</div>}
                 <hr />
                 <h4 style={{ textAlign: 'center' }}>Add Members</h4>
-                <label htmlFor="name">Name:</label>
+
                 <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter name" /><br />
-                {showAlert && !name && <div style={{ color: 'red', marginTop: '10px' }}>Please enter a name!</div>}
+                {showAlert && !name && <div style={{ color: 'red', marginTop: '-25px', marginBottom: '5px' }}>Please enter a name!</div>}
 
-                <label htmlFor="age">Age:</label>
+
                 <input type="text" id="age" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Enter age" /><br />
-                {showAlert && !age && <div style={{ color: 'red', marginTop: '10px' }}>Please enter a valid age!</div>}
+                {showAlert && !age && <div style={{ color: 'red', marginTop: '-25px', marginBottom: '5px' }}>Please enter a valid age!</div>}
 
-                <label htmlFor="regno">Registeration no.:</label>
                 <input type="text" id="regno" value={regno} onChange={(e) => setRegno(e.target.value)} placeholder="Enter Registeration no." /><br />
-                {showAlert && !regno && <div style={{ color: 'red', marginTop: '10px' }}>Please enter a Registeration no.!</div>}
+                {showAlert && !regno && <div style={{ color: 'red', marginTop: '-25px', marginBottom: '5px' }}>Please enter a Registeration no.!</div>}
 
-                <label htmlFor="cllgName">College Name:</label>
                 <input type="text" id="cllgName" value={cllgName} onChange={(e) => setCllgName(e.target.value)} placeholder="Enter College Name" /><br />
-                {showAlert && !cllgName && <div style={{ color: 'red', marginTop: '10px' }}>Please enter a College Name!</div>}
+                {showAlert && !cllgName && <div style={{ color: 'red', marginTop: '-25px', marginBottom: '5px' }}>Please enter a College Name!</div>}
 
                 <button
                     style={{
@@ -164,7 +162,7 @@ const EnterStudData = () => {
                 </button>
             </div>
 
-            <div style={{ width: '45%', textAlign: 'center', paddingBottom: '20px', paddingTop: '20px' }}>
+            <div style={{ width: '58%', textAlign: 'center', paddingBottom: '20px', paddingTop: '20px' }}>
                 <div
                     style={{
                         Width: '550px',
@@ -175,7 +173,7 @@ const EnterStudData = () => {
                         marginTop: '100px',
                         border: '2px solid #000',
                         borderRadius: '8px',
-                      // Adjust the alignment vertically
+                        // Adjust the alignment vertically
                     }}
                 >
                     <div style={{ maxHeight: '360px', overflowY: 'scroll' }}>
@@ -248,7 +246,7 @@ const EnterStudData = () => {
                                 }}
 
                             >
-                                Submit
+                                Submit ({records.length} Members)
                             </button>
                         </div>
                     </a>
