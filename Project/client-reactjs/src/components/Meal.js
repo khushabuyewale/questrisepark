@@ -2,6 +2,12 @@
 
 import React, { useState } from 'react';
 import chef from '../assets/MenuBg.jpg';
+import Breakfast from '../assets/Breakfast.jpg';
+import Lunch from '../assets/Lunch.jpg';
+import Dinner from '../assets/Dinner.jpg';
+import Snacks from '../assets/Snacks.jpg';
+
+
 const Meal = () => {
   const [firstCount, setFirstCount] = useState(0);
   const [secondCount, setSecondCount] = useState(0);
@@ -15,7 +21,6 @@ const Meal = () => {
     console.log(`Proceeding with ${packageType} ticket`);
   };
  
-
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between'}}>
     <div
@@ -29,7 +34,7 @@ const Meal = () => {
       <h1 style={{marginLeft:'150px'}}>Want To Add Meal To Your Package ?</h1>
       <div className="select-pack-container">
        {/* Breakfast  149, */}
-        <div className="pricing-card regular-card">
+        <div className="pricing-card first-card">
           <h2>Breakfast</h2>
           <br />
           <input
@@ -175,6 +180,8 @@ const styles = `
   }
 
   .pricing-card {
+    color: white;
+    text-shadow: 2px 2px 2px black, -2px -2px 2px black, 2px -2px 2px black, -2px 2px 2px black;
     width: 250px;
     height: 300px;
     margin-top:80px;
@@ -184,22 +191,24 @@ const styles = `
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
+    background-size: cover;
+    
   }
 
   .first-card {
-    background-image: url('regular-background.jpg'); /* Replace with the actual image URL */
+    background-image: url('${Breakfast}'); /* Replace with the actual image URL */
   }
 
-  .Second-card {
-    background-image: url('group-background.jpg'); /* Replace with the actual image URL */
+  .second-card {
+    background-image: url('${Lunch}'); /* Replace with the actual image URL */
   }
 
   .third-card {
-    background-image: url('student-background.jpg'); /* Replace with the actual image URL */
+    background-image: url('${Snacks}'); /* Replace with the actual image URL */
   }
 
   .fourth-card {
-    background-image: url('student-background.jpg'); /* Replace with the actual image URL */
+    background-image: url('${Dinner}'); /* Replace with the actual image URL */
   }
 
   .pricing-card:hover {
