@@ -1,3 +1,5 @@
+// 2nd page
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 

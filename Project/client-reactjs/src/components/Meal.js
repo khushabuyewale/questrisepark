@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+// 4th page
 
+import React, { useState } from 'react';
+import chef from '../assets/MenuBg.jpg';
 const Meal = () => {
   const [firstCount, setFirstCount] = useState(0);
   const [secondCount, setSecondCount] = useState(0);
@@ -20,11 +22,11 @@ const Meal = () => {
         style={{
            
             margin: '0 auto', 
-            marginTop: '80px',
+            marginTop: '100px',
            
         }}
     >
-      <h1>Want To Add Meal To Your Package ?</h1>
+      <h1 style={{marginLeft:'150px'}}>Want To Add Meal To Your Package ?</h1>
       <div className="select-pack-container">
 
         <div className="pricing-card regular-card">
@@ -96,7 +98,9 @@ const Meal = () => {
               }}
             >Proceed</button></a>
         </div>
-        <div class="menu-card">
+        <div class="menu-card" 
+      
+        >
           <h5>Breakfast (8:30 AM to 11:00 AM)</h5>
           <ul>
             <li>
@@ -209,16 +213,21 @@ const styles = `
   }
 
   .menu-card {
+    color: white;
     width: 400px;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background for better visibility */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top:180px;
-    margin-bottom:130px;
+    margin-top: 180px;
+    margin-bottom: 190px;
     overflow-y: scroll;
-    height: 500px; 
+    height: 500px;
+    background-image: url('${chef}');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px); /* Adjust the blur intensity as needed */
   }
 
   .h2, h3 {

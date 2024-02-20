@@ -1,3 +1,5 @@
+// 1st pages
+
 import React, { useState } from 'react';
 import ThemeParkCardImg from '../assets/Capture.jpg';
 import WaterParkCardImg from '../assets/Capture2.jpg';
