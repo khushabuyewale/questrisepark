@@ -14,7 +14,7 @@ const Meal = () => {
     // You can implement actions or navigation logic here based on the packageType
     console.log(`Proceeding with ${packageType} ticket`);
   };
-  // Lunch and HiTea price 329 , 
+ 
 
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between'}}>
@@ -28,9 +28,9 @@ const Meal = () => {
     >
       <h1 style={{marginLeft:'150px'}}>Want To Add Meal To Your Package ?</h1>
       <div className="select-pack-container">
-
+       {/* Breakfast  149, */}
         <div className="pricing-card regular-card">
-          <h2>Lunch and HiTea</h2>
+          <h2>Breakfast</h2>
           <br />
           <input
             type="number"
@@ -39,12 +39,12 @@ const Meal = () => {
             placeholder="Enter count of people"
           />
           <br />
-          <p><b>Total Price: Rs {calculatePrice(firstCount, 329)}</b></p>
+          <p><b>Total Price: Rs {calculatePrice(firstCount, 149)}</b></p>
 
         </div>
-        {/* Breakfast Lunch and HiTea price 399, */}
+        {/*  Lunch 399, */}
         <div className="pricing-card second-card">
-          <h2>Breakfast Lunch and HiTea price</h2>
+          <h2> Lunch </h2>
           <br />
           <input
             type="number"
@@ -57,9 +57,9 @@ const Meal = () => {
 
 
         </div>
-        {/* Lunch HiTea and Dinner price 449, */}
+        {/* Snacks 99 */}
         <div className="pricing-card third-card">
-          <h2>Lunch HiTea and Dinner price</h2>
+          <h2>Snacks</h2>
           <br />
           <input
             type="number"
@@ -68,14 +68,14 @@ const Meal = () => {
             placeholder="Enter count of students"
           />
           <br />
-          <p><b>Total Price: Rs {calculatePrice(thirdCount, 449)}</b></p>
+          <p><b>Total Price: Rs {calculatePrice(thirdCount, 99)}</b></p>
 
         </div>
 
-        {/*  Breakfast Lunch HiTea and Dinner price 519 */}
+        {/*   Dinner  499 */}
 
         <div className="pricing-card fourth-card">
-          <h2>Breakfast Lunch HiTea and Dinner</h2>
+          <h2>Dinner</h2>
           <br />
           <input
             type="number"
@@ -84,13 +84,13 @@ const Meal = () => {
             placeholder="Enter count of students"
           />
           <br />
-          <p><b>Total Price: Rs {calculatePrice(fourthCount, 519)}</b></p>
+          <p><b>Total Price: Rs {calculatePrice(fourthCount, 499)}</b></p>
           <a href='/pay'>
             <button onClick={() => handleProceed('Fourth')}
               style={{
                 width: '50%',
                 padding: '5px',
-                marginTop: '100px',
+                marginTop: '200px',
                 border: 'solid',
                 borderRadius: '3px',
                 cursor: 'pointer',
@@ -134,7 +134,7 @@ const Meal = () => {
           </ul>
 
 
-          <h5>Hi-Tea (4:30 PM to 6:00 PM)</h5>
+          <h5>Snacks (4:30 PM to 6:00 PM)</h5>
           <ul>
             <li>
               <h6>Samosa/Kachori 1 pc</h6> + Tea/Coffee
