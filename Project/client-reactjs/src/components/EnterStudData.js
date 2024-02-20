@@ -13,8 +13,11 @@ const EnterStudData = () => {
     const [records, setRecords] = useState([]);
     const [recordCount, setRecordCount] = useState(1);
     const [showAlert, setShowAlert] = useState(false);
+    const [totalAmount, setTotalAmount] = useState(0);
 
     const addRecord = () => {
+        const newTotalAmount = recordCount * 500;
+        setTotalAmount(newTotalAmount);
         // Validation for the first entry
         if (recordCount === 1 && (!phone || !email || !name || !age || !regno || !cllgName)) {
             setShowAlert(true);
@@ -250,6 +253,9 @@ const EnterStudData = () => {
                             >
                                 Submit ({records.length} Members)
                             </button>
+                            <div style={{ marginTop: '10px', color: '#333', fontSize: '18px' }}>
+                                Total Amount: ₹{totalAmount}
+                            </div>
                         </div>
                     </a>
                 </div>

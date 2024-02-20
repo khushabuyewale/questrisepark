@@ -11,14 +11,14 @@ const Card = ({ title, content, onClick, backgroundColor, imageUrl, ticketCount 
     maxWidth: '700px',
     width: '600px',
     height: '400px',
-    margin: '0 auto', // Center the form horizontally
+    margin: '0 auto', 
     padding: '20px',
     border: '2px solid #000',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    backgroundColor: backgroundColor || '#f0f0f0', // Default to a fallback color if not provided
+    backgroundColor: backgroundColor || '#f0f0f0', 
     position: 'relative',
-    filter: isSoldOut ? 'blur(5px)' : 'none', // Apply blur if sold out
+    filter: isSoldOut ? 'blur(5px)' : 'none', 
   };
 
   const titleStyle = {
@@ -60,7 +60,6 @@ const containerStyle = {
   marginBottom: '60px',
 };
 
-// Get the current date in the format YYYY-MM-DD
 const currentDate = new Date().toISOString().split('T')[0];
 
 const Booking = () => {
