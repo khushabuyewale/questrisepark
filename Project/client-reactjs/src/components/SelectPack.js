@@ -11,7 +11,7 @@ import StudentTicketImage from '../assets/StudentTicketBanner.png';
 const PricingCard = ({ cardType, price, onClick }) => {
   const [isHovered, setIsHovered] = React.useState(false);
   const commonStyle = {
-    maxWidth:'700px',
+    maxWidth: '700px',
     height: '400px',
     width: '100%',
     marginTop: '100px',
@@ -31,7 +31,7 @@ const PricingCard = ({ cardType, price, onClick }) => {
   };
 
   return (
-    <div style={{ padding:'50px' }}>
+    <div style={{ padding: '50px' }}>
       <div
         className={`pricing-card ${cardType}-card`}
         style={{
@@ -56,17 +56,18 @@ const SelectPack = () => {
   const navigate = useNavigate();
 
   const handleCardClick = (price) => {
-    navigate('/enterData');
-  };
-  const handleStudCardClick = (price) => {
-    navigate('/enterStudData');
+    navigate('/regular');
   };
   const handleGrpCardClick = (price) => {
-    navigate('/enterGrpData');
+    navigate('/group');
+  };
+  const handleStudCardClick = (price) => {
+    navigate('/student');
   };
 
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center',marginLeft:'75px' }}>
+    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '75px' }}>
       <PricingCard cardType="Regular" price={900} onClick={handleCardClick} />
       <PricingCard cardType="Group" price={800} onClick={handleGrpCardClick} />
       <PricingCard cardType="Student" price={500} onClick={handleStudCardClick} />

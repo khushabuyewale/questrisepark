@@ -14,9 +14,10 @@ import UpdateDetails from "./components/UpdateDetails";
 import Meal from "./components/Meal";
 import Terms from "./components/Terms";
 import Pay from "./components/Pay";
-import EnterData from "./components/EnterData";
-import EnterStudData from "./components/EnterStudData";
-import EnterGrpData from "./components/EnterGrpData";
+import Regular from "./components/Regular";
+import Group from "./components/Group";
+import Student from "./components/Student";
+
 
 
 const customeRouter = createBrowserRouter([
@@ -58,16 +59,16 @@ const customeRouter = createBrowserRouter([
       }
       ,
       {
-        path: "/enterData",
-        element: <EnterData/>
+        path: "/regular",
+        element: <Regular/>
       },
       {
-        path: "/enterGrpData",
-        element: <EnterGrpData/>
+        path: "/group",
+        element: <Group/>
       },
       {
-        path: "/enterStudData",
-        element: <EnterStudData/>
+        path: "/student",
+        element: <Student/>
       }
 
     ]

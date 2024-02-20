@@ -1,9 +1,9 @@
-//3.2 page
+//3.1 page
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const EnterGrpData = () => {
+const Regular = () => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
@@ -14,7 +14,8 @@ const EnterGrpData = () => {
     const [totalAmount, setTotalAmount] = useState(0);
 
     const addRecord = () => {
-        const newTotalAmount = recordCount * 800;
+
+        const newTotalAmount = recordCount * 900;
         setTotalAmount(newTotalAmount);
         // Validation for the first entry
         if (recordCount === 1 && (!phone || !email || !name || !age)) {
@@ -50,7 +51,6 @@ const EnterGrpData = () => {
             alert('Please enter a valid email address!');
             return;
         }
-
         // Validate age (between 5 and 90)
         const parsedAge = parseInt(age, 10);
         if (isNaN(parsedAge) || parsedAge < 10 || parsedAge > 90) {
@@ -86,15 +86,17 @@ const EnterGrpData = () => {
     const navigate = useNavigate();
 
     const handleSubmit = () => {
-        // Validation for a minimum of 5 members
-        if (records.length < 5) {
-            alert('Minimum 5 members required!');
+        // Additional validation before navigating to the next page
+        if (records.length === 0) {
+            setShowAlert(true);
+            alert('Please add at least one record before submitting!');
             return;
         }
 
-        // Logic for submitting the data, you can replace this with your actual submission logic
-        console.log('Submitting data:', records);
-        navigate('/meal');
+        // Perform any other actions or navigation logic here
+        // For now, just log a message and navigate to "/meal"
+        console.log('Submitting data:');
+        navigate('/meal'); // Use navigate for navigation
     };
 
     return (
@@ -159,7 +161,8 @@ const EnterGrpData = () => {
                         border: '2px solid #000',
                         borderRadius: '8px',
                     }}
-                ><div style={{ maxHeight: '360px', overflowY: 'scroll' }}>
+                >
+                    <div style={{ maxHeight: '360px', overflowY: 'scroll' }}>
                         <table
                             style={{
                                 width: '100%',
@@ -201,6 +204,7 @@ const EnterGrpData = () => {
                                 ))}
                             </tbody>
                         </table>
+
                     </div>
                 </div>
 
@@ -238,4 +242,4 @@ const EnterGrpData = () => {
     );
 };
 
-export default EnterGrpData;
+export default Regular;
