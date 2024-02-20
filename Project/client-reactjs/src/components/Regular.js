@@ -232,7 +232,7 @@ const Regular = () => {
                                 Submit ({records.length} Members)
                             </button>
                             <div style={{ marginTop: '10px', color: '#333', fontSize: '18px' }}>
-                                Total Amount: ₹{totalAmount}
+                                Total Amount: ₹ {totalAmount}
                             </div>
                         </div>
                     </a>

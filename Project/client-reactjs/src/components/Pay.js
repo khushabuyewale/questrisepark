@@ -49,16 +49,16 @@ const Pay = () => {
   
       {/* Ticket and Meal amount input */}
       <label>
-      <p> Amount of Ticket: ${amountTicket} </p>
+      <p> Amount of Ticket: ₹{amountTicket} </p>
       </label>
       <br />
       <label>
-       <p> Amount of Meal: ${amountMeal}  </p> 
+       <p> Amount of Meal: ₹{amountMeal}  </p> 
       </label>
       <br />
   
       {/* Display total amount */}
-      <p>Total Amount: ${amountTicket + amountMeal}</p>
+      <p>Total Amount: ₹{amountTicket + amountMeal}</p>
   
       <label>
         Name on Card:
