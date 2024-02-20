@@ -93,13 +93,13 @@ const Meal = () => {
           <a href='/pay'>
             <button onClick={() => handleProceed('Fourth')}
               style={{
+                color: 'white',
                 width: '50%',
                 padding: '5px',
                 marginTop: '200px',
-                border: 'solid',
-                borderRadius: '3px',
+                borderRadius: '5px',
                 cursor: 'pointer',
-
+                backgroundColor:'#00B000',
               }}
             >Proceed</button></a>
         </div>
