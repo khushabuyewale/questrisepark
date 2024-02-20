@@ -1,6 +1,6 @@
 // 4th page
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import chef from '../assets/MenuBg.jpg';
 import Breakfast from '../assets/Breakfast.jpg';
 import Lunch from '../assets/Lunch.jpg';
@@ -13,8 +13,22 @@ const Meal = () => {
   const [secondCount, setSecondCount] = useState(0);
   const [thirdCount, setThirdCount] = useState(0);
   const [fourthCount, setFourthCount] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(0);
 
   const calculatePrice = (count, pricePerPerson) => count * pricePerPerson;
+
+
+  useEffect(() => {
+    const total = calculatePrice(firstCount, 149) +
+                  calculatePrice(secondCount, 299) +
+                  calculatePrice(thirdCount, 129) +
+                  calculatePrice(fourthCount, 349);
+
+    setTotalAmount(total);
+  }, [firstCount, secondCount, thirdCount, fourthCount]);
+
+
+
 
   const handleProceed = (packageType) => {
     // You can implement actions or navigation logic here based on the packageType
@@ -94,20 +108,28 @@ const Meal = () => {
           />
           <br />
           <p><b>Total Price: Rs {calculatePrice(fourthCount, 349)}</b></p>
+
           <a href='/pay'>
+         
             <button onClick={() => handleProceed('Fourth')}
               style={{
                 color: 'white',
                 width: '50%',
                 padding: '5px',
-                marginTop: '200px',
+                marginTop: '150px',
                 border: '2px solid',
                 borderRadius: '5px',
                 cursor: 'pointer',
                 backgroundColor:'#00B000',
               }}
-            >Proceed</button></a>
+            >   Proceed</button></a>
+               
+          <div><p>
+              <b>Total Amount: ₹{totalAmount}</b>
+            </p></div>
         </div>
+        
+        
         <div class="menu-card" 
       
         >
