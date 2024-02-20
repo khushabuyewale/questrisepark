@@ -59,7 +59,7 @@ const Meal = () => {
             placeholder="Enter count of people"
           />
           <br />
-          <p><b>Total Price: Rs {calculatePrice(firstCount, 149)}</b></p>
+          <p><b>Total Price: ₹{calculatePrice(firstCount, 149)}</b></p>
 
         </div>
         {/*  Lunch 299, */}
@@ -74,7 +74,7 @@ const Meal = () => {
             placeholder="Enter count of people"
           />
           <br />
-          <p><b>Total Price: Rs {calculatePrice(secondCount, 299)}</b></p>
+          <p><b>Total Price: ₹{calculatePrice(secondCount, 299)}</b></p>
 
 
         </div>
@@ -90,7 +90,7 @@ const Meal = () => {
             placeholder="Enter count of students"
           />
           <br />
-          <p><b>Total Price: Rs {calculatePrice(thirdCount, 129)}</b></p>
+          <p><b>Total Price: ₹{calculatePrice(thirdCount, 129)}</b></p>
 
         </div>
 
@@ -107,7 +107,7 @@ const Meal = () => {
             placeholder="Enter count of students"
           />
           <br />
-          <p><b>Total Price: Rs {calculatePrice(fourthCount, 349)}</b></p>
+          <p><b>Total Price:  ₹{calculatePrice(fourthCount, 349)}</b></p>
 
           <a href='/pay'>
          
