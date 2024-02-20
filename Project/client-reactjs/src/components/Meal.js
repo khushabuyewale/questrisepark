@@ -48,26 +48,26 @@ const Meal = () => {
           <p><b>Total Price: Rs {calculatePrice(firstCount, 149)}</b></p>
 
         </div>
-        {/*  Lunch 399, */}
+        {/*  Lunch 299, */}
         <div className="pricing-card second-card">
           <h2> Lunch </h2>
-          <p>₹399/-</p>
+          <p>₹299/-</p>
           <br />
           <input
             type="number"
             value={secondCount}
             onChange={(e) => setSecondCount(Math.max(0, parseInt(e.target.value)))}
-            placeholder="Enter count of people (min 5)"
+            placeholder="Enter count of people"
           />
           <br />
-          <p><b>Total Price: Rs {calculatePrice(secondCount, 399)}</b></p>
+          <p><b>Total Price: Rs {calculatePrice(secondCount, 299)}</b></p>
 
 
         </div>
-        {/* Snacks 99 */}
+        {/* Snacks 129 */}
         <div className="pricing-card third-card">
           <h2>Snacks</h2>
-          <p>₹99/-</p>
+          <p>₹129/-</p>
           <br />
           <input
             type="number"
@@ -76,15 +76,15 @@ const Meal = () => {
             placeholder="Enter count of students"
           />
           <br />
-          <p><b>Total Price: Rs {calculatePrice(thirdCount, 99)}</b></p>
+          <p><b>Total Price: Rs {calculatePrice(thirdCount, 129)}</b></p>
 
         </div>
 
-        {/*   Dinner  499 */}
+        {/*   Dinner  349 */}
 
         <div className="pricing-card fourth-card">
           <h2>Dinner</h2>
-          <p>₹499/-</p>
+          <p>₹349/-</p>
           <br />
           <input
             type="number"
@@ -93,7 +93,7 @@ const Meal = () => {
             placeholder="Enter count of students"
           />
           <br />
-          <p><b>Total Price: Rs {calculatePrice(fourthCount, 499)}</b></p>
+          <p><b>Total Price: Rs {calculatePrice(fourthCount, 349)}</b></p>
           <a href='/pay'>
             <button onClick={() => handleProceed('Fourth')}
               style={{
@@ -114,13 +114,14 @@ const Meal = () => {
           <h5>Breakfast (8:30 AM to 11:00 AM)</h5>
           <ul>
             <li>
-              <h6>Idli Vada Set</h6> + Tea/Coffee
+              <h6>Idli Vada Set</h6>
             </li>
             <li>
-              <h6>Poha</h6> + Tea/Coffee
+              <h6>Poha/Upma</h6>
             </li>
             <li>
-              <h6>Masala Dosa</h6> + Tea/Coffee
+              <h6>Masala Dosa</h6>
+               <b>+ Tea/Coffee</b>
               <p style={{ color: 'red' }}>(Any One Option)</p>
             </li>
           </ul>
@@ -147,7 +148,15 @@ const Meal = () => {
           <h5>Snacks (4:30 PM to 6:00 PM)</h5>
           <ul>
             <li>
-              <h6>Samosa/Kachori 1 pc</h6> + Tea/Coffee
+              <h6>Samosa/Kachori </h6> 
+            </li>
+            <li>
+              <h6>Dhokla/Fafda-Jalebi</h6> 
+            </li>
+            <li>
+              <h6>VadaPav/Fritter</h6> 
+              <b>+ Tea/Coffee</b>
+              <p style={{ color: 'red' }}>(Any One Option)</p>
             </li>
 
           </ul>
