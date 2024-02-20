@@ -28,7 +28,7 @@ const Meal = () => {
            
             margin: '0 auto', 
             marginTop: '100px',
-           
+            marginBottom: '180px'
         }}
     >
       <h1 style={{marginLeft:'150px'}}>Want To Add Meal To Your Package ?</h1>
@@ -235,7 +235,7 @@ const styles = `
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 180px;
-    margin-bottom: 190px;
+    margin-bottom: 180px;
     overflow-y: scroll;
     height: 500px;
     background-image: url('${chef}');

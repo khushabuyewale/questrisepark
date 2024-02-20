@@ -2,7 +2,7 @@ import React from 'react';
 import { MDBFooter, MDBContainer, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
 const Footer = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light" style={{ marginTop: '10px', color:'#003366' }}>
+    <nav className="navbar navbar-expand-lg navbar-light" style={{ marginTop: '10px', color:'#003366', width:'100%' }}>
       {<MDBFooter className=' text-center text-white' style={{ width: '100%', backgroundColor:'#0e2f44'  }}>
         <MDBContainer className='d-flex justify-content-between p-4 pb-0' style={{ width: '100%'}}>
           <section className="text-left" style={{ color: 'white', width: '50%', textAlign: 'left' }}>
