@@ -23,14 +23,15 @@ const Navbar = () => {
               <Link className="nav-link" to="/" style={{fontSize:'20px', color:'black', margin:'10px'}}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/booking" style={{fontSize:'20px', color:'black', margin:'10px'}}>Book Now</Link>
+              <Link className="nav-link" to="/contactUs" style={{fontSize:'20px', color: 'black', margin:'10px'}}>Contact Us</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/booking" style={{fontSize:'20px', color:'black', margin:'10px'}}><u>Book Now</u></Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/admin" style={{fontSize:'20px', color:'black', margin:'10px'}}>Admin</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/contactUs" style={{fontSize:'20px', color: 'black', margin:'10px'}}>Contact Us</Link>
-            </li>
+            
           </ul></b>
         </div>
       </div>

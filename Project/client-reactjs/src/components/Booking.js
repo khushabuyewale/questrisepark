@@ -1,10 +1,11 @@
 // 1st pages
 
 import React, { useState } from 'react';
-import ThemeParkCardImg from '../assets/Capture.jpg';
-import WaterParkCardImg from '../assets/Capture2.jpg';
+import ThemeParkCardImg from '../assets/ThemeParkPoster.png';
+import WaterParkCardImg from '../assets/WaterParkPoster.png';
 
 const Card = ({ title, content, onClick, backgroundColor, imageUrl, ticketCount }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const isSoldOut = ticketCount === 0;
 
   const cardStyle = {
@@ -19,6 +20,8 @@ const Card = ({ title, content, onClick, backgroundColor, imageUrl, ticketCount 
     backgroundColor: backgroundColor || '#f0f0f0', 
     position: 'relative',
     filter: isSoldOut ? 'blur(5px)' : 'none', 
+    transition: 'transform 0.3s ease-out', 
+    transform: isHovered ? 'scale(1.05)' : 'scale(1)',
   };
 
   const titleStyle = {
@@ -29,7 +32,8 @@ const Card = ({ title, content, onClick, backgroundColor, imageUrl, ticketCount 
     maxWidth: '100%',
     height: 'auto',
     borderRadius: '8px',
-    marginBottom:'15px'
+    marginBottom:'15px',
+    objectFit: 'cover',
   };
 
   const ticketCountStyle = {
@@ -44,7 +48,11 @@ const Card = ({ title, content, onClick, backgroundColor, imageUrl, ticketCount 
   };
 
   return (
-    <div style={cardStyle} onClick={onClick}>
+    <div style={cardStyle} 
+    onClick={onClick}
+    onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <span style={ticketCountStyle}>Tickets available: {ticketCount}</span>
       <img src={imageUrl} alt={title} style={imageStyle} />
       <h2 style={titleStyle}>{title}</h2>
