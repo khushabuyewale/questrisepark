@@ -1,21 +1,50 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import React from 'react';
+
+import RegularTicketImage from '../assets/RegularTicketBanner.png';
+import GroupTicketImage from '../assets/GroupTicketBaner.png';
+import StudentTicketImage from '../assets/StudentTicketBanner.png';
 
 const PricingCard = ({ cardType, price, onClick }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
   const commonStyle = {
-    width: '50%',
-    padding: '5px',
+    maxWidth:'700px',
+    height: '400px',
+    width: '100%',
     marginTop: '100px',
-    border: 'solid',
-    borderRadius: '3px',
+    borderRadius: '8px',
     cursor: 'pointer',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    transition: 'transform 0.3s',
+    transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+  };
+
+  // Define background images based on card type
+  const cardImages = {
+    Regular: RegularTicketImage,
+    Group: GroupTicketImage,
+    Student: StudentTicketImage,
   };
 
   return (
-    <div className={`pricing-card ${cardType}-card`} style={{ ...commonStyle }} onClick={() => onClick(price)}>
-      <h2>{`${cardType} Ticket`}</h2>
-      <p>{`Price: ${price}/- per head`}</p>
-      <br />
+    <div style={{ padding:'50px' }}>
+      <div
+        className={`pricing-card ${cardType}-card`}
+        style={{
+          ...commonStyle,
+          backgroundImage: `url(${cardImages[cardType]})`,
+        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={() => onClick(price)}
+      >
+        <h1>{`${cardType} Ticket`}</h1>
+        <b>
+          <p>{`Price: ${price}/- per head`}</p>
+        </b>
+        <br />
+      </div>
     </div>
   );
 };
@@ -34,10 +63,10 @@ const SelectPack = () => {
   };
 
   return (
-    <div className="select-pack-container">
-      <PricingCard cardType="regular" price={900} onClick={handleCardClick} />
-      <PricingCard cardType="group" price={800} onClick={handleGrpCardClick} />
-      <PricingCard cardType="student" price={500} onClick={handleStudCardClick} />
+    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center',marginLeft:'75px' }}>
+      <PricingCard cardType="Regular" price={900} onClick={handleCardClick} />
+      <PricingCard cardType="Group" price={800} onClick={handleGrpCardClick} />
+      <PricingCard cardType="Student" price={500} onClick={handleStudCardClick} />
     </div>
   );
 };
