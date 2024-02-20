@@ -110,8 +110,8 @@ const EnterStudData = () => {
         <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '20px' }}>
             <div
                 style={{
-                    maxWidth: '525px',
-                    height: '400px',
+                    maxWidth: '400px',
+                    height: '720px',
                     margin: '0 auto',
                     marginRight: '120px', // Add margin to shift it to the right
                     padding: '20px',
@@ -167,7 +167,7 @@ const EnterStudData = () => {
             <div style={{ width: '45%', textAlign: 'center', paddingBottom: '20px', paddingTop: '20px' }}>
                 <div
                     style={{
-                        maxWidth: '525px',
+                        Width: '550px',
                         height: '400px',
                         margin: '0 auto',
                         marginRight: '120px', // Add margin to shift it to the right
