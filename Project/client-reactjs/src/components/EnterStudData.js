@@ -71,8 +71,7 @@ const EnterStudData = () => {
         setRecordCount(recordCount + 1);
 
         // Clear input fields
-        setPhone('');
-        setEmail('');
+      
         setName('');
         setAge('');
         setRegno('');
@@ -109,17 +108,19 @@ const EnterStudData = () => {
 
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '20px' }}>
-
             <div
                 style={{
                     maxWidth: '525px',
                     height: '400px',
-                    margin: '0 auto', // Center the form horizontally
+                    margin: '0 auto',
                     marginRight: '120px', // Add margin to shift it to the right
                     padding: '20px',
                     marginTop: '120px',
                     border: '2px solid #000',
                     borderRadius: '8px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between', // Adjust the alignment vertically
                 }}
             >
                 <h4 style={{ textAlign: 'center' }}>Member Details</h4>
@@ -168,12 +169,13 @@ const EnterStudData = () => {
                     style={{
                         maxWidth: '525px',
                         height: '400px',
-                        margin: '0 auto', // Center the form horizontally
+                        margin: '0 auto',
                         marginRight: '120px', // Add margin to shift it to the right
                         padding: '20px',
                         marginTop: '100px',
                         border: '2px solid #000',
                         borderRadius: '8px',
+                      // Adjust the alignment vertically
                     }}
                 >
                     <div style={{ maxHeight: '360px', overflowY: 'scroll' }}>
@@ -235,17 +237,20 @@ const EnterStudData = () => {
                             alert('Please add at least one record before submitting!');
                         }
                     }}>
-                        <button
-                            style={{
-                                backgroundColor: '#2196F3',
-                                color: 'white',
-                                border: 'none',
-                                padding: '10px 15px',
-                                borderRadius: '4px',
-                            }}
-                        >
-                            Submit
-                        </button>
+                        <div style={{ marginTop: '20px', textAlign: 'center', marginRight: '100px' }}>
+                            <button
+                                style={{
+                                    backgroundColor: '#2196F3',
+                                    color: 'white',
+                                    border: 'none',
+                                    padding: '10px 15px',
+                                    borderRadius: '4px',
+                                }}
+
+                            >
+                                Submit
+                            </button>
+                        </div>
                     </a>
                 </div>
             </div>

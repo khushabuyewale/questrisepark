@@ -61,8 +61,7 @@ const EnterGrpData = () => {
         setRecordCount(recordCount + 1);
 
         // Clear input fields
-        setPhone('');
-        setEmail('');
+        
         setName('');
         setAge('');
         setShowAlert(false);
