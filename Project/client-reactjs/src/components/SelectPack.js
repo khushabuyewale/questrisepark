@@ -8,7 +8,7 @@ import RegularTicketImage from '../assets/RegularTicketBanner.png';
 import GroupTicketImage from '../assets/GroupTicketBaner.png';
 import StudentTicketImage from '../assets/StudentTicketBanner.png';
 
-const PricingCard = ({ cardType, price, onClick }) => {
+const PricingCard = ({ cardType, price, onClick,note }) => {
   const [isHovered, setIsHovered] = React.useState(false);
   const commonStyle = {
     maxWidth: '700px',
@@ -45,6 +45,7 @@ const PricingCard = ({ cardType, price, onClick }) => {
         <h1>{`${cardType} Ticket`}</h1>
         <b>
           <p>{`Price: ${price}/- per head`}</p>
+          <p>{`Min No. of people: ${note}`}</p>
         </b>
         <br />
       </div>
@@ -68,9 +69,9 @@ const SelectPack = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '75px' }}>
-      <PricingCard cardType="Regular" price={900} onClick={handleCardClick} />
-      <PricingCard cardType="Group" price={800} onClick={handleGrpCardClick} />
-      <PricingCard cardType="Student" price={500} onClick={handleStudCardClick} />
+      <PricingCard cardType="Regular" price={900} note={1} onClick={handleCardClick} />
+      <PricingCard cardType="Group" price={800} note={5} onClick={handleGrpCardClick} />
+      <PricingCard cardType="Student" price={500} note={1} onClick={handleStudCardClick} />
     </div>
   );
 };
