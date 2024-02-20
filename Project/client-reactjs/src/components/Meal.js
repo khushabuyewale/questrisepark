@@ -97,6 +97,7 @@ const Meal = () => {
                 width: '50%',
                 padding: '5px',
                 marginTop: '200px',
+                border: '2px solid',
                 borderRadius: '5px',
                 cursor: 'pointer',
                 backgroundColor:'#00B000',
