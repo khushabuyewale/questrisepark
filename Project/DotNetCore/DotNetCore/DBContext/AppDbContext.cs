@@ -10,7 +10,9 @@ namespace DotNetCore.DBContext
 
         public DbSet<User> Users { get; set; }
         public DbSet<RegularTicket> regularTickets { get; set; }
-       
+        public DbSet<Admin> admins { get; set; }
+        public DbSet<StudentTicket> studentTickets { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

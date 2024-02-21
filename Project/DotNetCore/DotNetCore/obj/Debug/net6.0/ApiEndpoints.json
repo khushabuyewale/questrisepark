@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "DotNetCore.Controllers.AdminController",
+    "Method": "Login",
+    "RelativePath": "api/Admin/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "adminlogin",
+        "Type": "DotNetCore.Models.Admin",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DotNetCore.Controllers.RegularTicketController",
     "Method": "BookRegular",
     "RelativePath": "api/RegularTicket/bookregular",
@@ -10,6 +26,22 @@
       {
         "Name": "regularTicket",
         "Type": "DotNetCore.Models.RegularTicket",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.StudentTicketController",
+    "Method": "BookStudent",
+    "RelativePath": "api/StudentTicket/bookstudent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "studentTicket",
+        "Type": "DotNetCore.Models.StudentTicket",
         "IsRequired": true
       }
     ],

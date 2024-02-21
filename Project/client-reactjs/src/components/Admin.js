@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Admin = () => {
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     const data = {
@@ -13,10 +15,11 @@ const Admin = () => {
 
     const url = 'https://localhost:44358/api/test/Login';
     axios.post(url, data).then((result) => {
-      alert(result.data);
+      
     }).catch((error) => {
       alert(error.message);
-     })
+    })
+    navigate('/show');
   };
 
   return (
@@ -68,7 +71,7 @@ const Admin = () => {
           </div>
 
           <div>
-            <a href="/show">
+            
               <button
                 type="button"
                 style={{
@@ -84,7 +87,7 @@ const Admin = () => {
               >
                 Sign in
               </button>
-            </a>
+            
           </div>
         </div>
       </div>
