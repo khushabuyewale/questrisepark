@@ -1,6 +1,8 @@
 import React from 'react';
-import Slider from 'react-slick';
 import { Carousel, Container, Row, Col, Card } from 'react-bootstrap';
+import Slider from 'react-slick';
+
+import SubNavbar from './SubNavbar';
 
 import aboutUs from '../assets/th.jpeg';
 import studentBanner from '../assets/StudentBanner.png';
@@ -40,10 +42,11 @@ const Home = () => {
 
   return (
     <>
+    <SubNavbar />
       <nav style={{ backgroundColor: 'white', paddingBottom: '20px', paddingTop: '20px' }}>
         <div className="container mt-5 " >
 
-          <Container style={{ marginTop: '100px' }}>
+          <Container id="Carousel" style={{ marginTop: '100px' }}>
             <Carousel style={{ height: '300px', marginBottom: '150px', paddingTop: '20px' }}>
 
               <Carousel.Item>
@@ -69,7 +72,7 @@ const Home = () => {
               </Carousel.Item>
               {/* Add more Carousel.Items as needed */}
             </Carousel>
-          </Container>
+          </Container >
           <div style={{
             margin: '0 auto',
             marginBottom: '80px',
@@ -81,7 +84,7 @@ const Home = () => {
             <hr />
             <p>We are so much more than an amusement park - a world where everyone comes together and enjoys the little moments. A life of fun is what everyone deserves, so come on down to the Quest Rise closest to you!</p>
           </div>
-          <Container>
+          <Container id="images">
             <Row className="animate__animated animate__fadeIn">
               <Col>
                 <Card style={{ height: '200px' }}>
@@ -98,6 +101,7 @@ const Home = () => {
               </Col>
             </Row>
           </Container>
+          <Container id="to-da">
           <div style={{
             margin: '0 auto',
             marginBottom: '80px',
@@ -113,9 +117,11 @@ const Home = () => {
               Pack essentials like sunscreen for sun protection.<br />
               Use locker and changing room facilities for convenience.</p>
           <hr></hr>
+          
           <h2 style={{marginTop:'50px', marginBottom:'-50px'}}>Multi-cuisine restaurants</h2>
           </div>
-          <Container>
+          </Container>
+          <Container id="food">
             <Slider {...carouselSettings} style={{ marginBottom: '50px', paddingTop: '5px'}}>
               <img
                 src={food1}
@@ -142,7 +148,7 @@ const Home = () => {
             </Slider>
           </Container>
 
-          <Container>
+          <Container id ="review">
             <h2>Reviews</h2>
 
             {/* First Review */}
@@ -182,7 +188,7 @@ const Home = () => {
             <br />
           </Container>
 
-          <Container style={{ backgroundColor: '#f5f5f5', paddingBottom: '20px', paddingTop: '20px', marginBottom: '50px', marginTop: '50px' }}>
+          <Container id ="aboutus" style={{ backgroundColor: '#f5f5f5', paddingBottom: '20px', paddingTop: '20px', marginBottom: '50px', marginTop: '50px' }}>
             <Row className="animate__animated animate__fadeIn">
               <Col >
                 <div style={{ padding: '10px' }}>
