@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Regular = () => {
     const [phone, setPhone] = useState('');
@@ -58,6 +59,18 @@ const Regular = () => {
             alert('Please enter a valid age between 10 and 90!');
             return;
         }
+        const data = {
+                        phoneNumber: phone,
+                        email: email,
+                        name: name,
+                        age: age
+        }
+        const url = 'http://localhost:5293/api/regularticket/bookregular';
+    axios.post(url, data).then((result) => {
+      alert(result.data);
+    }).catch((error) => {
+      alert(error.message);
+     })
 
         // Add record to the state
         setRecords([...records, { id: recordCount, name, age }]);
