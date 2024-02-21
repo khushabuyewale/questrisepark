@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\cdac project\\new folder\\cdacsept23\\project\\dotnetcore\\dotnetcore\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\cdac project\\new folder\\cdacsept23\\project\\dotnetcore\\dotnetcore\\controllers\\regularticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\regularticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\cdac project\\new folder\\cdacsept23\\project\\dotnetcore\\dotnetcore\\models\\regularticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\regularticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\cdac project\\new folder\\cdacsept23\\project\\dotnetcore\\dotnetcore\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\cdac project\\new folder\\cdacsept23\\project\\dotnetcore\\dotnetcore\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegularTicket.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\Models\\RegularTicket.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Models\\RegularTicket.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\Models\\RegularTicket.cs",
+              "RelativeToolTip": "DotNetCore\\Models\\RegularTicket.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T21:52:59.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegularTicketController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\Controllers\\RegularTicketController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\RegularTicketController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\Controllers\\RegularTicketController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\RegularTicketController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABQAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T21:30:51.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DBContext\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\DBContext\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DBContext\\AppDbContext.cs",
+              "RelativeToolTip": "DotNetCore\\DBContext\\AppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T19:38:27.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\Controllers\\UserController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T19:10:19.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\Models\\User.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\Models\\User.cs",
+              "RelativeToolTip": "DotNetCore\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T19:42:38.127Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
