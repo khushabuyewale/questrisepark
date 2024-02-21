@@ -7,7 +7,7 @@ const Admin = () => {
 
   const handleLogin = () => {
     const data = {
-      username: loginEmail,
+      email: loginEmail,
       password: loginPassword
     }
 
