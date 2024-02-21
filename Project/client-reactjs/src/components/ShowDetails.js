@@ -15,9 +15,9 @@ const ShowDetails = () => {
   };
 
   return (
-    <div style={{ display: 'flex', height: '100vh' }}>
+    <div style={{ display: 'flex', height: '100vh'}}>
       <nav
-        style={{
+        style={{ 
           width: sidebarVisible ? '250px' : '30px',
           transition: 'width 0.3s ease',
           background: 'white',
@@ -102,7 +102,7 @@ const ShowDetails = () => {
       <main style={{ flex: 1 }}>
         <div
           style={{
-            background: 'radial-gradient(circle, #f6dae4 0%, #d4f0f7 35%, #d0d5f7 75%, #b8cfec 100%)',
+            background: 'white',
             height: '100%',
             padding: '20px',
 
@@ -115,7 +115,7 @@ const ShowDetails = () => {
         </div>
       </main>
 
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top" style={{ background: 'linear-gradient(#f6dae4 ,#d0d5f7)' }}>
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top" style={{ background: 'grey' }}>
         <button
           className="navbar-toggler"
           type="button"
