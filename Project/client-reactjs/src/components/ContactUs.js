@@ -1,11 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ContactBGImg from '../assets/ContactUsBG.jpg';
+import { Alert } from 'react-bootstrap';
+
 
 const ContactUs = () => {
   const form = useRef();
+
+const[name, setName]= useState('');
+const[email, setEmail]= useState('');
+const[msg, setMsg]= useState('');
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -17,6 +23,11 @@ const ContactUs = () => {
       .then(
         () => {
           console.log('SUCCESS!');
+          Alert("Your message has been submited. Thank you!");
+          setName('');
+          setEmail('');
+          setMsg('');
+
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -48,7 +59,7 @@ const ContactUs = () => {
         <h2>Contact Us</h2>
         <br />
         <form ref={form} onSubmit={sendEmail}>
-          <div className="mb-3">
+          <div className="mb-3" id='name'>
             <b>Name </b>{' '}
             <input
               type="text"
@@ -58,7 +69,7 @@ const ContactUs = () => {
               placeholder="Enter your Name"
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-3" id='email'>
             <b>Email </b>{' '}
             <input
               type="email"
@@ -68,7 +79,7 @@ const ContactUs = () => {
               placeholder="Enter your Email Address"
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-3" id='msg'>
             <b>Message </b>{' '}
             <textarea
               name="message"
