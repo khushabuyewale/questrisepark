@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Student = () => {
     const [phone, setPhone] = useState('');
@@ -82,6 +83,22 @@ const Student = () => {
         setRegno('');
         setCllgName('');
         setShowAlert(false);
+
+        const data = {
+                        phoneNumber: phone,
+                        email: email,
+                        name: name,
+            age: age,
+            regNo: regno,
+                        collegeName:cllgName
+        }
+
+        const url = 'http://localhost:5293/api/studentticket/bookstudent';
+    axios.post(url, data).then((result) => {
+      alert(result.data);
+    }).catch((error) => {
+      alert(error.message);
+     })
     };
 
     const removeRecord = (id) => {

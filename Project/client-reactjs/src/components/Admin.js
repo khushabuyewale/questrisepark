@@ -15,11 +15,11 @@ const Admin = () => {
 
     const url = 'https://localhost:44358/api/test/Login';
     axios.post(url, data).then((result) => {
-      
+      navigate('/show');
     }).catch((error) => {
       alert(error.message);
     })
-    navigate('/show');
+    
   };
 
   return (
