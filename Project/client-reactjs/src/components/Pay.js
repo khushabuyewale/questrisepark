@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import payBG from '../assets/payBG.png';
+
 const Pay = () => {
   const navigate = useNavigate();
 
@@ -97,22 +99,21 @@ const Pay = () => {
   };
 
   return (
-    <div style={{ paddingBottom: '20px', display: 'flex', flexDirection: 'row', paddingTop: '20px' }}>
+    <div style={{ paddingBottom: '20px', display: 'flex', flexDirection: 'row', paddingTop: '20px',backgroundImage: `url(${payBG})`,backgroundSize:'cover' }}>
 
       {showTermsPopup && (
         <div style={{
           position: 'fixed',
-          top: '50%',
-          left: '25%',
-          transform: 'translate(-50%, -50%)',
+          top: '0',
+          left: '0',
+          right: '0',
+          bottom: '0',
           padding: '20px',
           margin: '20px',
           border: '2px solid #000',
           borderRadius: '8px',
           backgroundColor: '#fff',
           zIndex: '1000',
-          height: '400px',
-          width:'600px',
           overflowY: 'scroll',
         }}>
           <p><button
@@ -182,27 +183,27 @@ const Pay = () => {
             <p>
               For questions or concerns regarding these terms, contact us at support@amusementpark.com.
             </p></p>
-          <button onClick={handleCloseTermsPopup}>Close</button>
+          <button
+          onClick={handleCloseTermsPopup}>Close</button>
         </div>
       )}
 
 
       <div style={{
-
+        color:'white',
         width: '525px',
-        height: '500px',
+        height: '530px',
         margin: '20px auto', // Center the form horizontally
-        marginRight: '120px', // Add margin to shift it to the right
+        marginRight: '-60px', // Add margin to shift it to the right
         padding: '20px',
         marginTop: '100px',
-        border: '2px solid #000',
         borderRadius: '8px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
       }}>
         <h2>Payment Details</h2>
-
+      <hr/>
         <form onSubmit={handlePayment}>
 
 
@@ -249,7 +250,7 @@ const Pay = () => {
               padding: '5px',
               marginTop: '20px',
               border: 'solid',
-              borderRadius: '3px',
+              borderRadius: '8px',
               cursor: 'pointer',
               backgroundColor: '#2196F3',
             }}
