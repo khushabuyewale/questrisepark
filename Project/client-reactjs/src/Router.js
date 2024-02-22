@@ -12,7 +12,6 @@ import AddDetails from "./components/AddDetails";
 import DeleteDetails from "./components/DeleteDetails";
 import UpdateDetails from "./components/UpdateDetails";
 import Meal from "./components/Meal";
-import Terms from "./components/Terms";
 import Pay from "./components/Pay";
 import Regular from "./components/Regular";
 import Group from "./components/Group";
@@ -49,10 +48,7 @@ const customeRouter = createBrowserRouter([
         path: "/meal",
         element: <Meal />
       },
-      {
-        path: "/terms",
-        element: <Terms />
-      },
+      
       {
         path: "/pay",
         element: <Pay/>
