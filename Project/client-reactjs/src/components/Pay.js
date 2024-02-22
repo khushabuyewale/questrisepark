@@ -191,10 +191,10 @@ const Pay = () => {
 
       <div style={{
         color:'white',
-        width: '525px',
+        width: '480px',
         height: '530px',
         margin: '20px auto', // Center the form horizontally
-        marginRight: '-60px', // Add margin to shift it to the right
+        marginRight: '0', // Add margin to shift it to the right
         padding: '20px',
         marginTop: '100px',
         borderRadius: '8px',
