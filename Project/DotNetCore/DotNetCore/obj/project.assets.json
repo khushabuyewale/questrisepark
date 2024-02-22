@@ -2336,11 +2336,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
+      "projectUniqueName": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
       "projectName": "DotNetCore",
-      "projectPath": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
+      "projectPath": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
       "packagesPath": "C:\\Users\\Ashutosh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ashutosh\\Desktop\\cdac project\\New folder\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\obj\\",
+      "outputPath": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ashutosh\\AppData\\Roaming\\NuGet\\NuGet.Config",
