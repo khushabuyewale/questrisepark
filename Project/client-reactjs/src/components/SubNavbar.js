@@ -7,7 +7,7 @@ const SubNavbar = () => {
         <div className="sub-navbar d-flex" style={{ background: '#f5f5f5', padding: '10px', position: 'sticky', top: '80px', zIndex: '999' }}>
             <ScrollLink to="Carousel" smooth={true} duration={500} offset={-80} className="nav-link" style={linkStyle} spy={true} activeClass="active">Carousel</ScrollLink>
             <ScrollLink to="images" smooth={true} duration={500} offset={-80} className="nav-link" style={linkStyle} spy={true} activeClass="active">Images</ScrollLink>
-            <ScrollLink to="to-do" smooth={true} duration={500} offset={-80} className="nav-link" style={linkStyle} spy={true} activeClass="active">To-Do’s</ScrollLink>
+            <ScrollLink to="todo" smooth={true} duration={500} offset={-80} className="nav-link" style={linkStyle} spy={true} activeClass="active">To-Do’s</ScrollLink>
             <ScrollLink to="food" smooth={true} duration={500} offset={-80} className="nav-link" style={linkStyle} spy={true} activeClass="active">Food</ScrollLink>
             <ScrollLink to="reviews" smooth={true} duration={500} offset={-80} className="nav-link" style={linkStyle} spy={true} activeClass="active">Reviews</ScrollLink>
             <ScrollLink to="aboutus" smooth={true} duration={500} offset={-80} className="nav-link" style={linkStyle} spy={true} activeClass="active">About Us</ScrollLink>
