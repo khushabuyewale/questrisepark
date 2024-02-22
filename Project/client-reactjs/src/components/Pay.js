@@ -179,10 +179,16 @@ const Pay = () => {
               The park reserves the right to modify these terms and conditions at any time. Check for updates regularly.
             </p>
 
-            <h6>10. Contact Information</h6>
+            
+            <h6>10. Cancellation of park ticked</h6>
+            <p>
+              Tickets once booked cannot be cancelled and will not be refunded.
+            </p>
+            <h6>11. Contact Information</h6>
             <p>
               For questions or concerns regarding these terms, contact us at support@amusementpark.com.
-            </p></p>
+            </p>
+            </p>
           <button
           onClick={handleCloseTermsPopup}>Close</button>
         </div>
