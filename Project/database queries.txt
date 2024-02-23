@@ -1,0 +1,86 @@
+================database queries================
+
+1)create database cdacsept2023;
+=======================================
+2) price table
+
+CREATE TABLE price (
+    id INT PRIMARY KEY,
+    regular_ticket INT,
+    student_ticket INT,
+    group_ticket INT,
+    breakfast INT,
+    lunch INT,
+    snack INT,
+    dinner INT
+);
+
+========================================
+3) rides table
+
+CREATE TABLE rides (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    ride_name VARCHAR(255),
+    description VARCHAR(400),
+    type VARCHAR(50)
+);
+
+========================================
+4) admin table
+
+CREATE TABLE admin (
+    id INT PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(50)
+);
+
+=======================================
+5) ticket table
+
+CREATE TABLE ticket (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255),
+    age INT,
+    date DATE,
+    type VARCHAR(50)
+);
+
+======================================
+6) contact table
+
+CREATE TABLE contact (
+    name VARCHAR(255) PRIMARY KEY,
+    email VARCHAR(255),
+    phone_no VARCHAR(15)
+);
+
+=======================================
+7) visit table
+
+CREATE TABLE visits (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    visited_status VARCHAR(15) 
+);
+
+=======================================
+8) meals table
+
+CREATE TABLE meals (
+    name VARCHAR(255) PRIMARY KEY,
+    breakfast INT,
+    lunch INT,
+    snack INT,
+    dinner INT
+);
+
+=========================================
+9) college info
+
+CREATE TABLE college_info (
+    name VARCHAR(255) PRIMARY KEY,
+    reg_no INT,
+    college_name VARCHAR(255)
+);
+
+=========================================
+

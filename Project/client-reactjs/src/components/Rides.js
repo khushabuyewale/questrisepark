@@ -2,18 +2,21 @@
 
 import React from 'react';
 
+import RidesBG from '../assets/RidesBG.png';
+
 const RidesTable = ({ rides }) => {
   const tableStyle = {
     width: '100%',
     borderCollapse: 'collapse',
     marginTop: '20px',
-    
+
   };
 
   const cellStyle = {
     border: '1px solid #ddd',
     padding: '10px',
     textAlign: 'left',
+    backgroundColor:''
   };
 
   const headerCellStyle = {
@@ -29,8 +32,8 @@ const RidesTable = ({ rides }) => {
     return {};
   };
   return (
-    <div style={{height:'100vh'}}>
-   <table style={tableStyle}>
+    <div style={{height:'100vh', backgroundImage:`url(${RidesBG})`,backgroundSize:'cover',color:'black',textSizeAdjust:'3px'}}>
+   <table style={{tableStyle, width:'80vw', margin:'0 auto',marginTop:'30px'}}>
         <thead>
           <tr>
             <th style={{ ...cellStyle, ...headerCellStyle }}>Sr. No.</th>
