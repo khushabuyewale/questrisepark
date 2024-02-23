@@ -1,5 +1,5 @@
 // 4th page
-
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import chef from '../assets/MenuBg.jpg';
 import Breakfast from '../assets/Breakfast.jpg';
@@ -9,23 +9,23 @@ import Snacks from '../assets/Snacks.jpg';
 
 
 const Meal = () => {
-  const [firstCount, setFirstCount] = useState(0);
-  const [secondCount, setSecondCount] = useState(0);
-  const [thirdCount, setThirdCount] = useState(0);
-  const [fourthCount, setFourthCount] = useState(0);
+  const [breakfast, setBreakfast] = useState(0);
+  const [lunch, setLunch] = useState(0);
+  const [snacks, setSnacks] = useState(0);
+  const [dinner, setDinner] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
 
   const calculatePrice = (count, pricePerPerson) => count * pricePerPerson;
 
 
   useEffect(() => {
-    const total = calculatePrice(firstCount, 149) +
-                  calculatePrice(secondCount, 299) +
-                  calculatePrice(thirdCount, 129) +
-                  calculatePrice(fourthCount, 349);
+    const total = calculatePrice(breakfast, 149) +
+                  calculatePrice(lunch, 299) +
+                  calculatePrice(snacks, 129) +
+                  calculatePrice(dinner, 349);
 
     setTotalAmount(total);
-  }, [firstCount, secondCount, thirdCount, fourthCount]);
+  }, [breakfast, lunch, snacks, dinner]);
 
 
 
@@ -33,6 +33,20 @@ const Meal = () => {
   const handleProceed = (packageType) => {
     // You can implement actions or navigation logic here based on the packageType
     console.log(`Proceeding with ${packageType} ticket`);
+
+    const data = {
+     breakfast: breakfast,
+      lunch: lunch,
+      snacks: snacks,
+      dinner: dinner
+}
+const url = 'http://localhost:5293/api/meal/bookmeal';
+axios.post(url, data).then((result) => {
+alert(result.data);
+}).catch((error) => {
+alert(error.message);
+})
+
   };
  
   return (
@@ -54,12 +68,12 @@ const Meal = () => {
           <br />
           <input
             type="number"
-            value={firstCount}
-            onChange={(e) => setFirstCount(Math.max(0, parseInt(e.target.value)))}
+            value={breakfast}
+            onChange={(e) => setBreakfast(Math.max(0, parseInt(e.target.value)))}
             placeholder="Enter count of people"
           />
           <br />
-          <p><b>Total Price: ₹{calculatePrice(firstCount, 149)}</b></p>
+          <p><b>Total Price: ₹{calculatePrice(breakfast, 149)}</b></p>
 
         </div>
         {/*  Lunch 299, */}
@@ -69,12 +83,12 @@ const Meal = () => {
           <br />
           <input
             type="number"
-            value={secondCount}
-            onChange={(e) => setSecondCount(Math.max(0, parseInt(e.target.value)))}
+            value={lunch}
+            onChange={(e) => setLunch(Math.max(0, parseInt(e.target.value)))}
             placeholder="Enter count of people"
           />
           <br />
-          <p><b>Total Price: ₹{calculatePrice(secondCount, 299)}</b></p>
+          <p><b>Total Price: ₹{calculatePrice(lunch, 299)}</b></p>
 
 
         </div>
@@ -85,12 +99,12 @@ const Meal = () => {
           <br />
           <input
             type="number"
-            value={thirdCount}
-            onChange={(e) => setThirdCount(Math.max(0, parseInt(e.target.value)))}
+            value={snacks}
+            onChange={(e) => setSnacks(Math.max(0, parseInt(e.target.value)))}
             placeholder="Enter count of students"
           />
           <br />
-          <p><b>Total Price: ₹{calculatePrice(thirdCount, 129)}</b></p>
+          <p><b>Total Price: ₹{calculatePrice(snacks, 129)}</b></p>
 
         </div>
 
@@ -102,12 +116,12 @@ const Meal = () => {
           <br />
           <input
             type="number"
-            value={fourthCount}
-            onChange={(e) => setFourthCount(Math.max(0, parseInt(e.target.value)))}
+            value={dinner}
+            onChange={(e) => setDinner(Math.max(0, parseInt(e.target.value)))}
             placeholder="Enter count of students"
           />
           <br />
-          <p><b>Total Price:  ₹{calculatePrice(fourthCount, 349)}</b></p>
+          <p><b>Total Price:  ₹{calculatePrice(dinner, 349)}</b></p>
 
           <a href='/pay'>
          

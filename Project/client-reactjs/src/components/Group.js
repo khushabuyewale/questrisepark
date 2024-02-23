@@ -1,5 +1,5 @@
 //3.2 page
-
+import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -59,6 +59,23 @@ const Group = () => {
             return;
         }
 
+        const data = {
+            phoneNumber: phone,
+            email: email,
+            name: name,
+            age: age
+            
+           
+    }
+    
+    const url = 'http://localhost:5293/api/groupticket/bookgroup';
+    axios.post(url, data).then((result) => {
+    alert(result.data);
+    }).catch((error) => {
+    alert(error.message);
+    })
+    
+
         // Add record to the state
         setRecords([...records, { id: recordCount, name, age }]);
 
@@ -66,11 +83,15 @@ const Group = () => {
         setRecordCount(recordCount + 1);
 
         // Clear input fields
-
+        
         setName('');
         setAge('');
-        setShowAlert(false);
+        
+        setShowAlert(false);    
+
     };
+
+    
 
     const removeRecord = (id) => {
         // Remove record from the state

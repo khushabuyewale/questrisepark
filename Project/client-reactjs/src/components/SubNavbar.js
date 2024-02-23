@@ -9,7 +9,7 @@ const SubNavbar = () => {
             <ScrollLink to="todo" smooth={true} duration={500} offset={-80} className="nav-link" style={linkStyle} spy={true} activeClass="active">To-Do’s</ScrollLink>
             <ScrollLink to="food" smooth={true} duration={500} offset={-80} className="nav-link" style={linkStyle} spy={true} activeClass="active">Food</ScrollLink>
             <ScrollLink to="review" smooth={true} duration={500} offset={-80} className="nav-link" style={linkStyle} spy={true} activeClass="active">Reviews</ScrollLink>
-            <ScrollLink to="aboutus" smooth={true} duration={500} offset={-80} className="nav-link" style={linkStyle} spy={true} activeClass="active">About Us</ScrollLink>
+        <ScrollLink to="aboutus" smooth={true} duration={500} offset={-80} className="nav-link" style={linkStyle} spy={true} activeClass="active">About Us</ScrollLink>
             {/* Add more links as needed */}
         </div>
     );

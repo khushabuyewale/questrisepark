@@ -13,6 +13,15 @@ namespace DotNetCore.DBContext
         public DbSet<Admin> admins { get; set; }
         public DbSet<StudentTicket> studentTickets { get; set; }
 
+        public DbSet<GroupTicket> groupTickets { get; set; }
+
+        public DbSet<Meal> meals{ get; set; }
+
+        public DbSet<UpdateDelete> udelete { get; set; }
+
+        public DbSet<AddRides> adds { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
