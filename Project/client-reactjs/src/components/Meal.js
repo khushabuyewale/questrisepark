@@ -29,15 +29,17 @@ const Meal = () => {
 
 
 
+  
 
-  const handleProceed = (packageType) => {
+  const handleProceed = () => {
+
     localStorage.setItem("breakfast",breakfast);
     localStorage.setItem("lunch",lunch);
     localStorage.setItem("snack",snacks);
     localStorage.setItem("dinner",dinner);
     localStorage.setItem("totalMeal", totalAmount)
     // You can implement actions or navigation logic here based on the packageType
-    console.log(`Proceeding with ${packageType} ticket`);
+    //console.log(`Proceeding with ${packageType} ticket`);
 
     const data = {
      breakfast: breakfast,
@@ -45,12 +47,12 @@ const Meal = () => {
       snacks: snacks,
       dinner: dinner
 }
-const url = 'http://localhost:5293/api/meal/bookmeal';
-axios.post(url, data).then((result) => {
-alert(result.data);
-}).catch((error) => {
-alert(error.message);
-})
+// const url = 'http://localhost:5293/api/meal/bookmeal';
+// axios.post(url, data).then((result) => {
+// alert(result.data);
+// }).catch((error) => {
+// alert(error.message);
+// })
 
   };
  
