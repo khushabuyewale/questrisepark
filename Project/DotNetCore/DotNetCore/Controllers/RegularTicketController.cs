@@ -11,6 +11,7 @@ namespace DotNetCore.Controllers
     public class RegularTicketController : ControllerBase
     {
 
+
         private readonly AppDbContext _context;
 
         public RegularTicketController(AppDbContext context)
@@ -19,11 +20,11 @@ namespace DotNetCore.Controllers
         }
 
         [HttpPost("bookregular")]
-        public async Task<IActionResult> BookRegular(RegularTicket regularTicket)
+        public async Task<IActionResult> BookRegular([FromBody] List<RegularTicket> regularTicket)
         {
             if (ModelState.IsValid)
             {
-                _context.regularTickets.Add(regularTicket);
+                _context.regularTickets.AddRange(regularTicket);
                 await _context.SaveChangesAsync();
                 return Ok("Ticket added");
             }

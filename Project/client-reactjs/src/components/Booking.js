@@ -74,7 +74,9 @@ const Booking = () => {
   const [selectedDate, setSelectedDate] = useState('');
 
   const handleDateChange = (event) => {
+
     setSelectedDate(event.target.value);
+    localStorage.setItem("date", selectedDate);
   };
 
   const handleCardClick = (ticketCount) => {
@@ -104,7 +106,10 @@ const Booking = () => {
         <div style={containerStyle}>
           <Card
             title="Theme Park"
-            onClick={() => handleCardClick(1)}
+            onClick={() => {
+              localStorage.setItem("type", "Theme Park");
+              handleCardClick(1)
+            }}
             backgroundColor="#ff7518"
             imageUrl={ThemeParkCardImg}
             ticketCount={1}
@@ -112,7 +117,9 @@ const Booking = () => {
           />
            <Card
             title="Water Park"
-            onClick={() => handleCardClick(2)}
+            onClick={() => {
+              localStorage.setItem("type", "Water Park");
+              handleCardClick(2) }}
             backgroundColor="#3cb4c4"
             imageUrl={WaterParkCardImg}
             ticketCount={2}

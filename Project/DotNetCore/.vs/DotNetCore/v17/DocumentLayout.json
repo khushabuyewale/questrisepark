@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\models\\studentticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\studentticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\controllers\\studentticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\studentticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\models\\regularticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\regularticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\controllers\\regularticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\regularticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\controllers\\studentticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\studentticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\models\\studentticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\studentticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\controllers\\regularticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\regularticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,32 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\DBContext\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "DotNetCore\\DBContext\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\DBContext\\AppDbContext.cs",
-              "RelativeToolTip": "DotNetCore\\DBContext\\AppDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T19:38:27.604Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "StudentTicketController.cs",
               "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\StudentTicketController.cs",
               "RelativeDocumentMoniker": "DotNetCore\\Controllers\\StudentTicketController.cs",
               "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\StudentTicketController.cs",
               "RelativeToolTip": "DotNetCore\\Controllers\\StudentTicketController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAHAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA5wBUAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-21T11:42:00.509Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "StudentTicket.cs",
               "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\StudentTicket.cs",
               "RelativeDocumentMoniker": "DotNetCore\\Models\\StudentTicket.cs",
@@ -92,19 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\User.cs",
-              "RelativeDocumentMoniker": "DotNetCore\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\User.cs",
-              "RelativeToolTip": "DotNetCore\\Models\\User.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T19:42:38.127Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "DotNetCore\\Controllers\\AdminController.cs",
@@ -112,23 +88,25 @@
               "RelativeToolTip": "DotNetCore\\Controllers\\AdminController.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAAwCcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T10:49:38.148Z"
+              "WhenOpened": "2024-02-21T10:49:38.148Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Admin.cs",
               "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\Admin.cs",
               "RelativeDocumentMoniker": "DotNetCore\\Models\\Admin.cs",
               "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\Admin.cs",
               "RelativeToolTip": "DotNetCore\\Models\\Admin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAeAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAowAoAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T10:47:56.984Z"
+              "WhenOpened": "2024-02-21T10:47:56.984Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "RegularTicket.cs",
               "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\RegularTicket.cs",
               "RelativeDocumentMoniker": "DotNetCore\\Models\\RegularTicket.cs",
@@ -141,15 +119,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "RegularTicketController.cs",
               "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\RegularTicketController.cs",
               "RelativeDocumentMoniker": "DotNetCore\\Controllers\\RegularTicketController.cs",
               "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\RegularTicketController.cs",
               "RelativeToolTip": "DotNetCore\\Controllers\\RegularTicketController.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAqwCQAAAAAAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAqwBYAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T21:30:51.709Z"
+              "WhenOpened": "2024-02-20T21:30:51.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\DBContext\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\DBContext\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\DBContext\\AppDbContext.cs",
+              "RelativeToolTip": "DotNetCore\\DBContext\\AppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T19:38:27.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\User.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\User.cs",
+              "RelativeToolTip": "DotNetCore\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T19:42:38.127Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -159,9 +164,10 @@
               "RelativeDocumentMoniker": "DotNetCore\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\UserController.cs",
               "RelativeToolTip": "DotNetCore\\Controllers\\UserController.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAgwDUAAAAAAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAA3wDUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T19:10:19.603Z"
+              "WhenOpened": "2024-02-20T19:10:19.603Z",
+              "EditorCaption": ""
             }
           ]
         },

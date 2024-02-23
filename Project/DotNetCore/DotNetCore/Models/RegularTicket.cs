@@ -7,8 +7,6 @@ namespace DotNetCore.Models
     public class RegularTicket
     {
         public int Id { get; set; }
-        public string phoneNumber { get; set; }
-        public string email { get; set; }
         public string name { get; set; }
             public int age { get; set; }
     }
