@@ -17,12 +17,13 @@ namespace DotNetCore.DBContext
 
         public DbSet<Meal> meals { get; set; }
 
-        public DbSet<UpdateDelete> udelete { get; set; }
-
+        public DbSet<UpdateDelete> update { get; set; }
+        public DbSet<UpdateDelete> delete { get; set; }
         public DbSet<AddRides> adds { get; set; }
 
+        public DbSet<AddRides> Rupdate { get; set; }
 
-
+        public DbSet<AddRides> Rdelete { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Configure your entities here using modelBuilder
