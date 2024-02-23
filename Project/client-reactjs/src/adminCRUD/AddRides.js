@@ -4,20 +4,39 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
-const adminName = 'Unnati';
+const adminName = 'Admin';
 const AddRides = () => {
+    const [ride, setRide] = useState({
+        id: '',
+        name: '',
+        parkType: 'theme',
+        description: '',
+       
+    });
     const [selectedOption, setSelectedOption] = useState('add');
     const [isSubNavVisible, setIsSubNavVisible] = useState(false);
 
     const handleOptionClick = (option) => {
         setSelectedOption((prevOption) => (prevOption === option ? 'add' : option));
-        setIsSubNavVisible(option !== 'add'); // Show sub-navigation only when a main navigation item is clicked
+        setIsSubNavVisible(option !== 'add');
     };
-
 
     const handleLogout = () => {
         // Implement logout logic here
         console.log('Logout clicked');
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setRide((prevRide) => ({
+            ...prevRide,
+            [name]: type === 'checkbox' ? checked : value,
+        }));
+    };
+
+    const handleAddRide = () => {
+        // Add logic to handle adding the ride record
+        console.log('Adding Ride:', ride);
     };
 
     return (
@@ -115,7 +134,45 @@ const AddRides = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <p>Add Rides</p>
+                    <h2>Add Rides</h2>
+                    {/* Add Ride Form */}
+                    <form style={styles.addRideForm}>
+
+
+                        <label style={styles.label}>Name of Ride:</label>
+                        <input
+                            type="text"
+                            name="name"
+                            style={styles.input}
+                            value={ride.name}
+                            onChange={handleInputChange}
+                        />
+
+                        <label style={styles.label}>Type of Park:</label>
+                        <select
+                            name="parkType"
+                            style={styles.input}
+                            value={ride.parkType}
+                            onChange={handleInputChange}
+                        >
+                            <option value="theme">Theme Park</option>
+                            <option value="water">Water Park</option>
+                        </select>
+
+                        <label style={styles.label}>Description:</label>
+                        <textarea
+                            name="description"
+                            style={styles.input}
+                            value={ride.description}
+                            onChange={handleInputChange}
+                        ></textarea>
+
+
+
+                        <button type="button" style={styles.addButton} onClick={handleAddRide}>
+                            Add Ride
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -159,6 +216,9 @@ const SubNavItem = ({ to, children }) => (
 );
 
 const styles = {
+    dataDisplay: {
+        // Your existing styles for data display
+    },
     container: {
         display: 'flex',
     },
@@ -233,6 +293,33 @@ const styles = {
     dataDisplay: {
         flex: 1,
         padding: '20px',
+    },
+    addRideForm: {
+        marginTop: '50px',
+        marginLeft: '400px',
+        padding: '20px',
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+        border: '1px solid #ccc',
+        width: '400px', // Adjust the width as needed
+    },
+    label: {
+        display: 'block',
+        margin: '10px 0',
+    },
+    input: {
+        width: '100%',
+        padding: '8px',
+        margin: '5px 0',
+        boxSizing: 'border-box',
+    },
+   
+    addButton: {
+        backgroundColor: 'navy',
+        color: 'white',
+        padding: '10px',
+        border: 'none',
+        cursor: 'pointer',
+        
     },
 };
 

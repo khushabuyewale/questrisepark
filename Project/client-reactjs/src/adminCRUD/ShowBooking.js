@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
-const adminName = 'Unnati';
+const adminName = 'Admin';
 const ShowBooking = () => {
     const [selectedOption, setSelectedOption] = useState('show');
     const [isSubNavVisible, setIsSubNavVisible] = useState(false);
@@ -19,32 +19,32 @@ const ShowBooking = () => {
         // Implement logout logic here
         console.log('Logout clicked');
     };
-// State for data with visited status
-const [data, setData] = useState([
-    {
-        id: 1,
-        date: '24/02/2024',
-        phoneNo: '7028263336',
-        email: 'unnati@email.com',
-        name: 'Unnati',
-        age: 21,
-        typeOfTicket: 'Regular',
-        typeOfPark: 'Theme Park',
-        mealAdded: 'Yes',
-        payment: 'Paid',
-        visited: true, // Set to true for a green tick
-    },
-    // Add more data as needed
-]);
+    // State for data with visited status
+    const [data, setData] = useState([
+        {
+            id: 1,
+            date: '24/02/2024',
+            phoneNo: '7028263336',
+            email: 'unnati@email.com',
+            name: 'Unnati',
+            age: 21,
+            typeOfTicket: 'Regular',
+            typeOfPark: 'Theme Park',
+            mealAdded: 'Yes',
+            payment: 'Paid',
+            visited: true, // Set to true for a green tick
+        },
+        // Add more data as needed
+    ]);
 
-// Function to toggle visited status
-const toggleVisitedStatus = (id) => {
-    setData((prevData) =>
-        prevData.map((row) =>
-            row.id === id ? { ...row, visited: !row.visited } : row
-        )
-    );
-};
+    // Function to toggle visited status
+    const toggleVisitedStatus = (id) => {
+        setData((prevData) =>
+            prevData.map((row) =>
+                row.id === id ? { ...row, visited: !row.visited } : row
+            )
+        );
+    };
 
     return (
         <div style={styles.container}>
@@ -91,7 +91,7 @@ const toggleVisitedStatus = (id) => {
                     setIsSubNavVisible={setIsSubNavVisible}
                     to="/updateBooking"
                 >
-                   UPDATE
+                    UPDATE
                     <SubNav isVisible={selectedOption === 'update'}>
                         <SubNavItem to="/updateBooking">Booking</SubNavItem>
                         <SubNavItem to="/updateRides">Rides</SubNavItem>
@@ -140,25 +140,25 @@ const toggleVisitedStatus = (id) => {
 
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
-                <h2>Show Booking</h2>
-    <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-        <thead style={{ backgroundColor: 'navy', color: 'white' }}>
-            <tr>
-                <th>ID</th>
-                <th>Date</th>
-                <th>Phone No</th>
-                <th>Email</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Type of Ticket</th>
-                <th>Type of Park</th>
-                <th>Meal Added</th>
-                <th>Payment</th>
-                <th>Visited</th>
-                
-            </tr>
-        </thead>
-        <tbody>
+                    <h2>Show Booking</h2>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                        <thead style={{ backgroundColor: 'navy', color: 'white' }}>
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Phone No</th>
+                                <th>Email</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Type of Ticket</th>
+                                <th>Type of Park</th>
+                                <th>Meal Added</th>
+                                <th>Payment</th>
+                                <th>Visited</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
                             {data.map((row) => (
                                 <tr key={row.id}>
                                     <td>{row.id}</td>
@@ -192,8 +192,8 @@ const toggleVisitedStatus = (id) => {
                                 </tr>
                             ))}
                         </tbody>
-    </table>
-</div>
+                    </table>
+                </div>
 
             </div>
         </div>
