@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import AdminBg from '../assets/AdminBG.png';
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -49,18 +50,18 @@ const Admin = () => {
   };
 
   return (
-    <div style={{ paddingBottom: '20px', paddingTop: '20px' }}>
+    <div style={{ paddingBottom: '20px', paddingTop: '20px',backgroundImage:`url(${AdminBg})` }}>
       {/* Login Form */}
       <form onSubmit={handleLogin}>
         <div
           style={{
-            maxWidth: '525px',
+            color:'white',
+            maxWidth: '480px',
             height: '500px',
             margin: '0 auto', // Center the form horizontally
-            marginRight: '120px', // Add margin to shift it to the right
+            marginRight: '80px', // Add margin to shift it to the right
             padding: '20px',
             marginTop: '100px',
-            border: '2px solid #000',
             borderRadius: '8px',
           }}
         >
@@ -75,7 +76,7 @@ const Admin = () => {
                 placeholder="Enter your Email Address"
                 id="loginEmail"
                 name="loginEmail"
-                style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+                style={{ width: '100%', padding: '8px', boxSizing: 'border-box',borderRadius:'8px' }}
                 value={loginEmail}
                 onChange={(e) => setLoginEmail(e.target.value)}
               />
@@ -90,7 +91,7 @@ const Admin = () => {
                 id="loginPassword"
                 name="loginPassword"
                 placeholder="Enter password"
-                style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+                style={{ width: '100%', padding: '8px', boxSizing: 'border-box',borderRadius:'8px' }}
                 value={loginPassword}
                 onChange={(e) => setLoginPassword(e.target.value)}
               />
@@ -105,6 +106,7 @@ const Admin = () => {
                 type="submit"
 
                 style={{
+                  color:'#003366',
                   width: '50%',
                   padding: '10px',
                   marginTop: '20px',
@@ -114,7 +116,7 @@ const Admin = () => {
                   marginLeft: '25%'
                 }}
               >
-                Sign in
+               <b> Sign in</b>
               </button>
             </div>
           </div>
