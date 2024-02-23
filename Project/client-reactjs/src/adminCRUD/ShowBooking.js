@@ -89,7 +89,7 @@ const toggleVisitedStatus = (id) => {
                     selectedOption={selectedOption}
                     handleOptionClick={handleOptionClick}
                     setIsSubNavVisible={setIsSubNavVisible}
-                    to="/updateRides"
+                    to="/updateBooking"
                 >
                    UPDATE
                     <SubNav isVisible={selectedOption === 'update'}>
@@ -107,7 +107,7 @@ const toggleVisitedStatus = (id) => {
                     selectedOption={selectedOption}
                     handleOptionClick={handleOptionClick}
                     setIsSubNavVisible={setIsSubNavVisible}
-                    to="/deleteRides"
+                    to="/deleteBooking"
                 >
                     DELETE
                     <SubNav isVisible={selectedOption === 'delete'}>

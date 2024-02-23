@@ -26,7 +26,7 @@ import ShowTickets from "./adminCRUD/ShowTickets";
 import UpdateMeals from "./adminCRUD/UpdateMeals";
 import UpdateRides from "./adminCRUD/UpdateRides";
 import UpdateTickets from "./adminCRUD/UpdateTickets";
-import UpdateBooking from "./adminCRUD/UpdateBookings";
+import UpdateBooking from "./adminCRUD/UpdateBooking";
 import DeleteBooking from "./adminCRUD/DeleteBooking";
 
 
