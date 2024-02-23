@@ -17,13 +17,13 @@ const[msg, setMsg]= useState('');
     e.preventDefault();
 
     emailjs
-      .sendForm('service_nphd33h', 'template_25rlobe', form.current, {
-        publicKey: 'keOigkIy-W2XhWLNM',
+      .sendForm('service_tealb8n', 'template_t4ff7z7', form.current, {
+        publicKey: '2lH7zfWnCrBFubwl9',
       })
       .then(
         () => {
           console.log('SUCCESS!');
-          Alert("Your message has been submited. Thank you!");
+          alert("Your message has been submited. Thank you!");
           setName('');
           setEmail('');
           setMsg('');
