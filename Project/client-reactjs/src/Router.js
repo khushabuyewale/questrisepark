@@ -13,6 +13,7 @@ import DeleteDetails from "./components/DeleteDetails";
 import UpdateDetails from "./components/UpdateDetails";
 import Meal from "./components/Meal";
 import Pay from "./components/Pay";
+import Rides from "./components/Rides";
 import Regular from "./components/Regular";
 import Group from "./components/Group";
 import Student from "./components/Student";
@@ -65,6 +66,10 @@ const customeRouter = createBrowserRouter([
       {
         path: "/student",
         element: <Student/>
+      },
+      {
+        path: "/rides",
+        element: <Rides/>
       }
 
     ]

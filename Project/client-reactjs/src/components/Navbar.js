@@ -23,6 +23,9 @@ const Navbar = () => {
               <Link className="nav-link" to="/" style={{fontSize:'20px', color:'black', margin:'10px'}}>Home</Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link" to="/rides" style={{fontSize:'20px', color:'black', margin:'10px'}}>Rides</Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/contactUs" style={{fontSize:'20px', color: 'black', margin:'10px'}}>Contact Us</Link>
             </li>
             <li className="nav-item">

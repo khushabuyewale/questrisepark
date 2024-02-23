@@ -91,11 +91,10 @@ const Pay = () => {
     if (!validateForm()) {
       return;
     }
-    const totalAmount = amountTicket + amountMeal;
+    
 
-    alert(`Payment successful! Total Amount: $${totalAmount}`);
-
-    navigate('/payment-success');
+    alert(`Payment successful!\n  Thank You for Booking!`);
+    navigate('/');
   };
 
   return (
