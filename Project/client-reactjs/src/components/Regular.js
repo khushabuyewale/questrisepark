@@ -10,6 +10,7 @@ const Regular = () => {
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
     const [records, setRecords] = useState([]);
+        const [records1, setRecords1] = useState([]);
     const [recordCount, setRecordCount] = useState(1);
     const [showAlert, setShowAlert] = useState(false);
     const [totalAmount, setTotalAmount] = useState(0);
@@ -59,21 +60,12 @@ const Regular = () => {
             alert('Please enter a valid age between 10 and 90!');
             return;
         }
-        const data = {
-                        phoneNumber: phone,
-                        email: email,
-                        name: name,
-                        age: age
-        }
-        const url = 'http://localhost:5293/api/regularticket/bookregular';
-    axios.post(url, data).then((result) => {
-      alert(result.data);
-    }).catch((error) => {
-      alert(error.message);
-     })
+        
 
         // Add record to the state
         setRecords([...records, { id: recordCount, name, age }]);
+                setRecords1([...records1, {name, age }]);
+
 
         // Increment record count
         setRecordCount(recordCount + 1);
@@ -105,6 +97,10 @@ const Regular = () => {
             alert('Please add at least one record before submitting!');
             return;
         }
+        localStorage.setItem("email", email);
+        localStorage.setItem("phone", phone);
+        localStorage.setItem("records1", JSON.stringify(records1));
+        localStorage.setItem("totalTicket",totalAmount);
 
         // Perform any other actions or navigation logic here
         // For now, just log a message and navigate to "/meal"

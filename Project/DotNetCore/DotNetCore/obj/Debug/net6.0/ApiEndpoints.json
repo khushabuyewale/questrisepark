@@ -25,7 +25,7 @@
     "Parameters": [
       {
         "Name": "regularTicket",
-        "Type": "DotNetCore.Models.RegularTicket",
+        "Type": "System.Collections.Generic.List\u00601[[DotNetCore.Models.RegularTicket, DotNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
