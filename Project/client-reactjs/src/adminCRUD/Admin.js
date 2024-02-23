@@ -18,7 +18,7 @@ const Admin = () => {
     
    axios.post(url, data)
       .then((result) => {
-        navigate('/show');
+        navigate('/showBooking');
       })
       .catch((error) => {
         console.error('Error during login:', error);
@@ -27,7 +27,7 @@ const Admin = () => {
     axios.post(url, data)
       .then((response) => {
         if (response.data.success) {
-          navigate('/show');
+          navigate('/showBooking');
         } else {
           console.error('Login failed. Server response:', response.data);
           alert('Failed to log in. Please check your credentials and try again.');
