@@ -3,14 +3,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./components/App";
 import Booking from "./components/Booking";
-import Admin from "./components/Admin";
 import ContactUs from "./components/ContactUs";
 import Home from "./components/Home";
 import SelectPack from "./components/SelectPack";
-import ShowDetails from "./components/ShowDetails";
-import AddDetails from "./components/AddDetails";
-import DeleteDetails from "./components/DeleteDetails";
-import UpdateDetails from "./components/UpdateDetails";
 import Meal from "./components/Meal";
 import Pay from "./components/Pay";
 import Rides from "./components/Rides";
@@ -18,6 +13,19 @@ import Regular from "./components/Regular";
 import Group from "./components/Group";
 import Student from "./components/Student";
 
+import Admin from "./adminCRUD/Admin";
+
+import AddRides from "./adminCRUD/AddRides";
+import DeleteRides from "./adminCRUD/DeleteRides";
+
+import ShowBooking from "./adminCRUD/ShowBooking";
+import ShowMeals from "./adminCRUD/ShowMeals";
+import ShowRides from "./adminCRUD/ShowRides";
+import ShowTickets from "./adminCRUD/ShowTickets";
+
+import UpdateMeals from "./adminCRUD/UpdateMeals";
+import UpdateRides from "./adminCRUD/UpdateRides";
+import UpdateTickets from "./adminCRUD/UpdateTickets";
 
 
 const customeRouter = createBrowserRouter([
@@ -75,21 +83,42 @@ const customeRouter = createBrowserRouter([
     ]
 
   },
+ 
   {
-    path: "/show",
-    element: <ShowDetails />
+    path: "/showBooking",
+    element: <ShowBooking />,
   },
   {
-    path: "/add",
-    element: <AddDetails />
-  },
-
-  {
-    path: "/delete",
-    element: <DeleteDetails />
+    path: "/showMeals",
+    element: <ShowMeals />,
   },
   {
-    path: "/update",
-    element: <UpdateDetails />
+    path: "/showRides",
+    element: <ShowRides />,
   },
+  {
+    path: "/showTickets",
+    element: <ShowTickets />,
+  },
+  {
+    path: "/addRides",
+    element: <AddRides />,
+  },
+  {
+    path: "/updateMeals",
+    element: <UpdateMeals />,
+  },
+  {
+    path: "/updateRides",
+    element: <UpdateRides />,
+  },
+  {
+    path: "/updateTickets",
+    element: <UpdateTickets />,
+  },
+  {
+    path: "/deleteRides",
+    element: <DeleteRides />,
+  },
+  
 ]); export default customeRouter;

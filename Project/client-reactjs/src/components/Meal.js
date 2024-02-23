@@ -31,10 +31,10 @@ const Meal = () => {
 
 
   const handleProceed = (packageType) => {
-    localStorage.setItem("breakfast",firstCount);
-    localStorage.setItem("lunch",secondCount);
-    localStorage.setItem("snack",thirdCount);
-    localStorage.setItem("dinner",fourthCount);
+    localStorage.setItem("breakfast",breakfast);
+    localStorage.setItem("lunch",lunch);
+    localStorage.setItem("snack",snacks);
+    localStorage.setItem("dinner",dinner);
     localStorage.setItem("totalMeal", totalAmount)
     // You can implement actions or navigation logic here based on the packageType
     console.log(`Proceeding with ${packageType} ticket`);
