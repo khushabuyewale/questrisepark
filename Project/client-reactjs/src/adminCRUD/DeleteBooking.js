@@ -187,18 +187,16 @@ const DeleteBooking = () => {
                                 <td>{row.payment}</td>
                                 <td>
                                     {!row.deleted && (
-                                        <button
-                                            style={{
-                                                backgroundColor: 'red',
-                                                color: 'white',
-                                                padding: '2px 20px',
-                                                border: 'none',
-                                                cursor: 'pointer',
-                                            }}
-                                            onClick={() => handleDelete(row.id)}
-                                        >
-                                            Delete
-                                        </button>
+                                         <button
+                                         style={{
+                                             backgroundColor: 'transparent',
+                                             border: 'none',
+                                             cursor: 'pointer',
+                                         }}
+                                         onClick={() => handleDelete(row.id)}
+                                     >
+                                         <i className="fas fa-trash-alt" style={{ color: 'red', fontSize: '18px' }}></i>
+                                     </button>
                                     )}
                                 </td>
                             </tr>
