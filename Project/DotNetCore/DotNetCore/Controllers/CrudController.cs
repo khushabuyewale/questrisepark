@@ -29,7 +29,7 @@ namespace DotNetCore.Controllers
 
         }
 
-*/
+
         [HttpPost("addrider")]
         public async Task<IActionResult> AddRide([FromBody] List<AddRides> addRide)
         {
@@ -44,12 +44,31 @@ namespace DotNetCore.Controllers
             return BadRequest("Ride not added");
 
         }
+        */
 
+
+        [HttpPost("addrider")]
+        public async Task<IActionResult> AddRide(AddRides ride)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.adds.Add(ride);
+                await _context.SaveChangesAsync();
+                return Ok("Ride added");
+            }
+
+            // Invalid credentials
+            return BadRequest("Ride not added");
+
+        }
+
+
+        //update meal and ticket info
 
         [HttpPut("update/{id}")]
-        public async Task<IActionResult> UpdateMeal(int id, [FromBody] UpdateDelete updatedelete)
+        public async Task<IActionResult> UpdateMeal(int id, UpdateDelete updatedelete)
         {
-            var updateDel = await _context.udelete.FindAsync(id);
+            var updateDel = await _context.update.FindAsync(id);
 
             if (updateDel == null)
             {
@@ -69,22 +88,60 @@ namespace DotNetCore.Controllers
             return Ok("Price updated");
         }
 
+        //delete meal and ticket info
+
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteTicket(int priceid)
         {
-            var priceToDelete = await _context.udelete.FindAsync(priceid);
+            var priceToDelete = await _context.delete.FindAsync(priceid);
 
             if (priceToDelete == null)
             {
                 return NotFound("Id not found");
             }
 
-            _context.udelete.Remove(priceToDelete);
+            _context.delete.Remove(priceToDelete);
             await _context.SaveChangesAsync();
 
             return Ok("Record deleted");
         }
 
+        //update ride
+
+        [HttpPut("updateride/{id}")]
+        public async Task<IActionResult> UpdateRide(int id, AddRides updateRide)
+        {
+            var updateRides = await _context.Rupdate.FindAsync(id);
+
+            if (updateRides == null)
+            {
+                return NotFound("Id");
+            }
+
+            updateRides.RideName= updateRide.RideName;
+            updateRides.Description= updateRide.Description;
+            await _context.SaveChangesAsync();
+
+            return Ok("Price updated");
+        }
+
+        //for deleting ride
+
+        [HttpDelete("deleteride/{id}")]
+        public async Task<IActionResult> DeleteRide(int rideid)
+        {
+            var RideToDelete = await _context.Rdelete.FindAsync(rideid);
+
+            if (RideToDelete == null)
+            {
+                return NotFound("Id not found");
+            }
+
+            _context.Rdelete.Remove(RideToDelete);
+            await _context.SaveChangesAsync();
+
+            return Ok("Ride deleted");
+        }
 
     }
 }
