@@ -67,9 +67,11 @@ const AddRides = () => {
                 >
                     UPDATE
                     <SubNav isVisible={selectedOption === 'update'}>
+                        <SubNavItem to="/updateBooking">Booking</SubNavItem>
                         <SubNavItem to="/updateRides">Rides</SubNavItem>
                         <SubNavItem to="/updateTickets">Tickets</SubNavItem>
                         <SubNavItem to="/updateMeals">Meals</SubNavItem>
+
                     </SubNav>
                 </NavItem>
 
@@ -83,6 +85,7 @@ const AddRides = () => {
                 >
                     DELETE
                     <SubNav isVisible={selectedOption === 'delete'}>
+                        <SubNavItem to="/deleteBooking">Booking</SubNavItem>
                         <SubNavItem to="/deleteRides">Rides</SubNavItem>
                     </SubNav>
                 </NavItem>

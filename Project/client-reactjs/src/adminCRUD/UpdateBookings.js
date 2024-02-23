@@ -5,19 +5,57 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
 const adminName = 'Unnati';
-const ShowMeals = () => {
-    const [selectedOption, setSelectedOption] = useState('show');
+
+const UpdateBooking = () => {
+    const [selectedOption, setSelectedOption] = useState('update');
     const [isSubNavVisible, setIsSubNavVisible] = useState(false);
 
     const handleOptionClick = (option) => {
-        setSelectedOption((prevOption) => (prevOption === option ? 'show' : option));
-        setIsSubNavVisible(option !== 'show'); // Show sub-navigation only when a main navigation item is clicked
+        setSelectedOption((prevOption) => (prevOption === option ? 'update' : option));
+        setIsSubNavVisible(option !== 'update'); // Show sub-navigation only when a main navigation item is clicked
     };
-
 
     const handleLogout = () => {
         // Implement logout logic here
         console.log('Logout clicked');
+    };
+
+    const [data, setData] = useState([
+        {
+            id: 1,
+            date: '24/02/2024',
+            phoneNo: '7028263336',
+            email: 'unnati@email.com',
+            name: 'Unnati',
+            age: 21,
+            typeOfTicket: 'Regular',
+            typeOfPark: 'Theme Park',
+            mealAdded: 'Yes',
+            payment: 'Paid',
+            visited: false,
+        },
+        // Add more data as needed
+        {
+            id: 2,
+            date: '25/02/2024',
+            phoneNo: '1234567890',
+            email: 'john@example.com',
+            name: 'John',
+            age: 25,
+            typeOfTicket: 'VIP',
+            typeOfPark: 'Water Park',
+            mealAdded: 'No',
+            payment: 'Pending',
+            visited: true,
+        },
+    ]);
+
+    const toggleVisitedStatus = (id) => {
+        setData((prevData) =>
+            prevData.map((row) =>
+                row.id === id ? { ...row, visited: !row.visited } : row
+            )
+        );
     };
 
     return (
@@ -65,7 +103,7 @@ const ShowMeals = () => {
                     setIsSubNavVisible={setIsSubNavVisible}
                     to="/updateRides"
                 >
-                   UPDATE
+                    UPDATE
                     <SubNav isVisible={selectedOption === 'update'}>
                         <SubNavItem to="/updateBooking">Booking</SubNavItem>
                         <SubNavItem to="/updateRides">Rides</SubNavItem>
@@ -89,6 +127,7 @@ const ShowMeals = () => {
                         <SubNavItem to="/deleteRides">Rides</SubNavItem>
                     </SubNav>
                 </NavItem>
+
                 <div className="text-center mt-3">
                     <a href="/admin"><button
                         className="btn btn-danger"
@@ -114,7 +153,59 @@ const ShowMeals = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <p>Show Meals</p>
+                    <h2>Update Booking</h2>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                        <thead style={{ backgroundColor: 'navy', color: 'white' }}>
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Phone No</th>
+                                <th>Email</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Type of Ticket</th>
+                                <th>Type of Park</th>
+                                <th>Meal Added</th>
+                                <th>Payment</th>
+                                <th>Visited</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {data.map((row) => (
+                                <tr key={row.id}>
+                                    <td>{row.id}</td>
+                                    <td>{row.date}</td>
+                                    <td>{row.phoneNo}</td>
+                                    <td>{row.email}</td>
+                                    <td>{row.name}</td>
+                                    <td>{row.age}</td>
+                                    <td>{row.typeOfTicket}</td>
+                                    <td>{row.typeOfPark}</td>
+                                    <td>{row.mealAdded}</td>
+                                    <td>{row.payment}</td>
+                                    <td>
+                                        <button
+                                            style={{
+                                                backgroundColor: row.visited ? 'green' : 'red',
+                                                color: 'white',
+                                                padding: '2px 20px',
+                                                border: 'none',
+                                                cursor: 'pointer',
+                                            }}
+                                            onClick={() => toggleVisitedStatus(row.id)}
+                                        >
+                                            {row.visited ? (
+                                                <i className="fas fa-check"></i>
+                                            ) : (
+                                                <i className="fas fa-times"></i>
+                                            )}
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -156,6 +247,7 @@ const SubNavItem = ({ to, children }) => (
         {children}
     </Link>
 );
+;
 
 const styles = {
     container: {
@@ -235,4 +327,4 @@ const styles = {
     },
 };
 
-export default ShowMeals;
+export default UpdateBooking;

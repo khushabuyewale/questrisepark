@@ -26,6 +26,8 @@ import ShowTickets from "./adminCRUD/ShowTickets";
 import UpdateMeals from "./adminCRUD/UpdateMeals";
 import UpdateRides from "./adminCRUD/UpdateRides";
 import UpdateTickets from "./adminCRUD/UpdateTickets";
+import UpdateBooking from "./adminCRUD/UpdateBookings";
+import DeleteBooking from "./adminCRUD/DeleteBooking";
 
 
 const customeRouter = createBrowserRouter([
@@ -105,6 +107,10 @@ const customeRouter = createBrowserRouter([
     element: <AddRides />,
   },
   {
+    path: "/updateBooking",
+    element: <UpdateBooking />,
+  },
+  {
     path: "/updateMeals",
     element: <UpdateMeals />,
   },
@@ -119,6 +125,10 @@ const customeRouter = createBrowserRouter([
   {
     path: "/deleteRides",
     element: <DeleteRides />,
+  },
+  {
+    path: "/deleteBooking",
+    element: <DeleteBooking />,
   },
   
 ]); export default customeRouter;

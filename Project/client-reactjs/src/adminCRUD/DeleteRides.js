@@ -65,11 +65,13 @@ const DeleteRides = () => {
                     setIsSubNavVisible={setIsSubNavVisible}
                     to="/updateRides"
                 >
-                    UPDATE
+                   UPDATE
                     <SubNav isVisible={selectedOption === 'update'}>
+                        <SubNavItem to="/updateBooking">Booking</SubNavItem>
                         <SubNavItem to="/updateRides">Rides</SubNavItem>
                         <SubNavItem to="/updateTickets">Tickets</SubNavItem>
                         <SubNavItem to="/updateMeals">Meals</SubNavItem>
+
                     </SubNav>
                 </NavItem>
 
@@ -83,6 +85,7 @@ const DeleteRides = () => {
                 >
                     DELETE
                     <SubNav isVisible={selectedOption === 'delete'}>
+                        <SubNavItem to="/deleteBooking">Booking</SubNavItem>
                         <SubNavItem to="/deleteRides">Rides</SubNavItem>
                     </SubNav>
                 </NavItem>
