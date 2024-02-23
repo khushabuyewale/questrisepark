@@ -101,7 +101,7 @@ const Home = () => {
               </Col>
             </Row>
           </Container>
-          <Container id="toda">
+          <Container id="todo">
           <div style={{
             margin: '0 auto',
             marginBottom: '80px',

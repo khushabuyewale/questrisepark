@@ -1,22 +1,32 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ContactBGImg from '../assets/ContactUsBG.jpg';
 
+
 const ContactUs = () => {
   const form = useRef();
+
+const[name, setName]= useState('');
+const[email, setEmail]= useState('');
+const[msg, setMsg]= useState('');
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_nphd33h', 'template_25rlobe', form.current, {
-        publicKey: 'keOigkIy-W2XhWLNM',
+      .sendForm('service_tealb8n', 'template_t4ff7z7', form.current, {
+        publicKey: '2lH7zfWnCrBFubwl9',
       })
       .then(
         () => {
           console.log('SUCCESS!');
+          setName('');
+          setEmail('');
+          setMsg('');
+          alert("Your message has been submited. Thank you!");
+          
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -48,27 +58,27 @@ const ContactUs = () => {
         <h2>Contact Us</h2>
         <br />
         <form ref={form} onSubmit={sendEmail}>
-          <div className="mb-3">
+          <div className="mb-3" id='name'>
             <b>Name </b>{' '}
             <input
               type="text"
-              name="user_name"
+              name="from_name"
               className="form-control"
               id="name"
               placeholder="Enter your Name"
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-3" id='email'>
             <b>Email </b>{' '}
             <input
               type="email"
-              name="user_email"
+              name="from_email"
               className="form-control"
               id="email"
               placeholder="Enter your Email Address"
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-3" id='msg'>
             <b>Message </b>{' '}
             <textarea
               name="message"
