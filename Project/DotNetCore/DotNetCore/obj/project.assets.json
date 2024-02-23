@@ -2331,19 +2331,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\Ashutosh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\Git_Repo\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
+      "projectUniqueName": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
       "projectName": "DotNetCore",
-      "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Git_Repo\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Git_Repo\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\obj\\",
+      "projectPath": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
+      "packagesPath": "C:\\Users\\Ashutosh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ashutosh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2363,6 +2363,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2417,7 +2422,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
