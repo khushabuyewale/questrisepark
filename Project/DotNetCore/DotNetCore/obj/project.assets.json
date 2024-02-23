@@ -2336,11 +2336,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\Git_Repo\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
       "projectName": "DotNetCore",
-      "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
+      "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Git_Repo\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\obj\\",
+      "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Git_Repo\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2420,13 +2420,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

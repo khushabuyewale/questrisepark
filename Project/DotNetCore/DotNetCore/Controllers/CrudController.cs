@@ -14,7 +14,7 @@ namespace DotNetCore.Controllers
         {
             _context = context;
         }
-
+/*
         [HttpPost("addrider")]
         public async Task<IActionResult> AddUser(AddRides addRide)
         {
@@ -28,6 +28,23 @@ namespace DotNetCore.Controllers
             return BadRequest("Ride not added");
 
         }
+
+*/
+        [HttpPost("addrider")]
+        public async Task<IActionResult> AddRide([FromBody] List<AddRides> addRide)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.adds.AddRange(addRide);
+                await _context.SaveChangesAsync();
+                return Ok("Ride added");
+            }
+
+            // Invalid credentials
+            return BadRequest("Ride not added");
+
+        }
+
 
         [HttpPut("update/{id}")]
         public async Task<IActionResult> UpdateMeal(int id, [FromBody] UpdateDelete updatedelete)

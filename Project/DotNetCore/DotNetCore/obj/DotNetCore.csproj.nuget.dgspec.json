@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj": {}
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Git_Repo\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj": {
+    "C:\\Users\\HP\\OneDrive\\Desktop\\Git_Repo\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\Git_Repo\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
         "projectName": "DotNetCore",
-        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
+        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Git_Repo\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\obj\\",
+        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Git_Repo\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LNmaOS/dUrbEqRVDB+8trqWXtyCdqZhRpzR0PcBjelP4mc+QtKxbXUTpsSXBmS9OGaYXq29CscJ3hG/ax/OWuQ==",
+  "dgSpecHash": "O96QfhhwbgKD7yI/YN5gHhKAr5ZjyCs7FSBhEW/uG3I9Yq4BzHZKbQU96YO4e/ZCdqK/XkCZxgqZ26s2ljqMYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
+  "projectFilePath": "C:\\Users\\HP\\OneDrive\\Desktop\\Git_Repo\\CDACSEPT23\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -53,12 +53,5 @@
     "C:\\Users\\HP\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
