@@ -50,7 +50,7 @@ const Admin = () => {
   };
 
   return (
-    <div style={{ paddingBottom: '20px', paddingTop: '20px',backgroundImage:`url(${AdminBg})` }}>
+    <div style={{ paddingBottom: '20px', paddingTop: '20px',backgroundImage:`url(${AdminBg})`,backgroundSize:'cover' }}>
       {/* Login Form */}
       <form onSubmit={handleLogin}>
         <div

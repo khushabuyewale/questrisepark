@@ -12,6 +12,7 @@
         "projectPath": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
         "packagesPath": "C:\\Users\\Ashutosh\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\obj\\",
+
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ashutosh\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -15,7 +15,7 @@ namespace DotNetCore.DBContext
 
         public DbSet<GroupTicket> groupTickets { get; set; }
 
-        public DbSet<Meal> meals{ get; set; }
+        public DbSet<Meal> meals { get; set; }
 
         public DbSet<UpdateDelete> udelete { get; set; }
 
