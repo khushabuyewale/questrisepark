@@ -3,7 +3,6 @@ import emailjs from '@emailjs/browser';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ContactBGImg from '../assets/ContactUsBG.jpg';
-import { Alert } from 'react-bootstrap';
 
 
 const ContactUs = () => {
@@ -23,11 +22,11 @@ const[msg, setMsg]= useState('');
       .then(
         () => {
           console.log('SUCCESS!');
-          alert("Your message has been submited. Thank you!");
           setName('');
           setEmail('');
           setMsg('');
-
+          alert("Your message has been submited. Thank you!");
+          
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -63,7 +62,7 @@ const[msg, setMsg]= useState('');
             <b>Name </b>{' '}
             <input
               type="text"
-              name="user_name"
+              name="from_name"
               className="form-control"
               id="name"
               placeholder="Enter your Name"
@@ -73,7 +72,7 @@ const[msg, setMsg]= useState('');
             <b>Email </b>{' '}
             <input
               type="email"
-              name="user_email"
+              name="from_email"
               className="form-control"
               id="email"
               placeholder="Enter your Email Address"
