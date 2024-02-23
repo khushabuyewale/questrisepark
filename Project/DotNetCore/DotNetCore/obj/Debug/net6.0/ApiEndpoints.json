@@ -16,6 +16,96 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DotNetCore.Controllers.CrudController",
+    "Method": "AddUser",
+    "RelativePath": "api/Crud/addrider",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addRide",
+        "Type": "DotNetCore.Models.AddRides",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.CrudController",
+    "Method": "DeleteTicket",
+    "RelativePath": "api/Crud/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "priceid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.CrudController",
+    "Method": "UpdateMeal",
+    "RelativePath": "api/Crud/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedelete",
+        "Type": "DotNetCore.Models.UpdateDelete",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.GroupTicketController",
+    "Method": "BookGroup",
+    "RelativePath": "api/GroupTicket/bookgroup",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "groupTicket",
+        "Type": "DotNetCore.Models.GroupTicket",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.MealController",
+    "Method": "BookMeal",
+    "RelativePath": "api/Meal/bookmeal",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "meal",
+        "Type": "DotNetCore.Models.Meal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DotNetCore.Controllers.RegularTicketController",
     "Method": "BookRegular",
     "RelativePath": "api/RegularTicket/bookregular",
