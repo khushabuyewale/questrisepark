@@ -46,7 +46,7 @@ const Admin = () => {
 
   // Function to handle button click and trigger navigation
   const handleButtonClick = () => {
-    navigate('/show');
+    navigate('/showBooking');
   };
 
   return (
