@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DotNetCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+810885e13fd2acebc2da7bf2b51ad314b980d7f1")]
+
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65fa2e4099ea7eff757caa7ab722ba57b28caf45")]
+
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f34305468ba9b68bdc653c5ae9bd03296366119")]
+
 [assembly: System.Reflection.AssemblyProductAttribute("DotNetCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DotNetCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

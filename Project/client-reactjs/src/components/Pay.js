@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 import payBG from '../assets/payBG.png';
 
@@ -13,8 +14,11 @@ const Pay = () => {
   const [cardNumber, setCardNumber] = useState('');
   const [expiry, setExpiry] = useState('');
   const [cvc, setCvc] = useState('');
-  const [amountTicket, setAmountTicket] = useState(0);
-  const [amountMeal, setAmountMeal] = useState(0);
+  const amountTicket = parseInt(localStorage.getItem("totalTicket"));
+  //const [amountTicket, setAmountTicket] = useState(0);
+  const amountMeal = parseInt(localStorage.getItem("totalMeal"));
+  //const [amountMeal, setAmountMeal] = useState(0);
+  const totalAmount =  amountTicket  +  amountMeal  ;
   const [showTermsPopup, setShowTermsPopup] = useState(false);
   const [agreedToTerms, setAgreedToTerms] = useState(false);
 
@@ -91,9 +95,18 @@ const Pay = () => {
     if (!validateForm()) {
       return;
     }
-    
+    const userdata = localStorage.getItem("records1");    
 
-    alert(`Payment successful!\n  Thank You for Booking!`);
+    //console.log(userdata);
+  
+        const url = 'http://localhost:5293/api/regularticket/bookregular';
+    axios.post(url, userdata).then(() => {
+      alert("regular data submitted successfully");
+    }).catch((error) => {
+      alert(error.message);
+     })
+    alert(`Payment successful! \n Thank you!`);
+
     navigate('/');
   };
 
@@ -216,7 +229,7 @@ const Pay = () => {
 
           <p> Amount of Meal: ₹{amountMeal}  </p>
 
-          <p>Total Amount: ₹{amountTicket + amountMeal}</p>
+          <p>Total Amount: ₹{ totalAmount}</p>
 
           Name on Card:<br />
           <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />

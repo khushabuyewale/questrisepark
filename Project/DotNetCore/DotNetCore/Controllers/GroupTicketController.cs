@@ -1,30 +1,26 @@
-﻿using System.Linq;
+﻿using DotNetCore.DBContext;
+using DotNetCore.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using DotNetCore.Models;  // Import the RegularTicket model
-using DotNetCore.DBContext;
 
 namespace DotNetCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RegularTicketController : ControllerBase
+    public class GroupTicketController : ControllerBase
     {
-
-
         private readonly AppDbContext _context;
 
-        public RegularTicketController(AppDbContext context)
+        public GroupTicketController(AppDbContext context)
         {
             _context = context;
         }
 
-        [HttpPost("bookregular")]
-        public async Task<IActionResult> BookRegular([FromBody] List<RegularTicket> regularTicket)
+        [HttpPost("bookgroup")]
+        public async Task<IActionResult> BookGroup(GroupTicket groupTicket)
         {
             if (ModelState.IsValid)
             {
-                _context.regularTickets.AddRange(regularTicket);
+                _context.groupTickets.Add(groupTicket);
                 await _context.SaveChangesAsync();
                 return Ok("Ticket added");
             }
@@ -33,5 +29,7 @@ namespace DotNetCore.Controllers
             return BadRequest("Ticket not added");
 
         }
-    }
+    
+
+}
 }

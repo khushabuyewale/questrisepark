@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import AdminBg from '../assets/AdminBG.png';
 
 const Admin = () => {
+  const navigate = useNavigate();
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
-  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -14,15 +14,39 @@ const Admin = () => {
       email: loginEmail,
       password: loginPassword
     };
-    const url = 'https://localhost:44358/api/test/Login';
-    axios.post(url, data)
+    const url = 'http://localhost:5293/api/admin/login';
+    
+   axios.post(url, data)
       .then((result) => {
         navigate('/show');
       })
       .catch((error) => {
         console.error('Error during login:', error);
         alert('Failed to log in. Please check your credentials and try again.');
+      });  
+    axios.post(url, data)
+      .then((response) => {
+        if (response.data.success) {
+          navigate('/show');
+        } else {
+          console.error('Login failed. Server response:', response.data);
+          alert('Failed to log in. Please check your credentials and try again.');
+        }
+      })
+      .catch((error) => {
+        console.error('Error during login:', error);
+
+        if (error.response) {
+          console.error('Server responded with:', error.response.data);
+        }
+
+        alert('Failed to log in. Please check your credentials and try again.');
       });
+  };
+
+  // Function to handle button click and trigger navigation
+  const handleButtonClick = () => {
+    navigate('/show');
   };
 
   return (
@@ -75,7 +99,12 @@ const Admin = () => {
 
             <div>
               <button
-                type="submit" 
+
+                
+
+                onClick={handleButtonClick}
+                type="submit"
+
                 style={{
                   color:'#003366',
                   width: '50%',
