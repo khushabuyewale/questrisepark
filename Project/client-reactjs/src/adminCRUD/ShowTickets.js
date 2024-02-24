@@ -1,6 +1,6 @@
 // Details.js
 
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
@@ -50,23 +50,23 @@ const ShowTickets = () => {
         // Call the fetchData function
         fetchData();
     }, [fromDate, toDate, selectedParkType]);
-   
-   // Function to handle from date selection
-   const handleFromDateChange = (event) => {
-    setFromDate(event.target.value);
-};
 
-// Function to handle to date selection
-const handleToDateChange = (event) => {
-    setToDate(event.target.value);
-};
+    // Function to handle from date selection
+    const handleFromDateChange = (event) => {
+        setFromDate(event.target.value);
+    };
 
-// Function to handle park type selection
-const handleParkTypeChange = (event) => {
-    setSelectedParkType(event.target.value);
-};
-       
-   
+    // Function to handle to date selection
+    const handleToDateChange = (event) => {
+        setToDate(event.target.value);
+    };
+
+    // Function to handle park type selection
+    const handleParkTypeChange = (event) => {
+        setSelectedParkType(event.target.value);
+    };
+
+
     return (
         <div style={styles.container}>
             {/* Vertical Navbar */}
@@ -180,27 +180,35 @@ const handleParkTypeChange = (event) => {
                     <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
                         <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
                             <tr>
-                            <th>Sr.no.</th>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Date</th>
-                            <th>Type of Park</th>
+                                <th>Sr.no.</th>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Type of Park</th>
                             </tr>
                         </thead>
                         <tbody>
                             {data.map((row) => (
                                 <tr key={row.srno}>
-                                <td>{row.srno}</td>
-                                <td>{row.id}</td>
-                                <td>{row.name}</td>
-                                <td>{row.date}</td>
-                                <td>{row.typeOfPark}</td>    
+                                    <td>{row.srno}</td>
+                                    <td>{row.id}</td>
+                                    <td>{row.date}</td>
+                                    <td>{row.name}</td>
+                                    <td>{row.typeOfPark}</td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-                       {/* Display count of tickets */}
-                       <h4><b>Total Tickets:</b> {data.length}</h4>
+                    {/* Display count of tickets */}
+                    <h4 style={{
+                        backgroundColor: '#333',
+                        color: 'white',
+                        padding: '10px',
+                        margin: '10px 0',
+                        
+                    }}>
+                        <b>Total Tickets:</b> {data.length}
+                    </h4>
                 </div>
             </div>
         </div>

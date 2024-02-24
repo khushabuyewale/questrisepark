@@ -1,13 +1,17 @@
 // Details.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
 const adminName = 'Admin';
+
 const ShowMeals = () => {
     const [selectedOption, setSelectedOption] = useState('show');
     const [isSubNavVisible, setIsSubNavVisible] = useState(false);
+    const [data, setData] = useState([]);
+    const [fromDate, setFromDate] = useState('');
+    const [toDate, setToDate] = useState('');
 
     const handleOptionClick = (option) => {
         setSelectedOption((prevOption) => (prevOption === option ? 'show' : option));
@@ -19,6 +23,38 @@ const ShowMeals = () => {
         // Implement logout logic here
         console.log('Logout clicked');
     };
+    // useEffect to fetch data from backend
+    useEffect(() => {
+        // Fetch data from the backend API
+        const fetchData = async () => {
+            try {
+                // Construct your backend API URL with selectedDate and selectedParkType
+                const apiURL = `your_backend_api_url?date=${selectedDate}`;
+                const response = await fetch(apiURL);
+                const result = await response.json();
+
+                // Auto-generate srno and update state with fetched data
+                const newData = result.map((item, index) => ({ ...item, srno: (index + 1).toString() }));
+                setData(newData);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        // Call the fetchData function
+        fetchData();
+    }, [fromDate, toDate]);
+
+    // Function to handle from date selection
+    const handleFromDateChange = (event) => {
+        setFromDate(event.target.value);
+    };
+
+    // Function to handle to date selection
+    const handleToDateChange = (event) => {
+        setToDate(event.target.value);
+    };
+
 
     return (
         <div style={styles.container}>
@@ -65,7 +101,7 @@ const ShowMeals = () => {
                     setIsSubNavVisible={setIsSubNavVisible}
                     to="/updateBooking"
                 >
-                   UPDATE
+                    UPDATE
                     <SubNav isVisible={selectedOption === 'update'}>
                         <SubNavItem to="/updateBooking">Booking</SubNavItem>
                         <SubNavItem to="/updateRides">Rides</SubNavItem>
@@ -89,6 +125,7 @@ const ShowMeals = () => {
                         <SubNavItem to="/deleteRides">Rides</SubNavItem>
                     </SubNav>
                 </NavItem>
+
                 <div className="text-center mt-3">
                     <a href="/admin"><button
                         className="btn btn-danger"
@@ -114,7 +151,70 @@ const ShowMeals = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                 
+                    <div style={{ marginBottom: '20px' }}>
+                        <label><b>Select Date Range</b>   from:</label>
+                        <input type="date" value={fromDate} onChange={handleFromDateChange} />
+                        <label style={{ marginLeft: '20px' }} >  to:</label>
+                        <input type="date" value={toDate} onChange={handleToDateChange} />
+                    </div>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                        <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
+                            <tr>
+                                <th>Sr.no.</th>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Breakfast</th>
+                                <th>Lunch</th>
+                                <th>Snacks</th>
+                                <th>Dinner</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data.map((row) => (
+                                <tr key={row.srno}>
+                                    <td>{row.srno}</td>
+                                    <td>{row.id}</td>
+                                    <td>{row.date}</td>
+                                    <td>{row.name}</td>
+                                    <td>{row.breakfast}</td>
+                                    <td>{row.lunch}</td>
+                                    <td>{row.snacks}</td>
+                                    <td>{row.dinner}</td>
+
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    {/* Summary Section */}
+                    <h4 style={{
+                        backgroundColor: '#333',
+                        color: 'white',
+                        display: 'flex',
+                        flexDirection: 'row',  // Change to row to place items horizontally
+                        justifyContent: 'space-between',
+                        alignItems: 'center',  // Align items vertically at the center
+                        padding: '10px',
+                        margin: '10px 0',
+                    }}>
+                        <div>
+                            <b>Total Count</b>
+                        </div>
+                        <div style={{ flex: 1, textAlign: 'center' }}>
+                            Breakfast: {data.reduce((total, row) => total + row.breakfast, 0)}
+                        </div>
+                        <div style={{ flex: 1, textAlign: 'center' }}>
+                            Lunch: {data.reduce((total, row) => total + row.lunch, 0)}
+                        </div>
+                        <div style={{ flex: 1, textAlign: 'center' }}>
+                            Snacks: {data.reduce((total, row) => total + row.snacks, 0)}
+                        </div>
+                        <div style={{ flex: 1, textAlign: 'center' }}>
+                            Dinner: {data.reduce((total, row) => total + row.dinner, 0)}
+                        </div>
+                    </h4>
+
                 </div>
             </div>
         </div>
@@ -171,6 +271,7 @@ const styles = {
         padding: '10px',
         color: 'white',
     },
+
     logo: {
         width: '100%',
         height: 'auto',
@@ -234,5 +335,6 @@ const styles = {
         padding: '20px',
     },
 };
+
 
 export default ShowMeals;
