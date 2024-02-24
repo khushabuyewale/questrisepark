@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
-const adminName = 'Unnati';
+const adminName = 'Admin';
 const ShowTickets = () => {
     const [selectedOption, setSelectedOption] = useState('show');
     const [isSubNavVisible, setIsSubNavVisible] = useState(false);

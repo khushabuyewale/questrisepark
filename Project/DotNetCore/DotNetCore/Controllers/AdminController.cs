@@ -23,7 +23,7 @@ namespace DotNetCore.Controllers
             {
                 // Find the user by email
                 var admin = await _context.admins
-                    .FirstOrDefaultAsync(u => u.email == adminlogin.email);
+                    .FirstOrDefaultAsync(u => u.username == adminlogin.username);
 
                 if (admin != null && admin.password == adminlogin.password)
                 {

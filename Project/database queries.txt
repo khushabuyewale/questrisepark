@@ -30,7 +30,7 @@ CREATE TABLE rides (
 
 CREATE TABLE admin (
     id INT PRIMARY KEY,
-    username VARCHAR(50),
+    email VARCHAR(50),
     password VARCHAR(50)
 );
 
@@ -83,4 +83,8 @@ CREATE TABLE college_info (
 );
 
 =========================================
-
+10) payment table
+CREATE TABLE payment (
+    name VARCHAR(255) PRIMARY KEY,
+    amount DECIMAL(10, 2)
+);

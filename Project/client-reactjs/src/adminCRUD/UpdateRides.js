@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
-const adminName = 'Unnati';
+const adminName = 'Admin';
 const UpdateRides = () => {
     const [selectedOption, setSelectedOption] = useState('update');
     const [isSubNavVisible, setIsSubNavVisible] = useState(false);
@@ -18,7 +18,24 @@ const UpdateRides = () => {
         // Implement logout logic here
         console.log('Logout clicked');
     };
+    const [updateFormData, setUpdateFormData] = useState({
+        id: '',
+        newRideName: '',
+        newDescription: '',
+    });
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setUpdateFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleUpdateRide = () => {
+        // Add logic to handle updating the ride record
+        console.log('Updating Ride:', updateFormData);
+    };
     return (
         <div style={styles.container}>
             {/* Vertical Navbar */}
@@ -114,7 +131,46 @@ const UpdateRides = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <p>Delete Rides</p>
+                    <h2>Update Rides</h2>
+                    {/* Update Ride Form */}
+                    <form style={styles.updateRideForm}>
+                        <label style={styles.label}>Select Ride Name:</label>
+                        <select
+                            name="name"
+                            style={styles.input}
+                            value={updateFormData.id}
+                            onChange={handleInputChange}
+                        >
+                            {/* Add options for available IDs */}
+                            <option value="roller">Roller</option>
+                            <option value="coaster">Coaster</option>
+                            {/* Add more options as needed */}
+                        </select>
+
+                        <label style={styles.label}>Old Description:</label>
+                        <p style={styles.oldValue}>it is a ride</p>
+
+                        <label style={styles.label}>New Ride Name:</label>
+                        <input
+                            type="text"
+                            name="newRideName"
+                            style={styles.input}
+                            value={updateFormData.newRideName}
+                            onChange={handleInputChange}
+                        />
+
+                        <label style={styles.label}>New Description:</label>
+                        <textarea
+                            name="newDescription"
+                            style={styles.input}
+                            value={updateFormData.newDescription}
+                            onChange={handleInputChange}
+                        ></textarea>
+
+                        <button type="button" style={styles.updateButton} onClick={handleUpdateRide}>
+                            Update Ride
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -232,6 +288,35 @@ const styles = {
     dataDisplay: {
         flex: 1,
         padding: '20px',
+    },
+    updateRideForm: {
+        marginTop: '10px',
+        marginLeft: '400px',
+        padding: '20px',
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+        border: '1px solid #ccc',
+        width: '400px', // Adjust the width as needed
+    },
+    oldValue: {
+        marginBottom: '10px',
+        color: '#777',
+    },
+    updateButton: {
+        backgroundColor: '#00416B',
+        color: 'white',
+        padding: '10px',
+        border: 'none',
+        cursor: 'pointer',
+    },
+    label: {
+        display: 'block',
+        margin: '10px 0',
+    },
+    input: {
+        width: '100%',
+        padding: '8px',
+        margin: '5px 0',
+        boxSizing: 'border-box',
     },
 };
 

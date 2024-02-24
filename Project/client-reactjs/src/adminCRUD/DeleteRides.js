@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
-const adminName = 'Unnati';
+const adminName = 'Admin';
 const DeleteRides = () => {
     const [selectedOption, setSelectedOption] = useState('delete');
     const [isSubNavVisible, setIsSubNavVisible] = useState(false);
@@ -20,6 +20,31 @@ const DeleteRides = () => {
         console.log('Logout clicked');
     };
 
+    const [data, setData] = useState([
+        {
+            id: 1,
+            name: 'Roller Coaster',
+            typeOfPark: 'Theme Park',
+            description:'Thrilling ride with twists and turns.',
+        },
+        // Add more data as needed
+        {
+            id: 2,
+            name: 'Wave Pool',
+            typeOfPark: 'Water Park',
+            description:'Thrilling ride with twists and turns.',
+        },
+    ]);
+
+
+
+    const handleDelete = (id) => {
+        setData((prevData) =>
+            prevData.map((row) =>
+                row.id === id ? { ...row, deleted: true } : row
+            )
+        );
+    };
     return (
         <div style={styles.container}>
             {/* Vertical Navbar */}
@@ -116,6 +141,42 @@ const DeleteRides = () => {
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
                     <p>Delete Rides</p>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                        <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name of Ride</th>
+                            <th>Type of Park</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                    <tbody>
+                        {data.map((row) => (
+                            <tr key={row.id} style={{ backgroundColor: row.deleted ? 'red' : 'white', color: row.deleted ? 'white' : 'black' }}>
+                                <td>{row.id}</td>
+                                <td>{row.name}</td>
+                                <td>{row.typeOfPark}</td>
+                                <td>{row.description}</td>
+                           
+                                <td>
+                                    {!row.deleted && (
+                                         <button
+                                         style={{
+                                             backgroundColor: 'transparent',
+                                             border: 'none',
+                                             cursor: 'pointer',
+                                         }}
+                                         onClick={() => handleDelete(row.id)}
+                                     >
+                                         <i className="fas fa-trash-alt" style={{ color: 'red', fontSize: '18px' }}></i>
+                                     </button>
+                                    )}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                    </table>
                 </div>
             </div>
         </div>

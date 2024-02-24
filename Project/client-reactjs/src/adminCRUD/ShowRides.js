@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
-const adminName = 'Unnati';
+const adminName = 'Admin';
 const ShowRides = () => {
     const [selectedOption, setSelectedOption] = useState('show');
     const [isSubNavVisible, setIsSubNavVisible] = useState(false);
@@ -19,7 +19,25 @@ const ShowRides = () => {
         // Implement logout logic here
         console.log('Logout clicked');
     };
+    // State for data with visited status
+    const [data, setData] = useState([
+        {
+            id: 1,
+            name: 'Roller Coaster',
+            typeOfPark: 'Theme Park',
+            description:'Thrilling ride with twists and turns.',
+        },
+        // Add more data as needed
+        {
+            id: 2,
+            name: 'Wave Pool',
+            typeOfPark: 'Water Park',
+            description:'Thrilling ride with twists and turns.',
+        },
+    ]);
 
+    // Function to toggle visited status
+   
     return (
         <div style={styles.container}>
             {/* Vertical Navbar */}
@@ -115,7 +133,29 @@ const ShowRides = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <p>Show Rides</p>
+                    <h2>Show Rides</h2>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                        <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
+                            <tr>
+                            <th>ID</th>
+                            <th>Name of Ride</th>
+                            <th>Type of Park</th>
+                            <th>Description</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data.map((row) => (
+                                <tr key={row.id}>
+                                    <td>{row.id}</td>
+                                <td>{row.name}</td>
+                                <td>{row.typeOfPark}</td>
+                                <td>{row.description}</td>
+                                    
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
