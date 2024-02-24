@@ -8,45 +8,26 @@ const Admin = () => {
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
 
-  const handleLogin = (e) => {
+  const handleLogin = async(e) => {
     e.preventDefault();
     const data = {
       email: loginEmail,
       password: loginPassword
     };
     const url = 'http://localhost:5293/api/admin/login';
-    
-   axios.post(url, data)
-      .then((result) => {
+    try {
+      const response = await axios.post(url, data);
+      if (response.data === "Login successful") {
         navigate('/showBooking');
-      })
-      .catch((error) => {
-        console.error('Error during login:', error);
-        alert('Failed to log in. Please check your credentials and try again.');
-      });  
-    axios.post(url, data)
-      .then((response) => {
-        if (response.data.success) {
-          navigate('/showBooking');
-        } else {
-          console.error('Login failed. Server response:', response.data);
-          alert('Failed to log in. Please check your credentials and try again.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during login:', error);
-
-        if (error.response) {
-          console.error('Server responded with:', error.response.data);
-        }
-
-        alert('Failed to log in. Please check your credentials and try again.');
-      });
-  };
-
-  // Function to handle button click and trigger navigation
-  const handleButtonClick = () => {
-    navigate('/showBooking');
+      }
+      else {
+        alert(`Wrong credentials!`);
+      }
+    } catch (error) {
+      error.message = "Login failed!";
+      alert(error.message);
+    }
+    
   };
 
   return (
@@ -102,7 +83,7 @@ const Admin = () => {
 
                 
 
-                onClick={handleButtonClick}
+                onClick={handleLogin}
                 type="submit"
 
                 style={{
