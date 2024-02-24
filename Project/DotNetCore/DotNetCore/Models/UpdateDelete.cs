@@ -7,9 +7,9 @@ namespace DotNetCore.Models
     {
        
         public int Id { get; set; }
-        public int Regular {  get; set; }
-        public int GroupTicket {  get; set; }
-        public int Student {  get; set; }
+        public int Regular_ticket {  get; set; }
+        public int Student_ticket {  get; set; }
+        public int Group_Ticket { get; set; }
         public int Breakfast {  get; set; }
         public int Lunch {  get; set; }
         public int Snacks {  get; set; }

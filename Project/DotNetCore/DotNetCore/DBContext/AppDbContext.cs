@@ -23,6 +23,7 @@ namespace DotNetCore.DBContext
 
         public DbSet<AddRides> Rupdate { get; set; }
 
+        public DbSet<Ticket> tickets { get; set; }
         public DbSet<AddRides> Rdelete { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
