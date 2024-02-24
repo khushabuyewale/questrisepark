@@ -8,7 +8,7 @@ namespace DotNetCore.Models
         public int Id { get; set; }
         public string name {  get; set; }
         public int age {  get; set; }
-        public DateOnly date { get; set; }
+        public string date { get; set; }
         public string type {  get; set; }
     }
 }
