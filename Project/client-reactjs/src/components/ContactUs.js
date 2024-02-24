@@ -16,8 +16,8 @@ const[msg, setMsg]= useState('');
     e.preventDefault();
 
     emailjs
-      .sendForm('service_tealb8n', 'template_t4ff7z7', form.current, {
-        publicKey: '2lH7zfWnCrBFubwl9',
+      .sendForm('service_sgs299m', 'template_ck2dhm2', form.current, {
+        publicKey: '4sBiKk-3zTFaxuA-5',
       })
       .then(
         () => {
