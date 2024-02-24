@@ -9,7 +9,10 @@ namespace DotNetCore.DBContext
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
+<<<<<<< Updated upstream
         
+=======
+>>>>>>> Stashed changes
         public DbSet<Admin> admins { get; set; }
 
         public DbSet<Meal> meals { get; set; }
