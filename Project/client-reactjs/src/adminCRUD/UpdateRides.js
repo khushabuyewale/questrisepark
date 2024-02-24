@@ -145,7 +145,7 @@ const UpdateRides = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <h2>Update Rides</h2>
+                    
                     {/* Update Ride Form */}
                     <form style={styles.updateRideForm}>
                         <label style={styles.label}>Select Ride Name:</label>

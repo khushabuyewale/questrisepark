@@ -114,7 +114,7 @@ const ShowMeals = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <p>Show Meals</p>
+                 
                 </div>
             </div>
         </div>

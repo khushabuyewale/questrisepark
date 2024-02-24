@@ -150,7 +150,7 @@ const UpdateTickets = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <h2>Update Tickets</h2>
+                    
                     {/* Update Ride Form */}
                     <form style={styles.updateUpdateTicketsForm}>
                         <label style={styles.label}>UpdateTickets Type:</label>
