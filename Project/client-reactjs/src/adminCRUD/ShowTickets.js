@@ -163,9 +163,9 @@ const ShowTickets = () => {
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
                     <div style={{ marginBottom: '20px' }}>
-                        <label><b>Select Date Range</b>   from:</label>
+                        <label><b>Select Date Range</b>   from:  </label>
                         <input type="date" value={fromDate} onChange={handleFromDateChange} />
-                        <label style={{ marginLeft: '20px' }} >  to:</label>
+                        <label style={{ marginLeft: '20px' }} >  to: </label>
                         <input type="date" value={toDate} onChange={handleToDateChange} />
                     </div>
                     <div style={{ marginBottom: '20px' }}>
