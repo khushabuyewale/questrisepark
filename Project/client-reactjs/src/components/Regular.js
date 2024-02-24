@@ -15,6 +15,7 @@ const Regular = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [totalAmount, setTotalAmount] = useState(0);
   const [type, setType] = useState(localStorage.getItem("type"));
+  const [date, setDate] = useState(localStorage.getItem("date"));
 
   const addRecord = () => {
     const newTotalAmount = recordCount * 900;
@@ -63,7 +64,7 @@ const Regular = () => {
 
     // Add record to the state
     setRecords([...records, { id: recordCount, name, age }]);
-    setRecords1([...records1, { name, age, type }]);
+    setRecords1([...records1, { name, age, date, type }]);
 
     // Increment record count
     setRecordCount(recordCount + 1);
@@ -106,6 +107,7 @@ const Regular = () => {
       alert("Please add at least one record before submitting!");
       return;
     }
+    localStorage.setItem("name", records[0].name);
     localStorage.setItem("email", email);
     localStorage.setItem("phone", phone);
     localStorage.setItem("records1", JSON.stringify(records1));
