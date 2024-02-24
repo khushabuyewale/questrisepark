@@ -18,7 +18,45 @@ const UpdateMeals = () => {
         // Implement logout logic here
         console.log('Logout clicked');
     };
+    const [updateFormData, setUpdateFormData] = useState({
+        Meal: '',
+        newPrice: '',
+    });
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+    
+        // Set the old price based on the selected meal type
+        let oldPrice;
+        switch (value) {
+            case 'breakfast':
+                oldPrice = '₹129/-';
+                break;
+            case 'lunch':
+                oldPrice = '₹329/-';
+                break;
+            case 'snacks':
+                oldPrice = '₹159/-';
+                break;
+            case 'dinner':
+                oldPrice = '₹345/-';
+                break;
+            default:
+                oldPrice = '';
+        }
+    
+        setUpdateFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+            oldPrice: oldPrice, // Add the old price to the form data
+        }));
+    };
+    
+
+    const handleUpdateMeal = () => {
+        // Add logic to handle updating the ride record
+        console.log('Updating Meal:', updateFormData);
+    };
     return (
         <div style={styles.container}>
             {/* Vertical Navbar */}
@@ -64,7 +102,7 @@ const UpdateMeals = () => {
                     setIsSubNavVisible={setIsSubNavVisible}
                     to="/updateBooking"
                 >
-                   UPDATE
+                    UPDATE
                     <SubNav isVisible={selectedOption === 'update'}>
                         <SubNavItem to="/updateBooking">Booking</SubNavItem>
                         <SubNavItem to="/updateRides">Rides</SubNavItem>
@@ -114,7 +152,40 @@ const UpdateMeals = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <p>Delete Rides</p>
+                    <h2>Delete Rides</h2>
+                    {/* Update Ride Form */}
+                    <form style={styles.updateMealForm}>
+                        <label style={styles.label}>Meal Type:</label>
+                        <select
+                            name="meal"
+                            style={styles.input}
+                            value={updateFormData.id}
+                            onChange={handleInputChange}
+                        >
+                            {/* Add options for available IDs */}
+                            <option>Select</option>
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="snacks">Snacks</option>
+                            <option value="dinner">Dinner</option>
+                            {/* Add more options as needed */}
+                        </select>
+
+                        <label style={styles.label}>Old Price:</label>
+                        <p style={styles.oldValue}>{updateFormData.oldPrice}</p>
+
+                        <label style={styles.label}>New Price:</label>
+                        <input
+                            type="text"
+                            name="newMealName"
+                            style={styles.input}
+                            value={updateFormData.newMealName}
+                            onChange={handleInputChange}
+                        />
+                        <button type="button" style={styles.updateButton} onClick={handleUpdateMeal}>
+                            Update Ride
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -232,6 +303,35 @@ const styles = {
     dataDisplay: {
         flex: 1,
         padding: '20px',
+    },
+    updateMealForm: {
+        marginTop: '10px',
+        marginLeft: '400px',
+        padding: '20px',
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+        border: '1px solid #ccc',
+        width: '400px', // Adjust the width as needed
+    },
+    oldValue: {
+        marginBottom: '10px',
+        color: '#777',
+    },
+    updateButton: {
+        backgroundColor: '#00416B',
+        color: 'white',
+        padding: '10px',
+        border: 'none',
+        cursor: 'pointer',
+    },
+    label: {
+        display: 'block',
+        margin: '10px 0',
+    },
+    input: {
+        width: '100%',
+        padding: '8px',
+        margin: '5px 0',
+        boxSizing: 'border-box',
     },
 };
 

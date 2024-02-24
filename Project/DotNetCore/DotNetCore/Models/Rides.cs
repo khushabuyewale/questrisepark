@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace DotNetCore.Models
 {
     [Table("rides")]
-    public class AddRides
+    public class Rides
     {
         [Key]
         public int Id {  get; set; }

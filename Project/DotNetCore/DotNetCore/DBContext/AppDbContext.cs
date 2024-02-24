@@ -19,9 +19,9 @@ namespace DotNetCore.DBContext
 
         public DbSet<Price> update { get; set; }
         public DbSet<Price> delete { get; set; }
-        public DbSet<AddRides> adds { get; set; }
+        public DbSet<Rides> adds { get; set; }
 
-        public DbSet<AddRides> Rupdate { get; set; }
+        public DbSet<Rides> Rupdate { get; set; }
 
         public DbSet<Contact> contacts { get; set; }
         public DbSet<Payment> payments { get; set; }
@@ -29,7 +29,9 @@ namespace DotNetCore.DBContext
         public DbSet<Price> prices { get; set; }
         public DbSet<Visits> visits { get; set; }
         public DbSet<Ticket> tickets { get; set; }
-        public DbSet<AddRides> Rdelete { get; set; }
+        public DbSet<Rides> Rdelete { get; set; }
+
+        public DbSet<Rides> rides { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Configure your entities here using modelBuilder
