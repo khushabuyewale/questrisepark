@@ -134,7 +134,7 @@ const AddRides = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <h2>Add Rides</h2>
+                  
                     {/* Add Ride Form */}
                     <form style={styles.addRideForm}>
 

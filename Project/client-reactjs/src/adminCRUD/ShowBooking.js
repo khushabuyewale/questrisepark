@@ -1,13 +1,15 @@
 // Details.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
 const adminName = 'Admin';
+
 const ShowBooking = () => {
     const [selectedOption, setSelectedOption] = useState('show');
     const [isSubNavVisible, setIsSubNavVisible] = useState(false);
+    const [data, setData] = useState([]);
 
     const handleOptionClick = (option) => {
         setSelectedOption((prevOption) => (prevOption === option ? 'show' : option));
@@ -19,31 +21,32 @@ const ShowBooking = () => {
         // Implement logout logic here
         console.log('Logout clicked');
     };
-    // State for data with visited status
-    const [data, setData] = useState([
-        {
-            id: 1,
-            date: '24/02/2024',
-            typeOfPark: 'Theme Park',
-            phoneNo: '7028263336',
-            email: 'unnati@email.com',
-            name: 'Unnati',
-            age: 21,
-            regno: '2387',
-            cllgName: 'MET Nashik',
-            grpId: '1 ',
-            mealAdded: 'Yes',
+    // useEffect to fetch data from backend
+    useEffect(() => {
+        // Fetch data from the backend API
+        const fetchData = async () => {
+            try {
+                // Assuming you have an API endpoint to fetch data
+                const response = await fetch('your_backend_api_url');
+                const result = await response.json();
 
-            visited: true, // Set to true for a green tick
-        },
-        // Add more data as needed
-    ]);
+                // Auto-generate srno and update state with fetched data
+                const newData = result.map((item, index) => ({ ...item, srno: (index + 1).toString() }));
+                setData(newData);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        // Call the fetchData function
+        fetchData();
+    }, []); // Empty dependency array ensures useEffect runs only once on component mount
 
     // Function to toggle visited status
-    const toggleVisitedStatus = (id) => {
+    const toggleVisitedStatus = (srno) => {
         setData((prevData) =>
             prevData.map((row) =>
-                row.id === id ? { ...row, visited: !row.visited } : row
+                row.srno === srno ? { ...row, visited: !row.visited } : row
             )
         );
     };
@@ -142,10 +145,11 @@ const ShowBooking = () => {
 
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
-                    <h2>Show Booking</h2>
+                  
                     <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
                         <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
                             <tr>
+                                <th>Sr.no.</th>
                                 <th>ID</th>
                                 <th>Date</th>
                                 <th>Type of Park</th>
@@ -158,12 +162,12 @@ const ShowBooking = () => {
                                 <th>Group Id</th>
                                 <th>Meal Added</th>
                                 <th>Visited</th>
-
                             </tr>
                         </thead>
                         <tbody>
                             {data.map((row) => (
-                                <tr key={row.id}>
+                                <tr key={row.srno}>
+                                    <td>{row.srno}</td>
                                     <td>{row.id}</td>
                                     <td>{row.date}</td>
                                     <td>{row.typeOfPark}</td>
@@ -175,7 +179,6 @@ const ShowBooking = () => {
                                     <td>{row.cllgName}</td>
                                     <td>{row.grpId}</td>
                                     <td>{row.mealAdded}</td>
-
                                     <td>
                                         <button
                                             style={{
