@@ -3,13 +3,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DotNetCore.Models
 {
-    [Table("Ride")]
+    [Table("rides")]
     public class AddRides
     {
         [Key]
-        public int RideId {  get; set; }
-        public string RideName { get; set;}
+        public int Id {  get; set; }
+        public string Ride_Name { get; set;}
         public string Description { get; set;}
+        public string type {  get; set;}
 
     }
 }
