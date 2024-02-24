@@ -24,14 +24,16 @@ const ShowBooking = () => {
         {
             id: 1,
             date: '24/02/2024',
+            typeOfPark: 'Theme Park',
             phoneNo: '7028263336',
             email: 'unnati@email.com',
             name: 'Unnati',
             age: 21,
-            typeOfTicket: 'Regular',
-            typeOfPark: 'Theme Park',
+            regno: '2387',
+            cllgName: 'MET Nashik',
+            grpId: '1 ',
             mealAdded: 'Yes',
-            payment: 'Paid',
+
             visited: true, // Set to true for a green tick
         },
         // Add more data as needed
@@ -142,18 +144,19 @@ const ShowBooking = () => {
                 <div style={styles.dataDisplay}>
                     <h2>Show Booking</h2>
                     <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-                        <thead style={{ backgroundColor: 'navy', color: 'white' }}>
+                        <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
                             <tr>
                                 <th>ID</th>
                                 <th>Date</th>
+                                <th>Type of Park</th>
                                 <th>Phone No</th>
                                 <th>Email</th>
                                 <th>Name</th>
                                 <th>Age</th>
-                                <th>Type of Ticket</th>
-                                <th>Type of Park</th>
+                                <th>Registration No.</th>
+                                <th>College Name</th>
+                                <th>Group Id</th>
                                 <th>Meal Added</th>
-                                <th>Payment</th>
                                 <th>Visited</th>
 
                             </tr>
@@ -163,14 +166,16 @@ const ShowBooking = () => {
                                 <tr key={row.id}>
                                     <td>{row.id}</td>
                                     <td>{row.date}</td>
+                                    <td>{row.typeOfPark}</td>
                                     <td>{row.phoneNo}</td>
                                     <td>{row.email}</td>
                                     <td>{row.name}</td>
                                     <td>{row.age}</td>
-                                    <td>{row.typeOfTicket}</td>
-                                    <td>{row.typeOfPark}</td>
+                                    <td>{row.regno}</td>
+                                    <td>{row.cllgName}</td>
+                                    <td>{row.grpId}</td>
                                     <td>{row.mealAdded}</td>
-                                    <td>{row.payment}</td>
+
                                     <td>
                                         <button
                                             style={{
@@ -194,7 +199,6 @@ const ShowBooking = () => {
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
     );

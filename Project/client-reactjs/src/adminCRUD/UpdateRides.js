@@ -21,7 +21,6 @@ const UpdateRides = () => {
     const [updateFormData, setUpdateFormData] = useState({
         id: '',
         newRideName: '',
-        newParkType: 'theme',
         newDescription: '',
     });
 
@@ -135,21 +134,19 @@ const UpdateRides = () => {
                     <h2>Update Rides</h2>
                     {/* Update Ride Form */}
                     <form style={styles.updateRideForm}>
-                        <label style={styles.label}>Select ID:</label>
+                        <label style={styles.label}>Select Ride Name:</label>
                         <select
-                            name="id"
+                            name="name"
                             style={styles.input}
                             value={updateFormData.id}
                             onChange={handleInputChange}
                         >
                             {/* Add options for available IDs */}
-                            <option value="1">1</option>
-                            <option value="2">2</option>
+                            <option value="roller">Roller</option>
+                            <option value="coaster">Coaster</option>
                             {/* Add more options as needed */}
                         </select>
 
-                        <label style={styles.label}>Old Ride Name:</label>
-                        <p style={styles.oldValue}>Roller</p>
                         <label style={styles.label}>Old Description:</label>
                         <p style={styles.oldValue}>it is a ride</p>
 
@@ -305,7 +302,7 @@ const styles = {
         color: '#777',
     },
     updateButton: {
-        backgroundColor: 'green',
+        backgroundColor: '#00416B',
         color: 'white',
         padding: '10px',
         border: 'none',

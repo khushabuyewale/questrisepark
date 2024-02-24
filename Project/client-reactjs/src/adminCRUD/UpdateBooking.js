@@ -24,28 +24,16 @@ const UpdateBooking = () => {
         {
             id: 1,
             date: '24/02/2024',
-            phoneNo: '7028263336',
-            email: 'unnati@email.com',
-            name: 'Unnati',
-            age: 21,
-            typeOfTicket: 'Regular',
             typeOfPark: 'Theme Park',
-            mealAdded: 'Yes',
-            payment: 'Paid',
+            name: 'Unnati',
             visited: false,
         },
         // Add more data as needed
         {
             id: 2,
             date: '25/02/2024',
-            phoneNo: '1234567890',
-            email: 'john@example.com',
-            name: 'John',
-            age: 25,
-            typeOfTicket: 'VIP',
-            typeOfPark: 'Water Park',
-            mealAdded: 'No',
-            payment: 'Pending',
+            typeOfPark: 'Water Park', 
+            name: 'Khushi',
             visited: true,
         },
     ]);
@@ -155,20 +143,13 @@ const UpdateBooking = () => {
                     {/* Your data display components go here */}
                     <h2>Update Booking</h2>
                     <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-                        <thead style={{ backgroundColor: 'navy', color: 'white' }}>
+                        <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
                             <tr>
                                 <th>ID</th>
-                                <th>Date</th>
-                                <th>Phone No</th>
-                                <th>Email</th>
-                                <th>Name</th>
-                                <th>Age</th>
-                                <th>Type of Ticket</th>
+                                <th>Date</th>  
                                 <th>Type of Park</th>
-                                <th>Meal Added</th>
-                                <th>Payment</th>
+                                <th>Name</th>
                                 <th>Visited</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -176,14 +157,8 @@ const UpdateBooking = () => {
                                 <tr key={row.id}>
                                     <td>{row.id}</td>
                                     <td>{row.date}</td>
-                                    <td>{row.phoneNo}</td>
-                                    <td>{row.email}</td>
-                                    <td>{row.name}</td>
-                                    <td>{row.age}</td>
-                                    <td>{row.typeOfTicket}</td>
                                     <td>{row.typeOfPark}</td>
-                                    <td>{row.mealAdded}</td>
-                                    <td>{row.payment}</td>
+                                    <td>{row.name}</td>
                                     <td>
                                         <button
                                             style={{

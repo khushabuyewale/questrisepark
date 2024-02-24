@@ -24,29 +24,17 @@ const DeleteBooking = () => {
         {
             id: 1,
             date: '24/02/2024',
-            phoneNo: '7028263336',
-            email: 'unnati@email.com',
-            name: 'Unnati',
-            age: 21,
-            typeOfTicket: 'Regular',
             typeOfPark: 'Theme Park',
-            mealAdded: 'Yes',
-            payment: 'Paid',
-            visited: false,
+            name: 'Unnati',
+          
         },
         // Add more data as needed
         {
             id: 2,
             date: '25/02/2024',
-            phoneNo: '1234567890',
-            email: 'john@example.com',
-            name: 'John',
-            age: 25,
-            typeOfTicket: 'VIP',
-            typeOfPark: 'Water Park',
-            mealAdded: 'No',
-            payment: 'Pending',
-            visited: true,
+            typeOfPark: 'Water Park', 
+            name: 'Khushi',
+           
         },
     ]);
 
@@ -157,51 +145,39 @@ const DeleteBooking = () => {
                     {/* Your data display components go here */}
                     <h2>Delete Booking</h2>
                     <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-                        <thead style={{ backgroundColor: 'navy', color: 'white' }}>
-                        <tr>
-                            <th>ID</th>
-                            <th>Date</th>
-                            <th>Phone No</th>
-                            <th>Email</th>
-                            <th>Name</th>
-                            <th>Age</th>
-                            <th>Type of Ticket</th>
-                            <th>Type of Park</th>
-                            <th>Meal Added</th>
-                            <th>Payment</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                    <tbody>
-                        {data.map((row) => (
-                            <tr key={row.id} style={{ backgroundColor: row.deleted ? 'red' : 'white', color: row.deleted ? 'white' : 'black' }}>
-                                <td>{row.id}</td>
-                                <td>{row.date}</td>
-                                <td>{row.phoneNo}</td>
-                                <td>{row.email}</td>
-                                <td>{row.name}</td>
-                                <td>{row.age}</td>
-                                <td>{row.typeOfTicket}</td>
-                                <td>{row.typeOfPark}</td>
-                                <td>{row.mealAdded}</td>
-                                <td>{row.payment}</td>
-                                <td>
-                                    {!row.deleted && (
-                                         <button
-                                         style={{
-                                             backgroundColor: 'transparent',
-                                             border: 'none',
-                                             cursor: 'pointer',
-                                         }}
-                                         onClick={() => handleDelete(row.id)}
-                                     >
-                                         <i className="fas fa-trash-alt" style={{ color: 'red', fontSize: '18px' }}></i>
-                                     </button>
-                                    )}
-                                </td>
+                        <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Type of Park</th>
+                                <th>Name</th>
+                                <th>Delete</th>
                             </tr>
-                        ))}
-                    </tbody>
+                        </thead>
+                        <tbody>
+                            {data.map((row) => (
+                                <tr key={row.id} style={{ backgroundColor: row.deleted ? 'red' : 'white', color: row.deleted ? 'white' : 'black' }}>
+                                    <td>{row.id}</td>
+                                    <td>{row.date}</td>
+                                    <td>{row.typeOfPark}</td>
+                                    <td>{row.name}</td>
+                                    <td>
+                                        {!row.deleted && (
+                                            <button
+                                                style={{
+                                                    backgroundColor: 'transparent',
+                                                    border: 'none',
+                                                    cursor: 'pointer',
+                                                }}
+                                                onClick={() => handleDelete(row.id)}
+                                            >
+                                                <i className="fas fa-trash-alt" style={{ color: 'red', fontSize: '18px' }}></i>
+                                            </button>
+                                        )}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </table>
                 </div>
             </div>

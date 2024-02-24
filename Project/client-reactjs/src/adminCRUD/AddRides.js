@@ -314,7 +314,7 @@ const styles = {
     },
    
     addButton: {
-        backgroundColor: 'navy',
+        backgroundColor: '#00416B',
         color: 'white',
         padding: '10px',
         border: 'none',

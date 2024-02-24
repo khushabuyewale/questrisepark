@@ -135,7 +135,7 @@ const ShowRides = () => {
                     {/* Your data display components go here */}
                     <h2>Show Rides</h2>
                     <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-                        <thead style={{ backgroundColor: 'navy', color: 'white' }}>
+                        <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
                             <tr>
                             <th>ID</th>
                             <th>Name of Ride</th>
