@@ -10,7 +10,7 @@ namespace DotNetCore.Models
         public string name {  get; set; }
         public int breakfast {  get; set; }
         public int lunch {  get; set; }
-        public int snacks {  get; set; }
+        public int snack {  get; set; }
         public int dinner {  get; set; }
 
     }
