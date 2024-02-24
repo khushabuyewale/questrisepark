@@ -30,7 +30,7 @@ const Pay = () => {
 
 const [to_email, setEmail] = useState(localStorage.getItem("email"));
 const [park_type, setParkType] = useState(localStorage.getItem("type"));
-const [to_date, setDate] = useState(localStorage.getItem("data"));
+const [to_date, setDate] = useState(localStorage.getItem("date"));
 const [people_count, setPeopleCount] = useState(localStorage.getItem("ticketCount"));
 const [no_breakfast, setNoBreakfast] = useState(localStorage.getItem("breakfast"));
 const [no_lunch, setNoLunch] = useState(localStorage.getItem("lunch"));
