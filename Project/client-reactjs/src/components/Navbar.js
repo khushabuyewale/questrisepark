@@ -29,10 +29,10 @@ const Navbar = () => {
               <Link className="nav-link" to="/contactUs" style={{fontSize:'20px', color: 'black', margin:'10px'}}>Contact Us</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/booking" style={{fontSize:'20px', color:'black', margin:'10px'}}><u>Book Now</u></Link>
+              <Link className="nav-link" to="/admin" style={{fontSize:'20px', color:'black', margin:'10px'}}>Admin</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/admin" style={{fontSize:'20px', color:'black', margin:'10px'}}>Admin</Link>
+              <Link className="nav-link" to="/booking" style={{fontSize:'20px', color:'white', margin:'10px', backgroundColor:"#0e2f44"}}>Book Now</Link>
             </li>
             
           </ul></b>
