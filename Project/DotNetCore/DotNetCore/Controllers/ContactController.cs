@@ -16,11 +16,11 @@ namespace DotNetCore.Controllers
         }
 
         [HttpPost("contacts")]
-        public async Task<IActionResult> ContactInfo([FromBody] List<Contact> contact)
+        public async Task<IActionResult> ContactInfo(Contact contact)
         {
             if (ModelState.IsValid)
             {
-                _context.contacts.AddRange(contact);
+                _context.contacts.Add(contact);
                 await _context.SaveChangesAsync();
                 return Ok("Contact added");
             }
