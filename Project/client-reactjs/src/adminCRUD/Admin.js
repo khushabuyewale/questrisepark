@@ -35,7 +35,7 @@ const Admin = () => {
   return (
     <div style={{ paddingBottom: '20px', paddingTop: '20px', backgroundImage: `url(${AdminBg})`, backgroundSize: 'cover' }}>
       {/* Login Form */}
-      <form onSubmit={handleLogin}>
+      <form >
         <div
           style={{
             color: 'white',
@@ -89,7 +89,11 @@ const Admin = () => {
                     color: 'white',
                     cursor: 'pointer'
                   }}
-                  onClick={() => setShowPassword(!showPassword)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowPassword(!showPassword);
+                  }}
+                
                 >
                   {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
                 </button>

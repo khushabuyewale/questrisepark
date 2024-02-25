@@ -1,62 +1,72 @@
 // Details.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
 const adminName = 'Admin';
-const UpdateMeals = () => {
-    const [selectedOption, setSelectedOption] = useState('update');
+
+const ShowPayement = () => {
+    const [selectedOption, setSelectedOption] = useState('show');
     const [isSubNavVisible, setIsSubNavVisible] = useState(false);
+    const [data, setData] = useState([]);
+    const [fromDate, setFromDate] = useState('');
+    const [toDate, setToDate] = useState('');
+    const [ticketData, setTicketData] = useState([]);
+    const [mealData, setMealData] = useState([]);
 
     const handleOptionClick = (option) => {
-        setSelectedOption((prevOption) => (prevOption === option ? 'update' : option));
-        setIsSubNavVisible(option !== 'update'); // Show sub-navigation only when a main navigation item is clicked
+        setSelectedOption((prevOption) => (prevOption === option ? 'show' : option));
+        setIsSubNavVisible(option !== 'show'); // Show sub-navigation only when a main navigation item is clicked
     };
 
     const handleLogout = () => {
         // Implement logout logic here
         console.log('Logout clicked');
     };
-    const [updateFormData, setUpdateFormData] = useState({
-        Meal: '',
-        newPrice: '',
-    });
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-    
-        // Set the old price based on the selected meal type
-        let oldPrice;
-        switch (value) {
-            case 'breakfast':
-                oldPrice = '₹129/-';
-                break;
-            case 'lunch':
-                oldPrice = '₹329/-';
-                break;
-            case 'snacks':
-                oldPrice = '₹159/-';
-                break;
-            case 'dinner':
-                oldPrice = '₹345/-';
-                break;
-            default:
-                oldPrice = '';
-        }
-    
-        setUpdateFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-            oldPrice: oldPrice, // Add the old price to the form data
-        }));
-    };
-    
+    useEffect(() => {
+        const fetchTicketData = async () => {
+            // Fetch ticket data from the backend API
+            try {
+                const ticketApiURL = `your_ticket_backend_api_url?fromDate=${fromDate}&toDate=${toDate}`;
+                const ticketResponse = await fetch(ticketApiURL);
+                const ticketResult = await ticketResponse.json();
+                const newTicketData = ticketResult.map((item, index) => ({ ...item, srno: (index + 1).toString() }));
+                setTicketData(newTicketData);
+            } catch (error) {
+                console.error('Error fetching ticket data:', error);
+            }
+        };
 
-    const handleUpdateMeal = () => {
-        // Add logic to handle updating the ride record
-        console.log('Updating Meal:', updateFormData);
+        const fetchMealData = async () => {
+            // Fetch meal data from the backend API
+            try {
+                const mealApiURL = `your_meal_backend_api_url?fromDate=${fromDate}&toDate=${toDate}`;
+                const mealResponse = await fetch(mealApiURL);
+                const mealResult = await mealResponse.json();
+                const newMealData = mealResult.map((item, index) => ({ ...item, srno: (index + 1).toString() }));
+                setMealData(newMealData);
+            } catch (error) {
+                console.error('Error fetching meal data:', error);
+            }
+        };
+
+        // Call both fetch functions
+        fetchTicketData();
+        fetchMealData();
+    }, [fromDate, toDate]);
+
+    // Function to handle from date selection
+    const handleFromDateChange = (event) => {
+        setFromDate(event.target.value);
     };
+
+    // Function to handle to date selection
+    const handleToDateChange = (event) => {
+        setToDate(event.target.value);
+    };
+
     return (
         <div style={styles.container}>
             {/* Vertical Navbar */}
@@ -109,11 +119,8 @@ const UpdateMeals = () => {
                         <SubNavItem to="/updateRides">Rides</SubNavItem>
                         <SubNavItem to="/updateTickets">Tickets</SubNavItem>
                         <SubNavItem to="/updateMeals">Meals</SubNavItem>
-
                     </SubNav>
                 </NavItem>
-
-
 
                 <NavItem
                     selectedOption={selectedOption}
@@ -129,13 +136,15 @@ const UpdateMeals = () => {
                 </NavItem>
 
                 <div className="text-center mt-3">
-                    <a href="/admin"><button
-                        className="btn btn-danger"
-                        style={{ width: '80%', padding: '10px' }}
-                        onClick={handleLogout}
-                    >
-                        Logout
-                    </button> </a>
+                    <Link to="/admin">
+                        <button
+                            className="btn btn-danger"
+                            style={{ width: '80%', padding: '10px' }}
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </button>
+                    </Link>
                 </div>
             </div>
 
@@ -153,40 +162,68 @@ const UpdateMeals = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                   
-                    {/* Update Ride Form */}
-                    <form style={styles.updateMealForm}>
-                        <label style={styles.label}>Meal Type:</label>
-                        <select
-                            name="meal"
-                            style={styles.input}
-                            value={updateFormData.id}
-                            onChange={handleInputChange}
-                        >
-                            {/* Add options for available IDs */}
-                            <option>Select</option>
-                            <option value="breakfast">Breakfast</option>
-                            <option value="lunch">Lunch</option>
-                            <option value="snacks">Snacks</option>
-                            <option value="dinner">Dinner</option>
-                            {/* Add more options as needed */}
-                        </select>
+                    <div style={{ marginBottom: '20px' }}>
+                        <label><b>Select Date Range</b>   from:  </label>
+                        <input type="date" value={fromDate} onChange={handleFromDateChange} />
+                        <label style={{ marginLeft: '20px' }} >  to: </label>
+                        <input type="date" value={toDate} onChange={handleToDateChange} />
+                    </div>
 
-                        <label style={styles.label}>Old Price:</label>
-                        <p style={styles.oldValue}>{updateFormData.oldPrice}</p>
+                    <div style={{ display: 'flex', marginBottom: '20px' }}>
+                        {/* Ticket Table */}
+                        <div style={{ flex: '1', marginRight: '2%' }}>
+                            <h4>Ticket Table</h4>
+                            <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                                <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
+                                    <tr>
+                                        <th>Sr.no.</th>
+                                        <th>Name</th>
+                                        <th>Ticket Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {ticketData.map((ticket) => (
+                                        <tr key={ticket.srno}>
+                                            <td>{ticket.srno}</td>
+                                            <td>{ticket.name}</td>
+                                            <td>{ticket.price}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                            {/* Display total amount of tickets */}
+                            <div style={{ backgroundColor: '#333', color: 'white', padding: '10px', margin: '10px 0' }}>
+                                <b>Total Tickets Price:</b> {ticketData.reduce((total, ticket) => total + parseFloat(ticket.price), 0)}
+                            </div>
+                        </div>
 
-                        <label style={styles.label}>New Price:</label>
-                        <input
-                            type="text"
-                            name="newMealName"
-                            style={styles.input}
-                            value={updateFormData.newMealName}
-                            onChange={handleInputChange}
-                        />
-                        <button type="button" style={styles.updateButton} onClick={handleUpdateMeal}>
-                            Update Ride
-                        </button>
-                    </form>
+                        {/* Meal Table */}
+                        <div style={{ flex: '1' }}>
+                            <h4>Meal Table</h4>
+                            <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                                <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
+                                    <tr>
+                                        <th>Sr.no.</th>
+                                        <th>Name</th>
+                                        <th>Meal Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {mealData.map((meal) => (
+                                        <tr key={meal.srno}>
+                                            <td>{meal.srno}</td>
+                                            <td>{meal.name}</td>
+                                            <td>{meal.price}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                            {/* Display total amount of meals */}
+                            <div style={{ backgroundColor: '#333', color: 'white', padding: '10px', margin: '10px 0' }}>
+                                <b>Total Meals Price:</b> {mealData.reduce((total, meal) => total + parseFloat(meal.price), 0)}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -231,7 +268,7 @@ const SubNavItem = ({ to, children }) => (
 
 const styles = {
     container: {
-        display: 'flex',
+        display: 'flex'
     },
     verticalNavbar: {
         display: 'flex',
@@ -305,35 +342,6 @@ const styles = {
         flex: 1,
         padding: '20px',
     },
-    updateMealForm: {
-        marginTop: '10px',
-        marginLeft: '400px',
-        padding: '20px',
-        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-        border: '1px solid #ccc',
-        width: '400px', // Adjust the width as needed
-    },
-    oldValue: {
-        marginBottom: '10px',
-        color: '#777',
-    },
-    updateButton: {
-        backgroundColor: '#00416B',
-        color: 'white',
-        padding: '10px',
-        border: 'none',
-        cursor: 'pointer',
-    },
-    label: {
-        display: 'block',
-        margin: '10px 0',
-    },
-    input: {
-        width: '100%',
-        padding: '8px',
-        margin: '5px 0',
-        boxSizing: 'border-box',
-    },
 };
 
-export default UpdateMeals;
+export default ShowPayement;

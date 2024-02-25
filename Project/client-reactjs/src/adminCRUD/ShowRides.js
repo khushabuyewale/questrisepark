@@ -65,6 +65,7 @@ const ShowRides = () => {
                     SHOW
                     <SubNav isVisible={selectedOption === 'show'}>
                         <SubNavItem to="/showBooking">Booking</SubNavItem>
+                        <SubNavItem to="/showPayement">Payment</SubNavItem>
                         <SubNavItem to="/showRides">Rides</SubNavItem>
                         <SubNavItem to="/showTickets">Tickets</SubNavItem>
                         <SubNavItem to="/showMeals">Meals</SubNavItem>
