@@ -29,5 +29,20 @@ namespace DotNetCore.Controllers
             return BadRequest("Payment Not Done");
 
         }
+
+        [HttpGet("showpayment")]
+        public IActionResult ShowPayment()
+        {
+            var allPayment = _context.payments.ToList();
+            if (allPayment != null)
+            {
+                return Ok(allPayment);
+
+            }
+            else
+            {
+                return BadRequest("No payment found");
+            }
+        }
     }
 }
