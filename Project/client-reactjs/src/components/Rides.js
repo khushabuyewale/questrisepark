@@ -42,7 +42,7 @@ const RidesTable = ({ rides }) => {
   const getCellStyle = (rideType) => {
     // Define additional styles based on ride type
     if (rideType === "water park") {
-      return { backgroundColor: "#b3e0ff" }; // Example background color for water park rides
+      return { backgroundColor: "9ea9bd" }; // Example background color for water park rides
     }
 
     // Add more conditions as needed

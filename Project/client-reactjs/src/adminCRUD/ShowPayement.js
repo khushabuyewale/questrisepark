@@ -58,14 +58,32 @@ const ShowPayement = () => {
     }, [fromDate, toDate]);
 
     // Function to handle from date selection
-    const handleFromDateChange = (event) => {
-        setFromDate(event.target.value);
-    };
+ // Function to handle from date selection
+const handleFromDateChange = (event) => {
+    const selectedFromDate = event.target.value;
+    
+    // Ensure selectedFromDate is greater than or equal to toDate
+    if (selectedFromDate <= toDate) {
+        // You can optionally show a message or perform another action here
+        console.error('From date should be greater than the to date.');
+    } else {
+        setFromDate(selectedFromDate);
+    }
+};
 
-    // Function to handle to date selection
-    const handleToDateChange = (event) => {
-        setToDate(event.target.value);
-    };
+// Function to handle to date selection
+const handleToDateChange = (event) => {
+    const selectedToDate = event.target.value;
+    
+    // Ensure toDate is less than or equal to fromDate
+    if (selectedToDate <= fromDate) {
+        // You can optionally show a message or perform another action here
+        console.error('To date should be less than the from date.');
+    } else {
+        setToDate(selectedToDate);
+    }
+};
+
 
     return (
         <div style={styles.container}>

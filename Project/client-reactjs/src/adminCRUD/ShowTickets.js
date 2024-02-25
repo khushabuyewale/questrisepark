@@ -30,7 +30,7 @@ const ShowTickets = () => {
         const fetchData = async () => {
             try {
                 // Construct your backend API URL with selectedDate and selectedParkType
-                const apiURL = `your_backend_api_url?date=${selectedDate}&parkType=${selectedParkType}`;
+                const apiURL = `your_backend_api_url?fromDate=${fromDate}&toDate=${toDate}&parkType=${selectedParkType}`;
                 const response = await fetch(apiURL);
                 const result = await response.json();
 
@@ -52,14 +52,32 @@ const ShowTickets = () => {
     }, [fromDate, toDate, selectedParkType]);
 
     // Function to handle from date selection
+   
     const handleFromDateChange = (event) => {
-        setFromDate(event.target.value);
+        const selectedFromDate = event.target.value;
+
+        // Ensure selectedFromDate is greater than or equal to toDate
+        if (selectedFromDate <= toDate) {
+            // You can optionally show a message or perform another action here
+            console.error('From date should be greater than the to date.');
+        } else {
+            setFromDate(selectedFromDate);
+        }
     };
 
     // Function to handle to date selection
     const handleToDateChange = (event) => {
-        setToDate(event.target.value);
+        const selectedToDate = event.target.value;
+
+        // Ensure toDate is less than or equal to fromDate
+        if (selectedToDate <= fromDate) {
+            // You can optionally show a message or perform another action here
+            console.error('To date should be less than the from date.');
+        } else {
+            setToDate(selectedToDate);
+        }
     };
+
 
     // Function to handle park type selection
     const handleParkTypeChange = (event) => {
@@ -206,7 +224,7 @@ const ShowTickets = () => {
                         color: 'white',
                         padding: '10px',
                         margin: '10px 0',
-                        
+
                     }}>
                         <b>Total Tickets:</b> {data.length}
                     </h4>
