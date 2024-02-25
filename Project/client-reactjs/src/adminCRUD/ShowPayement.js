@@ -6,46 +6,59 @@ import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
 const adminName = 'Admin';
 
-const ShowMeals = () => {
+const ShowPayement = () => {
     const [selectedOption, setSelectedOption] = useState('show');
     const [isSubNavVisible, setIsSubNavVisible] = useState(false);
     const [data, setData] = useState([]);
     const [fromDate, setFromDate] = useState('');
     const [toDate, setToDate] = useState('');
+    const [ticketData, setTicketData] = useState([]);
+    const [mealData, setMealData] = useState([]);
 
     const handleOptionClick = (option) => {
         setSelectedOption((prevOption) => (prevOption === option ? 'show' : option));
         setIsSubNavVisible(option !== 'show'); // Show sub-navigation only when a main navigation item is clicked
     };
 
-
     const handleLogout = () => {
         // Implement logout logic here
         console.log('Logout clicked');
     };
-    // useEffect to fetch data from backend
-    useEffect(() => {
-        // Fetch data from the backend API
-        const fetchData = async () => {
-            try {
-                // Construct your backend API URL with selectedDate and selectedParkType
-                const apiURL = `your_backend_api_url?fromDate=${fromDate}&toDate=${toDate}`;
-                const response = await fetch(apiURL);
-                const result = await response.json();
 
-                // Auto-generate srno and update state with fetched data
-                const newData = result.map((item, index) => ({ ...item, srno: (index + 1).toString() }));
-                setData(newData);
+    useEffect(() => {
+        const fetchTicketData = async () => {
+            // Fetch ticket data from the backend API
+            try {
+                const ticketApiURL = `your_ticket_backend_api_url?fromDate=${fromDate}&toDate=${toDate}`;
+                const ticketResponse = await fetch(ticketApiURL);
+                const ticketResult = await ticketResponse.json();
+                const newTicketData = ticketResult.map((item, index) => ({ ...item, srno: (index + 1).toString() }));
+                setTicketData(newTicketData);
             } catch (error) {
-                console.error('Error fetching data:', error);
+                console.error('Error fetching ticket data:', error);
             }
         };
 
-        // Call the fetchData function
-        fetchData();
+        const fetchMealData = async () => {
+            // Fetch meal data from the backend API
+            try {
+                const mealApiURL = `your_meal_backend_api_url?fromDate=${fromDate}&toDate=${toDate}`;
+                const mealResponse = await fetch(mealApiURL);
+                const mealResult = await mealResponse.json();
+                const newMealData = mealResult.map((item, index) => ({ ...item, srno: (index + 1).toString() }));
+                setMealData(newMealData);
+            } catch (error) {
+                console.error('Error fetching meal data:', error);
+            }
+        };
+
+        // Call both fetch functions
+        fetchTicketData();
+        fetchMealData();
     }, [fromDate, toDate]);
 
-// Function to handle from date selection
+    // Function to handle from date selection
+ // Function to handle from date selection
 const handleFromDateChange = (event) => {
     const selectedFromDate = event.target.value;
     
@@ -70,7 +83,6 @@ const handleToDateChange = (event) => {
         setToDate(selectedToDate);
     }
 };
-
 
 
     return (
@@ -125,11 +137,8 @@ const handleToDateChange = (event) => {
                         <SubNavItem to="/updateRides">Rides</SubNavItem>
                         <SubNavItem to="/updateTickets">Tickets</SubNavItem>
                         <SubNavItem to="/updateMeals">Meals</SubNavItem>
-
                     </SubNav>
                 </NavItem>
-
-
 
                 <NavItem
                     selectedOption={selectedOption}
@@ -145,13 +154,15 @@ const handleToDateChange = (event) => {
                 </NavItem>
 
                 <div className="text-center mt-3">
-                    <a href="/admin"><button
-                        className="btn btn-danger"
-                        style={{ width: '80%', padding: '10px' }}
-                        onClick={handleLogout}
-                    >
-                        Logout
-                    </button> </a>
+                    <Link to="/admin">
+                        <button
+                            className="btn btn-danger"
+                            style={{ width: '80%', padding: '10px' }}
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </button>
+                    </Link>
                 </div>
             </div>
 
@@ -170,69 +181,67 @@ const handleToDateChange = (event) => {
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
                     <div style={{ marginBottom: '20px' }}>
-                        <label><b>Select Date Range</b>   from:</label>
+                        <label><b>Select Date Range</b>   from:  </label>
                         <input type="date" value={fromDate} onChange={handleFromDateChange} />
-                        <label style={{ marginLeft: '20px' }} >  to:</label>
+                        <label style={{ marginLeft: '20px' }} >  to: </label>
                         <input type="date" value={toDate} onChange={handleToDateChange} />
                     </div>
-                    <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-                        <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
-                            <tr>
-                                <th>Sr.no.</th>
-                                <th>ID</th>
-                                <th>Date</th>
-                                <th>Name</th>
-                                <th>Breakfast</th>
-                                <th>Lunch</th>
-                                <th>Snacks</th>
-                                <th>Dinner</th>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data.map((row) => (
-                                <tr key={row.srno}>
-                                    <td>{row.srno}</td>
-                                    <td>{row.id}</td>
-                                    <td>{row.date}</td>
-                                    <td>{row.name}</td>
-                                    <td>{row.breakfast}</td>
-                                    <td>{row.lunch}</td>
-                                    <td>{row.snacks}</td>
-                                    <td>{row.dinner}</td>
+                    <div style={{ display: 'flex', marginBottom: '20px' }}>
+                        {/* Ticket Table */}
+                        <div style={{ flex: '1', marginRight: '2%' }}>
+                            <h4>Ticket Table</h4>
+                            <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                                <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
+                                    <tr>
+                                        <th>Sr.no.</th>
+                                        <th>Name</th>
+                                        <th>Ticket Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {ticketData.map((ticket) => (
+                                        <tr key={ticket.srno}>
+                                            <td>{ticket.srno}</td>
+                                            <td>{ticket.name}</td>
+                                            <td>{ticket.price}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                            {/* Display total amount of tickets */}
+                            <div style={{ backgroundColor: '#333', color: 'white', padding: '10px', margin: '10px 0' }}>
+                                <b>Total Tickets Price:</b> {ticketData.reduce((total, ticket) => total + parseFloat(ticket.price), 0)}
+                            </div>
+                        </div>
 
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                    {/* Summary Section */}
-                    <h4 style={{
-                        backgroundColor: '#333',
-                        color: 'white',
-                        display: 'flex',
-                        flexDirection: 'row',  // Change to row to place items horizontally
-                        justifyContent: 'space-between',
-                        alignItems: 'center',  // Align items vertically at the center
-                        padding: '10px',
-                        margin: '10px 0',
-                    }}>
-                        <div>
-                            <b>Total Count</b>
+                        {/* Meal Table */}
+                        <div style={{ flex: '1' }}>
+                            <h4>Meal Table</h4>
+                            <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                                <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
+                                    <tr>
+                                        <th>Sr.no.</th>
+                                        <th>Name</th>
+                                        <th>Meal Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {mealData.map((meal) => (
+                                        <tr key={meal.srno}>
+                                            <td>{meal.srno}</td>
+                                            <td>{meal.name}</td>
+                                            <td>{meal.price}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                            {/* Display total amount of meals */}
+                            <div style={{ backgroundColor: '#333', color: 'white', padding: '10px', margin: '10px 0' }}>
+                                <b>Total Meals Price:</b> {mealData.reduce((total, meal) => total + parseFloat(meal.price), 0)}
+                            </div>
                         </div>
-                        <div style={{ flex: 1, textAlign: 'center' }}>
-                            Breakfast: {data.reduce((total, row) => total + row.breakfast, 0)}
-                        </div>
-                        <div style={{ flex: 1, textAlign: 'center' }}>
-                            Lunch: {data.reduce((total, row) => total + row.lunch, 0)}
-                        </div>
-                        <div style={{ flex: 1, textAlign: 'center' }}>
-                            Snacks: {data.reduce((total, row) => total + row.snacks, 0)}
-                        </div>
-                        <div style={{ flex: 1, textAlign: 'center' }}>
-                            Dinner: {data.reduce((total, row) => total + row.dinner, 0)}
-                        </div>
-                    </h4>
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -277,7 +286,7 @@ const SubNavItem = ({ to, children }) => (
 
 const styles = {
     container: {
-        display: 'flex',
+        display: 'flex'
     },
     verticalNavbar: {
         display: 'flex',
@@ -289,7 +298,6 @@ const styles = {
         padding: '10px',
         color: 'white',
     },
-
     logo: {
         width: '100%',
         height: 'auto',
@@ -354,5 +362,4 @@ const styles = {
     },
 };
 
-
-export default ShowMeals;
+export default ShowPayement;
