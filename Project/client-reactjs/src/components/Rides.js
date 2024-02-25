@@ -51,7 +51,7 @@ const RidesTable = ({ rides }) => {
   };
   return (
     <div
-      style={{ backgroundImage: `url(${RidesBG})`, backgroundSize: "cover" }}
+      style={{ backgroundColor:'darkgray'}}
     >
       <div style={{ height: "100vh", color: "black", fontSize: "16px" }}>
         <div style={tableContainerStyle}>
