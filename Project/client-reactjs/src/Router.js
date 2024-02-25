@@ -17,17 +17,16 @@ import Admin from "./adminCRUD/Admin";
 
 import AddRides from "./adminCRUD/AddRides";
 import DeleteRides from "./adminCRUD/DeleteRides";
-
 import ShowBooking from "./adminCRUD/ShowBooking";
 import ShowMeals from "./adminCRUD/ShowMeals";
 import ShowRides from "./adminCRUD/ShowRides";
 import ShowTickets from "./adminCRUD/ShowTickets";
-
 import UpdateMeals from "./adminCRUD/UpdateMeals";
 import UpdateRides from "./adminCRUD/UpdateRides";
 import UpdateTickets from "./adminCRUD/UpdateTickets";
 import UpdateBooking from "./adminCRUD/UpdateBooking";
 import DeleteBooking from "./adminCRUD/DeleteBooking";
+import ShowPayement from "./adminCRUD/ShowPayement";
 
 
 const customeRouter = createBrowserRouter([
@@ -89,6 +88,10 @@ const customeRouter = createBrowserRouter([
   {
     path: "/showBooking",
     element: <ShowBooking />,
+  },
+  {
+    path: "/showPayement",
+    element: <ShowPayement />,
   },
   {
     path: "/showMeals",
