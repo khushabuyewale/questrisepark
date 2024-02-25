@@ -16,6 +16,7 @@ namespace DotNetCore.Controllers
             _context = context;
         }
 
+
         [HttpPost("addrider")]
         public async Task<IActionResult> AddRide([FromBody] List<Rides> addRide)
         {
