@@ -11,7 +11,7 @@ const Regular = () => {
   const [age, setAge] = useState("");
   const [records, setRecords] = useState([]);
   const [records1, setRecords1] = useState([]);
-  const [recordCount, setRecordCount] = useState(0);
+  const [recordCount, setRecordCount] = useState(1);
   const [showAlert, setShowAlert] = useState(false);
   const [totalAmount, setTotalAmount] = useState(0);
   const [type, setType] = useState(localStorage.getItem("type"));
@@ -67,7 +67,7 @@ const Regular = () => {
     setRecords1([...records1, { name, age, date, type }]);
 
     // Increment record count
-    setRecordCount(recordCount + 1);
+    setRecordCount((prevRecordCount) => prevRecordCount);
 
     // Clear input fields
 
