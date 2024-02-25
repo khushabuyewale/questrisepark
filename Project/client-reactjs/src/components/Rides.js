@@ -1,7 +1,6 @@
 // Rides.js
 
 import React, { useEffect, useState } from "react";
-import RidesBG from "../assets/RidesBG.png";
 
 const RidesTable = ({ rides }) => {
   const cellStyle = {
