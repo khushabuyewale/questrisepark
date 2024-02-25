@@ -30,5 +30,21 @@ namespace DotNetCore.Controllers
             return BadRequest("Ticket not added");
 
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteTicket(int id)
+        {
+            var ticketToDelete = _context.tickets.FirstOrDefault(k => k.Id == id);
+
+            if (ticketToDelete == null)
+            {
+                return NotFound("Name not found");
+            }
+
+            _context.tickets.Remove(ticketToDelete);
+            _context.SaveChanges();
+
+            return Ok("Ticket deleted");
+        }
     }
 }
