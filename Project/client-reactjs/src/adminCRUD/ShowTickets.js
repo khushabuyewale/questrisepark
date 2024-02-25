@@ -1,13 +1,18 @@
 // Details.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/QuestRiseLogo-removebg-preview.png';
 
 const adminName = 'Admin';
+
 const ShowTickets = () => {
     const [selectedOption, setSelectedOption] = useState('show');
     const [isSubNavVisible, setIsSubNavVisible] = useState(false);
+    const [data, setData] = useState([]);
+    const [fromDate, setFromDate] = useState('');
+    const [toDate, setToDate] = useState('');
+    const [selectedParkType, setSelectedParkType] = useState('');
 
     const handleOptionClick = (option) => {
         setSelectedOption((prevOption) => (prevOption === option ? 'show' : option));
@@ -19,6 +24,48 @@ const ShowTickets = () => {
         // Implement logout logic here
         console.log('Logout clicked');
     };
+    // useEffect to fetch data from backend
+    useEffect(() => {
+        // Fetch data from the backend API
+        const fetchData = async () => {
+            try {
+                // Construct your backend API URL with selectedDate and selectedParkType
+                const apiURL = `your_backend_api_url?date=${selectedDate}&parkType=${selectedParkType}`;
+                const response = await fetch(apiURL);
+                const result = await response.json();
+
+                // Auto-generate srno and update state with fetched data
+                const newData = result.map((item, index) => ({ ...item, srno: (index + 1).toString() }));
+                setData(newData);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+
+
+
+
+
+        // Call the fetchData function
+        fetchData();
+    }, [fromDate, toDate, selectedParkType]);
+
+    // Function to handle from date selection
+    const handleFromDateChange = (event) => {
+        setFromDate(event.target.value);
+    };
+
+    // Function to handle to date selection
+    const handleToDateChange = (event) => {
+        setToDate(event.target.value);
+    };
+
+    // Function to handle park type selection
+    const handleParkTypeChange = (event) => {
+        setSelectedParkType(event.target.value);
+    };
+
 
     return (
         <div style={styles.container}>
@@ -65,7 +112,7 @@ const ShowTickets = () => {
                     setIsSubNavVisible={setIsSubNavVisible}
                     to="/updateBooking"
                 >
-                   UPDATE
+                    UPDATE
                     <SubNav isVisible={selectedOption === 'update'}>
                         <SubNavItem to="/updateBooking">Booking</SubNavItem>
                         <SubNavItem to="/updateRides">Rides</SubNavItem>
@@ -115,7 +162,53 @@ const ShowTickets = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <p>Show Tickets</p>
+                    <div style={{ marginBottom: '20px' }}>
+                        <label><b>Select Date Range</b>   from:  </label>
+                        <input type="date" value={fromDate} onChange={handleFromDateChange} />
+                        <label style={{ marginLeft: '20px' }} >  to: </label>
+                        <input type="date" value={toDate} onChange={handleToDateChange} />
+                    </div>
+                    <div style={{ marginBottom: '20px' }}>
+                        <label><b>Park Type:</b></label>
+
+                        <select value={selectedParkType} onChange={handleParkTypeChange}>
+                            <option value="">All</option>
+                            <option value="theme">Theme Park</option>
+                            <option value="water">Water Park</option>
+                        </select>
+                    </div>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                        <thead style={{ backgroundColor: '#00416B', color: 'white' }}>
+                            <tr>
+                                <th>Sr.no.</th>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Type of Park</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data.map((row) => (
+                                <tr key={row.srno}>
+                                    <td>{row.srno}</td>
+                                    <td>{row.id}</td>
+                                    <td>{row.date}</td>
+                                    <td>{row.name}</td>
+                                    <td>{row.typeOfPark}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    {/* Display count of tickets */}
+                    <h4 style={{
+                        backgroundColor: '#333',
+                        color: 'white',
+                        padding: '10px',
+                        margin: '10px 0',
+                        
+                    }}>
+                        <b>Total Tickets:</b> {data.length}
+                    </h4>
                 </div>
             </div>
         </div>

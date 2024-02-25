@@ -19,16 +19,30 @@ const UpdateRides = () => {
         console.log('Logout clicked');
     };
     const [updateFormData, setUpdateFormData] = useState({
-        id: '',
         newRideName: '',
         newDescription: '',
     });
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+
+        let oldDescription;
+        switch (value) {
+            case 'roller':
+                oldDescription = 'It is a good ride';
+                break;
+            case 'coaster':
+                oldDescription = 'Awesome';
+                break;
+           
+            default:
+                oldDescription = '';
+        }
+
         setUpdateFormData((prevData) => ({
             ...prevData,
             [name]: value,
+            oldDescription: oldDescription,
         }));
     };
 
@@ -131,12 +145,12 @@ const UpdateRides = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <h2>Update Rides</h2>
+                    
                     {/* Update Ride Form */}
                     <form style={styles.updateRideForm}>
                         <label style={styles.label}>Select Ride Name:</label>
                         <select
-                            name="name"
+                            name="ride"
                             style={styles.input}
                             value={updateFormData.id}
                             onChange={handleInputChange}
@@ -148,7 +162,8 @@ const UpdateRides = () => {
                         </select>
 
                         <label style={styles.label}>Old Description:</label>
-                        <p style={styles.oldValue}>it is a ride</p>
+                        <p style={styles.oldValue}>{updateFormData.oldDescription}</p>
+
 
                         <label style={styles.label}>New Ride Name:</label>
                         <input

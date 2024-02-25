@@ -18,7 +18,43 @@ const UpdateTickets = () => {
         // Implement logout logic here
         console.log('Logout clicked');
     };
+    const [updateFormData, setUpdateFormData] = useState({
+        UpdateTickets: '',
+        newPrice: '',
+    });
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+    
+        // Set the old price based on the selected meal type
+        let oldPrice;
+        switch (value) {
+            case 'regular':
+                oldPrice = '₹900/-';
+                break;
+            case 'group':
+                oldPrice = '₹800/-';
+                break;
+            case 'students':
+                oldPrice = '₹500/-';
+                break;
+            
+            default:
+                oldPrice = '';
+        }
+    
+        setUpdateFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+            oldPrice: oldPrice, // Add the old price to the form data
+        }));
+    };
+    
+
+    const handleUpdateUpdateTickets = () => {
+        // Add logic to handle updating the ride record
+        console.log('Updating UpdateTickets:', updateFormData);
+    };
     return (
         <div style={styles.container}>
             {/* Vertical Navbar */}
@@ -64,7 +100,7 @@ const UpdateTickets = () => {
                     setIsSubNavVisible={setIsSubNavVisible}
                     to="/updateBooking"
                 >
-                 UPDATE
+                    UPDATE
                     <SubNav isVisible={selectedOption === 'update'}>
                         <SubNavItem to="/updateBooking">Booking</SubNavItem>
                         <SubNavItem to="/updateRides">Rides</SubNavItem>
@@ -114,7 +150,39 @@ const UpdateTickets = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <p>Delete Rides</p>
+                    
+                    {/* Update Ride Form */}
+                    <form style={styles.updateUpdateTicketsForm}>
+                        <label style={styles.label}>UpdateTickets Type:</label>
+                        <select
+                            name="tickets"
+                            style={styles.input}
+                            value={updateFormData.id}
+                            onChange={handleInputChange}
+                        >
+                            {/* Add options for available IDs */}
+                            <option>Select</option>
+                            <option value="regular">Regular</option>
+                            <option value="group">Group</option>
+                            <option value="students">Students</option>
+                            {/* Add more options as needed */}
+                        </select>
+
+                        <label style={styles.label}>Old Price:</label>
+                        <p style={styles.oldValue}>{updateFormData.oldPrice}</p>
+
+                        <label style={styles.label}>New Price:</label>
+                        <input
+                            type="text"
+                            name="newUpdateTicketsPrice"
+                            style={styles.input}
+                            value={updateFormData.newUpdateTicketsPrice}
+                            onChange={handleInputChange}
+                        />
+                        <button type="button" style={styles.updateButton} onClick={handleUpdateUpdateTickets}>
+                            Update Ride
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -233,7 +301,35 @@ const styles = {
         flex: 1,
         padding: '20px',
     },
+    updateUpdateTicketsForm: {
+        marginTop: '10px',
+        marginLeft: '400px',
+        padding: '20px',
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+        border: '1px solid #ccc',
+        width: '400px', // Adjust the width as needed
+    },
+    oldValue: {
+        marginBottom: '10px',
+        color: '#777',
+    },
+    updateButton: {
+        backgroundColor: '#00416B',
+        color: 'white',
+        padding: '10px',
+        border: 'none',
+        cursor: 'pointer',
+    },
+    label: {
+        display: 'block',
+        margin: '10px 0',
+    },
+    input: {
+        width: '100%',
+        padding: '8px',
+        margin: '5px 0',
+        boxSizing: 'border-box',
+    },
 };
-
 
 export default UpdateTickets;

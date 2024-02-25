@@ -152,7 +152,7 @@ const UpdateMeals = () => {
                 {/* Show Data */}
                 <div style={styles.dataDisplay}>
                     {/* Your data display components go here */}
-                    <h2>Delete Rides</h2>
+                   
                     {/* Update Ride Form */}
                     <form style={styles.updateMealForm}>
                         <label style={styles.label}>Meal Type:</label>
