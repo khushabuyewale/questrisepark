@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 const Regular = () => {
   const [phone, setPhone] = useState("");
@@ -67,7 +66,7 @@ const Regular = () => {
     setRecords1([...records1, { name, age, date, type }]);
 
     // Increment record count
-    setRecordCount((prevRecordCount) => prevRecordCount);
+    setRecordCount(recordCount + 1);
 
     // Clear input fields
 
@@ -112,7 +111,7 @@ const Regular = () => {
     localStorage.setItem("phone", phone);
     localStorage.setItem("records1", JSON.stringify(records1));
     localStorage.setItem("totalTicket", totalAmount);
-    localStorage.setItem("ticketCount", recordCount);
+    localStorage.setItem("ticketCount", recordCount - 1);
 
     // Perform any other actions or navigation logic here
     // For now, just log a message and navigate to "/meal"
