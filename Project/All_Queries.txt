@@ -1,3 +1,80 @@
+CREATE TABLE admin (
+    id INT NOT NULL PRIMARY KEY,
+    email VARCHAR(50),
+    password VARCHAR(50)
+);
+
+
+CREATE TABLE college_info (
+    name VARCHAR(255) NOT NULL PRIMARY KEY,
+    reg_no INT,
+    college_name VARCHAR(255)
+);
+
+
+CREATE TABLE contact (
+    name VARCHAR(255) NOT NULL PRIMARY KEY,
+    email VARCHAR(255),
+    phone_no VARCHAR(15)
+);
+
+
+
+CREATE TABLE mealprice (
+    meal_name VARCHAR(50) NOT NULL PRIMARY KEY,
+    meal_price INT
+);
+
+
+CREATE TABLE meals (
+    name VARCHAR(255) NOT NULL PRIMARY KEY,
+    breakfast INT,
+    lunch INT,
+    snack INT,
+    dinner INT
+);
+
+
+CREATE TABLE payment (
+    name VARCHAR(255) NOT NULL PRIMARY KEY,
+    amount DECIMAL(10,2)
+);
+
+
+CREATE TABLE rides (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ride_name VARCHAR(255),
+    description VARCHAR(400),
+    type VARCHAR(50)
+);
+
+
+CREATE TABLE ticket (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255),
+    age INT,
+    date VARCHAR(255),
+    type VARCHAR(50)
+);
+
+
+
+CREATE TABLE ticketprice (
+    ticket_name VARCHAR(50) NOT NULL PRIMARY KEY,
+    ticket_price INT
+);
+
+
+CREATE TABLE visits (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    visited_status VARCHAR(15)
+);
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 SELECT
     COALESCE(ticket.id, visits.id) AS id,
     ticket.name,
@@ -106,3 +183,5 @@ LEFT JOIN visits ON ticket.id = visits.id
 LEFT JOIN meals ON ticket.name = meals.name
 LEFT JOIN college_info ON ticket.name = college_info.name
 LEFT JOIN payment ON ticket.name = payment.name;
+
+

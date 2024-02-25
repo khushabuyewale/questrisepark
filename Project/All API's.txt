@@ -1,0 +1,60 @@
+http://localhost:5293/api/payment/payments
+
+
+//add ride
+http://localhost:5293/api/ride/addrider
+
+
+//update ride
+http://localhost:5293/api/ride/{name}
+
+
+//delete ride
+http://localhost:5293/api/ride/{name}
+
+
+//book ticket
+http://localhost:5293/api/ticket/bookticket
+
+
+
+//delete ticket
+http://localhost:5293/api/ticket/{id}
+
+
+//add college
+http://localhost:5293/api/college/colleges
+
+
+//add contact
+http://localhost:5293/api/contact/contacts
+
+
+//book meal
+http://localhost:5293/api/meal/bookmeal
+
+
+//update mealprice
+http://localhost:5293/api/mealprice/{name}
+
+
+//add meal by admin
+http://localhost:5293/api/mealprice/priced
+
+
+// add ticket by admin
+http://localhost:5293/api/ticketprice/priced
+
+
+//update ticket price
+http://localhost:5293/api/ticketprice/{name}
+
+
+//add visit status
+http://localhost:5293/api/visitinfo/visits
+
+
+//update visit status
+http://localhost:5293/api/visitinfo/{id}
+
+

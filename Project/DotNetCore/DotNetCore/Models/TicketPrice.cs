@@ -3,11 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DotNetCore.Models
 {
-    [Table("visits")]
-    public class Visits
+    [Table("ticketprice")]
+    public class TicketPrice
     {
         [Key]
-        public int Id {  get; set; }
-        public string visited_status {  get; set; }
+        public string ticket_name { get; set; }
+        public int ticket_price { get; set; }
     }
 }

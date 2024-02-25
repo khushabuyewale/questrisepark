@@ -9,29 +9,23 @@ namespace DotNetCore.DBContext
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
-<<<<<<< Updated upstream
-        
-=======
->>>>>>> Stashed changes
+
         public DbSet<Admin> admins { get; set; }
 
         public DbSet<Meal> meals { get; set; }
 
-        public DbSet<Price> update { get; set; }
-        public DbSet<Price> delete { get; set; }
-        public DbSet<Rides> adds { get; set; }
-
-        public DbSet<Rides> Rupdate { get; set; }
+        
+        
+        public DbSet<Rides> rides { get; set; }
 
         public DbSet<Contact> contacts { get; set; }
         public DbSet<Payment> payments { get; set; }
         public DbSet<College> colleges { get; set; }
-        public DbSet<Price> prices { get; set; }
+        public DbSet<MealPrice> uprices { get; set; }
         public DbSet<Visits> visits { get; set; }
         public DbSet<Ticket> tickets { get; set; }
-        public DbSet<Rides> Rdelete { get; set; }
 
-        public DbSet<Rides> rides { get; set; }
+        public DbSet<TicketPrice> tprices { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Configure your entities here using modelBuilder

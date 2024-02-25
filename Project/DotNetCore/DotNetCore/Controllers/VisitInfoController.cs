@@ -29,5 +29,22 @@ namespace DotNetCore.Controllers
             return BadRequest("Not Visited");
 
         }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateVisitor(int id, Visits visited)
+        {
+            var vistor = _context.visits.FirstOrDefault(v => v.Id == id);
+
+            if (vistor == null)
+            {
+                return NotFound("not found");
+            }
+
+            vistor.visited_status = visited.visited_status;
+
+            _context.SaveChanges();
+
+            return Ok("found");
+        }
     }
 }

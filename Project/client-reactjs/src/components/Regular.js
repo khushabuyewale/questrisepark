@@ -11,7 +11,7 @@ const Regular = () => {
   const [age, setAge] = useState("");
   const [records, setRecords] = useState([]);
   const [records1, setRecords1] = useState([]);
-  const [recordCount, setRecordCount] = useState(1);
+  const [recordCount, setRecordCount] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
   const [totalAmount, setTotalAmount] = useState(0);
   const [type, setType] = useState(localStorage.getItem("type"));
