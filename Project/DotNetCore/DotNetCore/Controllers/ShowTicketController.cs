@@ -20,17 +20,19 @@ namespace DotNetCore.Controllers
         [HttpGet("showtickets")]
         public IActionResult ShowTickets()
         {
-            var allTickets = _context.tickets.ToList();
-            if(allTickets != null) 
-            {
-                return Ok(allTickets);
+            // Assuming _context is your DbContext instance
+            var allTickets = _context.views;
 
+            if (allTickets != null)
+            {
+                return Ok(allTickets);  // Return a 200 OK response with the list of tickets
             }
             else
             {
-                return BadRequest("No tickets found");
+                return BadRequest("No tickets found");  // Return a 400 Bad Request response if no tickets are found
             }
         }
+
 
     }
 }

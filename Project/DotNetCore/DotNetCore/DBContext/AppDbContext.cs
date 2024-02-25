@@ -25,6 +25,7 @@ namespace DotNetCore.DBContext
         public DbSet<Visits> visits { get; set; }
         public DbSet<Ticket> tickets { get; set; }
 
+        public DbSet<All_View> views { get; set; }
         public DbSet<TicketPrice> tprices { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

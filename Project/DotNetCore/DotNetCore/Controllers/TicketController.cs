@@ -16,6 +16,21 @@ namespace DotNetCore.Controllers
             _context = context;
         }
 
+        [HttpGet("showtickets")]
+        public IActionResult ShowTickets()
+        {
+            var allTickets = _context.tickets.ToList();
+            if (allTickets != null)
+            {
+                return Ok(allTickets);
+
+            }
+            else
+            {
+                return BadRequest("No tickets found");
+            }
+        }
+
         [HttpPost("bookticket")]
         public async Task<IActionResult> BookTicket([FromBody] List<Ticket> ticket)
         {
