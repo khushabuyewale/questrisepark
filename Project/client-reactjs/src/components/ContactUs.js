@@ -22,11 +22,8 @@ const[msg, setMsg]= useState('');
       .then(
         () => {
           console.log('SUCCESS!');
-          setName('');
-          setEmail('');
-          setMsg('');
           alert("Your message has been submited. Thank you!");
-          
+          window.location.href='/contactUs'
         },
         (error) => {
           console.log('FAILED...', error.text);

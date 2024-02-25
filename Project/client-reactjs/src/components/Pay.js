@@ -53,7 +53,7 @@ const handleFormSubmit = (e) => {
       .then(
         () => {
           console.log('SUCCESS!');
-          
+          alert("Your message has been submited. Thank you!");
         },
         (error) => {
           console.log('FAILED...', error.text);
