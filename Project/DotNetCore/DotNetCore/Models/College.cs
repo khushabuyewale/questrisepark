@@ -7,7 +7,7 @@ namespace DotNetCore.Models
     public class College
     {
         [Key]
-        public string Name { get; set; }
+        public string name { get; set; }
         public int reg_no {  get; set; }
         public string college_name {  get; set; }
     }

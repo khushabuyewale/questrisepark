@@ -1,31 +1,31 @@
-import React from 'react';
-import { Carousel, Container, Row, Col, Card } from 'react-bootstrap';
-import Slider from 'react-slick';
+import React from "react";
+import { Carousel, Container, Row, Col, Card } from "react-bootstrap";
+import Slider from "react-slick";
 
-import SubNavbar from './SubNavbar';
+import SubNavbar from "./SubNavbar";
 
-import aboutUs from '../assets/th.jpeg';
-import studentBanner from '../assets/StudentBanner.png';
-import SlideImg2 from '../assets/SlideImg2.png';
-import cardImg01 from '../assets/WaterSlideBanner.png';
-import cardImg02 from '../assets/WSBann02.png';
-import SnowWorldBanner from '../assets/SnowWorld.png';
-import food1 from '../assets/Capture.jpg';
-import food2 from '../assets/Capture2.jpg';
-import food3 from '../assets/Capture3.jpg';
-import food4 from '../assets/Capture4.jpg';
-import food5 from '../assets/Capture5.jpg';
+import aboutUs from "../assets/th.jpeg";
+import studentBanner from "../assets/StudentBanner.png";
+import SlideImg2 from "../assets/SlideImg2.png";
+import cardImg01 from "../assets/WaterSlideBanner.png";
+import cardImg02 from "../assets/WSBann02.png";
+import SnowWorldBanner from "../assets/SnowWorld.png";
+import food1 from "../assets/Capture.jpg";
+import food2 from "../assets/Capture2.jpg";
+import food3 from "../assets/Capture3.jpg";
+import food4 from "../assets/Capture4.jpg";
+import food5 from "../assets/Capture5.jpg";
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-import { FaStar } from 'react-icons/fa';
-
+import { FaStar } from "react-icons/fa";
 
 const Home = () => {
+  localStorage.clear();
   const StarRating = ({ rating }) => {
     const stars = Array.from({ length: 5 }, (_, index) => (
-      <FaStar key={index} color={index < rating ? '#ffc107' : '#e4e5e9'} />
+      <FaStar key={index} color={index < rating ? "#ffc107" : "#e4e5e9"} />
     ));
 
     return <div>{stars}</div>;
@@ -42,13 +42,23 @@ const Home = () => {
 
   return (
     <>
-    <SubNavbar />
-      <nav style={{ backgroundColor: 'white', paddingBottom: '20px', paddingTop: '20px' }}>
-        <div className="container mt-5 " >
-
-          <Container id="Carousel" style={{ marginTop: '100px' }}>
-            <Carousel style={{ height: '300px', marginBottom: '150px', paddingTop: '20px' }}>
-
+      <SubNavbar />
+      <nav
+        style={{
+          backgroundColor: "white",
+          paddingBottom: "20px",
+          paddingTop: "20px",
+        }}
+      >
+        <div className="container mt-5 ">
+          <Container id="Carousel" style={{ marginTop: "100px" }}>
+            <Carousel
+              style={{
+                height: "300px",
+                marginBottom: "150px",
+                paddingTop: "20px",
+              }}
+            >
               <Carousel.Item>
                 <img
                   className="d-block w-100"
@@ -72,99 +82,111 @@ const Home = () => {
               </Carousel.Item>
               {/* Add more Carousel.Items as needed */}
             </Carousel>
-          </Container >
-          <div style={{
-            margin: '0 auto',
-            marginBottom: '80px',
-            maxWidth: '1000px',
-            textAlign: 'center',
-          }}>
-            <h1 style={{color:'#0e2f44'}}>QUEST RISE - The Largest Amusement Park In Jalgaon</h1>
+          </Container>
+          <div
+            style={{
+              margin: "0 auto",
+              marginBottom: "80px",
+              maxWidth: "1000px",
+              textAlign: "center",
+            }}
+          >
+            <h1 style={{ color: "#0e2f44" }}>
+              QUEST RISE - The Largest Amusement Park In Jalgaon
+            </h1>
             <h3>Step into a world of magic, where joy springs to life!</h3>
             <hr />
-            <p>We are so much more than an amusement park - a world where everyone comes together and enjoys the little moments. A life of fun is what everyone deserves, so come on down to the Quest Rise closest to you!</p>
+            <p>
+              We are so much more than an amusement park - a world where
+              everyone comes together and enjoys the little moments. A life of
+              fun is what everyone deserves, so come on down to the Quest Rise
+              closest to you!
+            </p>
           </div>
           <Container id="images">
             <Row className="animate__animated animate__fadeIn">
               <Col>
-                <Card style={{ height: '200px' }}>
-                  <Card.Img src={cardImg01} alt="image" style={{height:'200px'}}>
-                  </Card.Img>
+                <Card style={{ height: "200px" }}>
+                  <Card.Img
+                    src={cardImg01}
+                    alt="image"
+                    style={{ height: "200px" }}
+                  ></Card.Img>
                 </Card>
               </Col>
 
               <Col>
-                <Card style={{height: '200px' }}>
-                <Card.Img src={cardImg02} alt="image" style={{height:'200px'}}>
-                  </Card.Img>
+                <Card style={{ height: "200px" }}>
+                  <Card.Img
+                    src={cardImg02}
+                    alt="image"
+                    style={{ height: "200px" }}
+                  ></Card.Img>
                 </Card>
               </Col>
             </Row>
           </Container>
 
           <Container id="todo">
-          <div style={{
-            margin: '0 auto',
-            marginBottom: '80px',
-            marginTop: '50px',
-            maxWidth: '1000px',
-            textAlign: 'center',
-          }}>
-            <h3>   Simple do’s for a smooth ride!</h3>
-            <p>Plan and book tickets online to save time.<br />
-              Dress comfortably and wear suitable footwear.<br />
-              Arrive early to make the most of your time.<br />
-              Prioritize safety by following park guidelines.<br />
-              Pack essentials like sunscreen for sun protection.<br />
-              Use locker and changing room facilities for convenience.</p>
-          <hr></hr>
-          
-          <h2 style={{marginTop:'50px', marginBottom:'-50px'}}>Multi-cuisine restaurants</h2>
-          </div>
+            <div
+              style={{
+                margin: "0 auto",
+                marginBottom: "80px",
+                marginTop: "50px",
+                maxWidth: "1000px",
+                textAlign: "center",
+              }}
+            >
+              <h3> Simple do’s for a smooth ride!</h3>
+              <p>
+                Plan and book tickets online to save time.
+                <br />
+                Dress comfortably and wear suitable footwear.
+                <br />
+                Arrive early to make the most of your time.
+                <br />
+                Prioritize safety by following park guidelines.
+                <br />
+                Pack essentials like sunscreen for sun protection.
+                <br />
+                Use locker and changing room facilities for convenience.
+              </p>
+              <hr></hr>
+
+              <h2 style={{ marginTop: "50px", marginBottom: "-50px" }}>
+                Multi-cuisine restaurants
+              </h2>
+            </div>
           </Container>
           <Container id="food">
-            <Slider {...carouselSettings} style={{ marginBottom: '50px', paddingTop: '5px'}}>
-              <img
-                src={food1}
-                alt="Image"
-              />
-              <img
-                src={food2}
-                alt="Image"
-              />
-              <img
-                src={food3}
-                alt="Image"
-              />
-              <img
-                src={food4}
-                alt="Image"
-              />
-              <img
-                src={food5}
-                alt="Image"
-              />
-              
+            <Slider
+              {...carouselSettings}
+              style={{ marginBottom: "50px", paddingTop: "5px" }}
+            >
+              <img src={food1} alt="Image" />
+              <img src={food2} alt="Image" />
+              <img src={food3} alt="Image" />
+              <img src={food4} alt="Image" />
+              <img src={food5} alt="Image" />
+
               {/* Add more images as needed */}
             </Slider>
           </Container>
 
-          <Container id ="review">
+          <Container id="review">
             <h2>Reviews</h2>
 
             {/* First Review */}
-            <Card style={{ marginBottom: '20px' }}>
+            <Card style={{ marginBottom: "20px" }}>
               <Card.Body>
                 <Card.Title>Unnati</Card.Title>
                 <StarRating rating={4} /> {/* Example rating: 4 */}
-                <Card.Text>
-                  Fun environment, food is excellent!
-                </Card.Text>
+                <Card.Text>Fun environment, food is excellent!</Card.Text>
               </Card.Body>
             </Card>
 
             {/* Second Review */}
-            <Card style={{ marginBottom: '20px' }}>
+            <Card style={{ marginBottom: "20px" }}>
               <Card.Body>
                 <Card.Title>Anutosh</Card.Title>
                 <StarRating rating={5} /> {/* Example rating: 3 */}
@@ -175,23 +197,19 @@ const Home = () => {
             </Card>
 
             {/* Third Review */}
-            <Card style={{ marginBottom: '20px' }}>
+            <Card style={{ marginBottom: "20px" }}>
               <Card.Body>
                 <Card.Title>Khushi</Card.Title>
                 <StarRating rating={5} /> {/* Example rating: 5 */}
-                <Card.Text>
-                  Loved it! 
-                </Card.Text>
+                <Card.Text>Loved it!</Card.Text>
               </Card.Body>
             </Card>
 
-            <Card style={{ marginBottom: '20px' }}>
+            <Card style={{ marginBottom: "20px" }}>
               <Card.Body>
                 <Card.Title>Ashutosh</Card.Title>
                 <StarRating rating={5} /> {/* Example rating: 5 */}
-                <Card.Text>
-                  Wow Its Amazing ! 
-                </Card.Text>
+                <Card.Text>Wow Its Amazing !</Card.Text>
               </Card.Body>
             </Card>
 
@@ -199,31 +217,46 @@ const Home = () => {
             <br />
           </Container>
 
-          <Container id ="aboutus" style={{ backgroundColor: '#f5f5f5', paddingBottom: '20px', paddingTop: '20px', marginBottom: '50px', marginTop: '50px' }}>
+          <Container
+            id="aboutus"
+            style={{
+              backgroundColor: "#f5f5f5",
+              paddingBottom: "20px",
+              paddingTop: "20px",
+              marginBottom: "50px",
+              marginTop: "50px",
+            }}
+          >
             <Row className="animate__animated animate__fadeIn">
-              <Col >
-                <div style={{ padding: '10px' }}>
+              <Col>
+                <div style={{ padding: "10px" }}>
                   <img
                     src={aboutUs}
                     alt="About Us"
-                    style={{ width: '400px' }}
+                    style={{ width: "400px" }}
                   />
                 </div>
               </Col>
-              <Col >
-                <div style={{ padding: '10px', marginLeft:'-100px' }}>
+              <Col>
+                <div style={{ padding: "10px", marginLeft: "-100px" }}>
                   <h2>About Us</h2>
-                  <p>The fantastic thing about Quest Rise Amusement Park is "There's a Whole Lot for Every Lot!". A wide range of themed rides and attractions include Kiddie rides, Family rides, rides for Grown up's. Right from Nitro's adrenaline-pumping experience to getting family and friends to help rescue Mr. India from Mogambo's terror, Quest Rise Amusement park engages you in interesting ways.
-
-                    And for the kids, you can fly high with Tubbby Takes Off or indulge in some fun water splashing aboard Splash Ahoy.
-
+                  <p>
+                    The fantastic thing about Quest Rise Amusement Park is
+                    "There's a Whole Lot for Every Lot!". A wide range of themed
+                    rides and attractions include Kiddie rides, Family rides,
+                    rides for Grown up's. Right from Nitro's adrenaline-pumping
+                    experience to getting family and friends to help rescue Mr.
+                    India from Mogambo's terror, Quest Rise Amusement park
+                    engages you in interesting ways. And for the kids, you can
+                    fly high with Tubbby Takes Off or indulge in some fun water
+                    splashing aboard Splash Ahoy.
                   </p>
                 </div>
               </Col>
             </Row>
           </Container>
         </div>
-      </nav >
+      </nav>
     </>
   );
 };

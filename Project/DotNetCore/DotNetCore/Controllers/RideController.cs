@@ -17,12 +17,12 @@ namespace DotNetCore.Controllers
         }
 
 
-        [HttpPost("addrider")]
-        public async Task<IActionResult> AddRide([FromBody] List<Rides> addRide)
+        [HttpPost("addride")]
+        public async Task<IActionResult> AddRide(Rides addRide)
         {
             if (ModelState.IsValid)
             {
-                _context.rides.AddRange(addRide);
+                _context.rides.Add(addRide);
                 await _context.SaveChangesAsync();
                 return Ok("Ride added");
             }
@@ -51,10 +51,10 @@ namespace DotNetCore.Controllers
             return Ok("found");
         }
 
-        [HttpDelete("{name}")]
-        public IActionResult DeleteRide(string name)
+        [HttpDelete("{id}")]
+        public IActionResult DeleteRide(int id)
         {
-            var rideToDelete = _context.rides.FirstOrDefault(p => p.Ride_Name == name);
+            var rideToDelete = _context.rides.FirstOrDefault(p => p.Id == id);
 
             if (rideToDelete == null)
             {
@@ -66,5 +66,6 @@ namespace DotNetCore.Controllers
 
             return Ok("Ride deleted");
         }
+
     }
 }

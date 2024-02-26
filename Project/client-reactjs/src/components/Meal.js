@@ -1,12 +1,11 @@
 // 4th page
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import chef from '../assets/MenuBg.jpg';
-import Breakfast from '../assets/Breakfast.jpg';
-import Lunch from '../assets/Lunch.jpg';
-import Dinner from '../assets/Dinner.jpg';
-import Snacks from '../assets/Snacks.jpg';
-
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import chef from "../assets/MenuBg.jpg";
+import Breakfast from "../assets/Breakfast.jpg";
+import Lunch from "../assets/Lunch.jpg";
+import Dinner from "../assets/Dinner.jpg";
+import Snacks from "../assets/Snacks.jpg";
 
 const Meal = () => {
   const [breakfast, setBreakfast] = useState(0);
@@ -17,209 +16,214 @@ const Meal = () => {
 
   const calculatePrice = (count, pricePerPerson) => count * pricePerPerson;
 
-
   useEffect(() => {
-    const total = calculatePrice(breakfast, 149) +
-                  calculatePrice(lunch, 299) +
-                  calculatePrice(snacks, 129) +
-                  calculatePrice(dinner, 349);
+    const total =
+      calculatePrice(breakfast, 149) +
+      calculatePrice(lunch, 299) +
+      calculatePrice(snacks, 129) +
+      calculatePrice(dinner, 349);
 
     setTotalAmount(total);
   }, [breakfast, lunch, snacks, dinner]);
 
-
-
-  
-
   const handleProceed = () => {
-
-    localStorage.setItem("breakfast",breakfast);
-    localStorage.setItem("lunch",lunch);
-    localStorage.setItem("snack",snacks);
-    localStorage.setItem("dinner",dinner);
-    localStorage.setItem("totalMeal", totalAmount)
+    localStorage.setItem("breakfast", breakfast);
+    localStorage.setItem("lunch", lunch);
+    localStorage.setItem("snack", snacks);
+    localStorage.setItem("dinner", dinner);
+    localStorage.setItem("totalMeal", totalAmount);
+    const amountTicket = parseInt(localStorage.getItem("totalTicket"));
+    //const [amountTicket, setAmountTicket] = useState(0);
+    const amountMeal = parseInt(localStorage.getItem("totalMeal"));
+    //const [amountMeal, setAmountMeal] = useState(0);
+    localStorage.setItem("totalamount", amountTicket + amountMeal);
     // You can implement actions or navigation logic here based on the packageType
     //console.log(`Proceeding with ${packageType} ticket`);
 
     const data = {
-     breakfast: breakfast,
+      breakfast: breakfast,
       lunch: lunch,
       snacks: snacks,
-      dinner: dinner
-}
-// const url = 'http://localhost:5293/api/meal/bookmeal';
-// axios.post(url, data).then((result) => {
-// alert(result.data);
-// }).catch((error) => {
-// alert(error.message);
-// })
-
+      dinner: dinner,
+    };
+    // const url = 'http://localhost:5293/api/meal/bookmeal';
+    // axios.post(url, data).then((result) => {
+    // alert(result.data);
+    // }).catch((error) => {
+    // alert(error.message);
+    // })
   };
- 
+
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between'}}>
-    <div
+    <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div
         style={{
-           
-            margin: '0 auto', 
-            marginTop: '100px',
-            marginBottom: '180px'
+          margin: "0 auto",
+          marginTop: "100px",
+          marginBottom: "180px",
         }}
-    >
-      <h1 style={{marginLeft:'150px'}}>Want To Add Meal To Your Package ?</h1>
-      <div className="select-pack-container">
-       {/* Breakfast  149, */}
-        <div className="pricing-card first-card">
-          <h2>Breakfast</h2>
-          <p>₹149/-</p>
-          <br />
-          <input
-            type="number"
-            value={breakfast}
-            onChange={(e) => setBreakfast(Math.max(0, parseInt(e.target.value)))}
-            placeholder="Enter count of people"
-          />
-          <br />
-          <p><b>Total Price: ₹{calculatePrice(breakfast, 149)}</b></p>
+      >
+        <h1 style={{ marginLeft: "150px" }}>
+          Want To Add Meal To Your Package ?
+        </h1>
+        <div className="select-pack-container">
+          {/* Breakfast  149, */}
+          <div className="pricing-card first-card">
+            <h2>Breakfast</h2>
+            <p>₹149/-</p>
+            <br />
+            <input
+              type="number"
+              value={breakfast}
+              onChange={(e) =>
+                setBreakfast(Math.max(0, parseInt(e.target.value)))
+              }
+              placeholder="Enter count of people"
+            />
+            <br />
+            <p>
+              <b>Total Price: ₹{calculatePrice(breakfast, 149)}</b>
+            </p>
+          </div>
+          {/*  Lunch 299, */}
+          <div className="pricing-card second-card">
+            <h2> Lunch </h2>
+            <p>₹299/-</p>
+            <br />
+            <input
+              type="number"
+              value={lunch}
+              onChange={(e) => setLunch(Math.max(0, parseInt(e.target.value)))}
+              placeholder="Enter count of people"
+            />
+            <br />
+            <p>
+              <b>Total Price: ₹{calculatePrice(lunch, 299)}</b>
+            </p>
+          </div>
+          {/* Snacks 129 */}
+          <div className="pricing-card third-card">
+            <h2>Snacks</h2>
+            <p>₹129/-</p>
+            <br />
+            <input
+              type="number"
+              value={snacks}
+              onChange={(e) => setSnacks(Math.max(0, parseInt(e.target.value)))}
+              placeholder="Enter count of students"
+            />
+            <br />
+            <p>
+              <b>Total Price: ₹{calculatePrice(snacks, 129)}</b>
+            </p>
+          </div>
 
+          {/*   Dinner  349 */}
+
+          <div className="pricing-card fourth-card">
+            <h2>Dinner</h2>
+            <p>₹349/-</p>
+            <br />
+            <input
+              type="number"
+              value={dinner}
+              onChange={(e) => setDinner(Math.max(0, parseInt(e.target.value)))}
+              placeholder="Enter count of students"
+            />
+            <br />
+            <p>
+              <b>Total Price: ₹{calculatePrice(dinner, 349)}</b>
+            </p>
+
+            <a href="/pay">
+              <button
+                onClick={() => handleProceed("Fourth")}
+                style={{
+                  color: "white",
+                  width: "50%",
+                  padding: "5px",
+                  marginTop: "150px",
+                  border: "2px solid",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  backgroundColor: "#00B000",
+                }}
+              >
+                {" "}
+                Proceed
+              </button>
+            </a>
+
+            <div>
+              <p>
+                <b>Total Amount: ₹{totalAmount}</b>
+              </p>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <h5>Breakfast (8:30 AM to 11:00 AM)</h5>
+            <ul>
+              <li>
+                <h6>Idli Vada Set</h6>
+              </li>
+              <li>
+                <h6>Poha/Upma</h6>
+              </li>
+              <li>
+                <h6>Masala Dosa</h6>
+                <b>+ Tea/Coffee</b>
+                <p style={{ color: "red" }}>(Any One Option)</p>
+              </li>
+            </ul>
+
+            <h5>Lunch (1:00 PM to 3:00 PM)</h5>
+            <ul>
+              <li>
+                <h6>Chicken Biryani Combo</h6>
+              </li>
+              <li>
+                <h6>Veg Biryani Combo</h6>
+              </li>
+              <li>
+                <h6>Veg Fried Rice Combo</h6>
+              </li>
+              <li>
+                <h6>Chicken Fried Rice Combo</h6>
+                <p style={{ color: "red" }}>(Any One Option)</p>
+              </li>
+            </ul>
+
+            <h5>Snacks (4:30 PM to 6:00 PM)</h5>
+            <ul>
+              <li>
+                <h6>Samosa/Kachori </h6>
+              </li>
+              <li>
+                <h6>Dhokla/Fafda-Jalebi</h6>
+              </li>
+              <li>
+                <h6>VadaPav/Fritter</h6>
+                <b>+ Tea/Coffee</b>
+                <p style={{ color: "red" }}>(Any One Option)</p>
+              </li>
+            </ul>
+
+            <h5>Dinner (6:00 PM to 7:00 PM)</h5>
+            <ul>
+              <li>
+                <h6>Chapathi with Chicken Curry</h6>
+              </li>
+              <li>
+                <h6>Veg Curry</h6>
+              </li>
+              <li>
+                <h6>Egg Curry</h6>
+                <p style={{ color: "red" }}>(Any One Option)</p>
+              </li>
+            </ul>
+          </div>
         </div>
-        {/*  Lunch 299, */}
-        <div className="pricing-card second-card">
-          <h2> Lunch </h2>
-          <p>₹299/-</p>
-          <br />
-          <input
-            type="number"
-            value={lunch}
-            onChange={(e) => setLunch(Math.max(0, parseInt(e.target.value)))}
-            placeholder="Enter count of people"
-          />
-          <br />
-          <p><b>Total Price: ₹{calculatePrice(lunch, 299)}</b></p>
-
-
-        </div>
-        {/* Snacks 129 */}
-        <div className="pricing-card third-card">
-          <h2>Snacks</h2>
-          <p>₹129/-</p>
-          <br />
-          <input
-            type="number"
-            value={snacks}
-            onChange={(e) => setSnacks(Math.max(0, parseInt(e.target.value)))}
-            placeholder="Enter count of students"
-          />
-          <br />
-          <p><b>Total Price: ₹{calculatePrice(snacks, 129)}</b></p>
-
-        </div>
-
-        {/*   Dinner  349 */}
-
-        <div className="pricing-card fourth-card">
-          <h2>Dinner</h2>
-          <p>₹349/-</p>
-          <br />
-          <input
-            type="number"
-            value={dinner}
-            onChange={(e) => setDinner(Math.max(0, parseInt(e.target.value)))}
-            placeholder="Enter count of students"
-          />
-          <br />
-          <p><b>Total Price:  ₹{calculatePrice(dinner, 349)}</b></p>
-
-          <a href='/pay'>
-         
-            <button onClick={() => handleProceed('Fourth')}
-              style={{
-                color: 'white',
-                width: '50%',
-                padding: '5px',
-                marginTop: '150px',
-                border: '2px solid',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                backgroundColor:'#00B000',
-              }}
-            >   Proceed</button></a>
-               
-          <div><p>
-              <b>Total Amount: ₹{totalAmount}</b>
-            </p></div>
-        </div>
-        
-        
-        <div class="menu-card" 
-      
-        >
-          <h5>Breakfast (8:30 AM to 11:00 AM)</h5>
-          <ul>
-            <li>
-              <h6>Idli Vada Set</h6>
-            </li>
-            <li>
-              <h6>Poha/Upma</h6>
-            </li>
-            <li>
-              <h6>Masala Dosa</h6>
-               <b>+ Tea/Coffee</b>
-              <p style={{ color: 'red' }}>(Any One Option)</p>
-            </li>
-          </ul>
-
-
-          <h5>Lunch (1:00 PM to 3:00 PM)</h5>
-          <ul>
-            <li>
-              <h6>Chicken Biryani Combo</h6>
-            </li>
-            <li>
-              <h6>Veg Biryani Combo</h6>
-            </li>
-            <li>
-              <h6>Veg Fried Rice Combo</h6>
-            </li>
-            <li>
-              <h6>Chicken Fried Rice Combo</h6>
-              <p style={{ color: 'red' }}>(Any One Option)</p>
-            </li>
-          </ul>
-
-
-          <h5>Snacks (4:30 PM to 6:00 PM)</h5>
-          <ul>
-            <li>
-              <h6>Samosa/Kachori </h6> 
-            </li>
-            <li>
-              <h6>Dhokla/Fafda-Jalebi</h6> 
-            </li>
-            <li>
-              <h6>VadaPav/Fritter</h6> 
-              <b>+ Tea/Coffee</b>
-              <p style={{ color: 'red' }}>(Any One Option)</p>
-            </li>
-
-          </ul>
-
-
-          <h5>Dinner (6:00 PM to 7:00 PM)</h5>
-          <ul>
-            <li>
-              <h6>Chapathi with Chicken Curry</h6>
-            </li>
-            <li>
-              <h6>Veg Curry</h6>
-            </li>
-            <li>
-              <h6>Egg Curry</h6>
-              <p style={{ color: 'red' }}>(Any One Option)</p>
-            </li>
-          </ul>
-        </div>
-      </div>
       </div>
     </div>
   );
@@ -310,12 +314,10 @@ const styles = `
   }
 `;
 
-//Menu Card 
-
-
+//Menu Card
 
 // Create a style element and append it to the head
-const styleElement = document.createElement('style');
+const styleElement = document.createElement("style");
 styleElement.innerHTML = styles;
 document.head.appendChild(styleElement);
 

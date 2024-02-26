@@ -1,49 +1,90 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\",
+  "WorkspaceRootPath": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\models\\addrides.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\addrides.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\controllers\\regularticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\regularticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\models\\regularticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\regularticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\controllers\\studentticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\studentticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\dbcontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\models\\studentticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\studentticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repo clone\\cdac-pro\\project\\dotnetcore\\dotnetcore\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\controllers\\deletebookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\deletebookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\controllers\\collegecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\collegecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\models\\college.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\college.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\controllers\\ridecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\ridecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\models\\rides.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\rides.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\controllers\\showridecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\showridecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\controllers\\allviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\allviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\controllers\\mealcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\mealcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\models\\all_view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\all_view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\controllers\\showticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\showticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\controllers\\visitinfocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\visitinfocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\models\\visits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\models\\visits.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|c:\\users\\ashutosh\\desktop\\repository clone\\quest-rise\\project\\dotnetcore\\dotnetcore\\controllers\\ticketpricecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F67D84B7-1899-45F6-87AD-B6B8EC9A8E95}|DotNetCore\\DotNetCore.csproj|solutionrelative:dotnetcore\\controllers\\ticketpricecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -53,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -61,139 +102,265 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddRides.cs",
-              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\AddRides.cs",
-              "RelativeDocumentMoniker": "DotNetCore\\Models\\AddRides.cs",
-              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\AddRides.cs",
-              "RelativeToolTip": "DotNetCore\\Models\\AddRides.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T17:50:34.772Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Microsoft.Common.CurrentVersion.targets",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AQIAAHcVAAAAAAAAAAAawIkVAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-02-23T12:22:39.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "StudentTicket.cs",
-              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\StudentTicket.cs",
-              "RelativeDocumentMoniker": "DotNetCore\\Models\\StudentTicket.cs",
-              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\StudentTicket.cs",
-              "RelativeToolTip": "DotNetCore\\Models\\StudentTicket.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T11:39:58.988Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "DotNetCore\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwCcAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T10:49:38.148Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\Admin.cs",
-              "RelativeDocumentMoniker": "DotNetCore\\Models\\Admin.cs",
-              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\Admin.cs",
-              "RelativeToolTip": "DotNetCore\\Models\\Admin.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAowAoAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T10:47:56.984Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RegularTicket.cs",
-              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\RegularTicket.cs",
-              "RelativeDocumentMoniker": "DotNetCore\\Models\\RegularTicket.cs",
-              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\RegularTicket.cs",
-              "RelativeToolTip": "DotNetCore\\Models\\RegularTicket.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAjAAAA",
+              "Title": "ContactController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\ContactController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\ContactController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\ContactController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\ContactController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T21:52:59.093Z",
+              "WhenOpened": "2024-02-25T17:57:16.504Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RegularTicketController.cs",
-              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\RegularTicketController.cs",
-              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\RegularTicketController.cs",
-              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\RegularTicketController.cs",
-              "RelativeToolTip": "DotNetCore\\Controllers\\RegularTicketController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAuwBYAAABAAAAA",
+              "Title": "TicketController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\TicketController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\TicketController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\TicketController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\TicketController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACEAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T21:30:51.709Z",
+              "WhenOpened": "2024-02-25T09:52:40.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DBContext\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\DBContext\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DBContext\\AppDbContext.cs",
+              "RelativeToolTip": "DotNetCore\\DBContext\\AppDbContext.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T22:57:22.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\Ticket.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Models\\Ticket.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\Ticket.cs",
+              "RelativeToolTip": "DotNetCore\\Models\\Ticket.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T09:55:30.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "College.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\College.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Models\\College.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\College.cs",
+              "RelativeToolTip": "DotNetCore\\Models\\College.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T21:35:57.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CollegeController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\CollegeController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\CollegeController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\CollegeController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\CollegeController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T00:29:34.452Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "StudentTicketController.cs",
-              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\StudentTicketController.cs",
-              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\StudentTicketController.cs",
-              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\StudentTicketController.cs",
-              "RelativeToolTip": "DotNetCore\\Controllers\\StudentTicketController.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA5wBUAAAA1AAAA",
+              "Title": "DeleteBookingController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\DeleteBookingController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\DeleteBookingController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\DeleteBookingController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\DeleteBookingController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T11:42:00.509Z"
+              "WhenOpened": "2024-02-25T21:27:56.268Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\DBContext\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "DotNetCore\\DBContext\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\DBContext\\AppDbContext.cs",
-              "RelativeToolTip": "DotNetCore\\DBContext\\AppDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAMAAAA",
+              "DocumentIndex": 4,
+              "Title": "Contact.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\Contact.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Models\\Contact.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\Contact.cs",
+              "RelativeToolTip": "DotNetCore\\Models\\Contact.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T19:38:27.604Z"
+              "WhenOpened": "2024-02-25T18:35:29.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\PaymentController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\PaymentController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T18:22:25.493Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\User.cs",
-              "RelativeDocumentMoniker": "DotNetCore\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Models\\User.cs",
-              "RelativeToolTip": "DotNetCore\\Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAIBJwAAAAAAAAAAA",
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Models\\Payment.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\Payment.cs",
+              "RelativeToolTip": "DotNetCore\\Models\\Payment.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAAAAAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T19:42:38.127Z"
+              "WhenOpened": "2024-02-25T11:52:51.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AllViewController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\AllViewController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\AllViewController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\AllViewController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\AllViewController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T22:58:06.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Rides.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\Rides.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Models\\Rides.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\Rides.cs",
+              "RelativeToolTip": "DotNetCore\\Models\\Rides.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T20:15:52.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ShowRideController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\ShowRideController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\ShowRideController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\ShowRideController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\ShowRideController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T10:52:55.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MealController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\MealController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\MealController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\MealController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\MealController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T10:24:55.049Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\repo clone\\cdac-pro\\Project\\DotNetCore\\DotNetCore\\Controllers\\UserController.cs",
-              "RelativeToolTip": "DotNetCore\\Controllers\\UserController.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAA3wDUAAAAAAAAA",
+              "Title": "RideController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\RideController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\RideController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\RideController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\RideController.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAgwEQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T19:10:19.603Z"
+              "WhenOpened": "2024-02-25T20:15:43.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "All_View.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\All_View.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Models\\All_View.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\All_View.cs",
+              "RelativeToolTip": "DotNetCore\\Models\\All_View.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T21:35:57.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "VisitInfoController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\VisitInfoController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\VisitInfoController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\VisitInfoController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\VisitInfoController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T17:59:35.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ShowTicketController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\ShowTicketController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\ShowTicketController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\ShowTicketController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\ShowTicketController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T20:07:18.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TicketpriceController.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\TicketpriceController.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Controllers\\TicketpriceController.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Controllers\\TicketpriceController.cs",
+              "RelativeToolTip": "DotNetCore\\Controllers\\TicketpriceController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwDEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T10:50:51.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Visits.cs",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\Visits.cs",
+              "RelativeDocumentMoniker": "DotNetCore\\Models\\Visits.cs",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\Models\\Visits.cs",
+              "RelativeToolTip": "DotNetCore\\Models\\Visits.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T18:00:21.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\appsettings.json",
+              "RelativeDocumentMoniker": "DotNetCore\\appsettings.json",
+              "ToolTip": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\appsettings.json",
+              "RelativeToolTip": "DotNetCore\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-02-25T09:57:13.846Z"
             }
           ]
         },

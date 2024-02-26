@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DotNetCore.Models
 {
-    [Table("allrecords")]
+    [Table("all_view")]
     public class All_View
     {
         [Key]

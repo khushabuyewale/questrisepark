@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj": {}
+    "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj": {
+    "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
+        "projectUniqueName": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
         "projectName": "DotNetCore",
-        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Cdac-Proj\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\obj\\",
+        "projectPath": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\DotNetCore.csproj",
+        "packagesPath": "C:\\Users\\Ashutosh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ashutosh\\Desktop\\Repository Clone\\Quest-Rise\\Project\\DotNetCore\\DotNetCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ashutosh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -88,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

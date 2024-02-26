@@ -3,11 +3,10 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import payBG from "../assets/payBG.png";
 
 const Pay = () => {
-  const navigate = useNavigate();
   const form = useRef();
 
   // State and handlers for form input
@@ -28,36 +27,42 @@ const Pay = () => {
   const [expiryError, setExpiryError] = useState("");
   const [cvcError, setCvcError] = useState("");
 
-const [to_email, setEmail] = useState(localStorage.getItem("email"));
-const [park_type, setParkType] = useState(localStorage.getItem("type"));
-const [to_date, setDate] = useState(localStorage.getItem("date"));
-const [people_count, setPeopleCount] = useState(localStorage.getItem("ticketCount"));
-const [no_breakfast, setNoBreakfast] = useState(localStorage.getItem("breakfast"));
-const [no_lunch, setNoLunch] = useState(localStorage.getItem("lunch"));
-const [no_snacks, setNoSnacks] = useState(localStorage.getItem("snack"));
-const [no_dinner, setNoDinner] = useState(localStorage.getItem("dinner"));
+  const [to_email, setEmail] = useState(localStorage.getItem("email"));
+  const [park_type, setParkType] = useState(localStorage.getItem("type"));
+  const [to_date, setDate] = useState(localStorage.getItem("date"));
+  const [people_count, setPeopleCount] = useState(
+    localStorage.getItem("ticketCount")
+  );
+  const [no_breakfast, setNoBreakfast] = useState(
+    localStorage.getItem("breakfast")
+  );
+  const [no_lunch, setNoLunch] = useState(localStorage.getItem("lunch"));
+  const [no_snacks, setNoSnacks] = useState(localStorage.getItem("snack"));
+  const [no_dinner, setNoDinner] = useState(localStorage.getItem("dinner"));
 
-const handleFormSubmit = (e) => {
-  e.preventDefault();
-  handlePayment(e);
-  sendEmail(e);
-};
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    handlePayment(e);
+    sendEmail(e);
+    alert("Booking successful! Check mail");
+    window.location.href = "/";
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_wh6ynav', 'template_wxwuvwi', form.current, {
-        publicKey: '4sBiKk-3zTFaxuA-5',
+      .sendForm("service_wh6ynav", "template_wxwuvwi", form.current, {
+        publicKey: "4sBiKk-3zTFaxuA-5",
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          console.log("SUCCESS!");
           alert("Your message has been submited. Thank you!");
         },
         (error) => {
-          console.log('FAILED...', error.text);
-        },
+          console.log("FAILED...", error.text);
+        }
       );
   };
 
@@ -120,6 +125,7 @@ const handleFormSubmit = (e) => {
   // Function to handle payment
   const handlePayment = (e) => {
     e.preventDefault();
+    const tickettype = localStorage.getItem("tickettype");
 
     if (!agreedToTerms) {
       alert("Please agree to the terms and conditions before proceeding.");
@@ -128,41 +134,138 @@ const handleFormSubmit = (e) => {
     if (!validateForm()) {
       return;
     }
-    try {
-      //=====add value to ticket table =====
-      const userdata = JSON.parse(localStorage.getItem("records1"));
-      const url = "http://localhost:5293/api/ticket/bookticket";
-      axios.post(url, userdata);
+    //===========================sending values of regular ticket=====================================
+    if (tickettype === "regular" || tickettype === "group") {
+      try {
+        //=====add value to ticket table =====
+        const userdata = JSON.parse(localStorage.getItem("records1"));
+        const url = "http://localhost:5293/api/ticket/bookticket";
+        axios.post(url, userdata);
+      } catch (error) {
+        alert("error in ticket");
+      }
+      try {
+        //=====add contact to table=====
+        const contactdata = {
+          name: localStorage.getItem("name"),
+          email: localStorage.getItem("email"),
+          phone_no: localStorage.getItem("phone"),
+        };
 
-      //=====add value to contact table =====
-      const contact = {
-        name: localStorage.getItem("name"),
-        email: localStorage.getItem("email"),
-        phone_no: localStorage.getItem("phone"),
-      };
-      const url1 = "http://localhost:5293/api/contact/contacts";
-      axios.post(url1, contact);
+        const url1 = "http://localhost:5293/api/contact/contacts";
+        axios.post(url1, contactdata);
+      } catch (error) {
+        alert("error in contact");
+      }
+      try {
+        //=====add visit status=====
+        const visit = JSON.parse(localStorage.getItem("visit_stat"));
 
-      //=====add values to meals table =====
-      const meals = {};
-    } catch (error) {
-      alert(`Error`);
+        const url2 = "http://localhost:5293/api/visitinfo/visits";
+        axios.post(url2, visit);
+      } catch (error) {
+        alert("error in meal");
+      }
+      try {
+        //=====add meals=====
+        const meals = {
+          name: localStorage.getItem("name"),
+          breakfast: parseInt(localStorage.getItem("breakfast")),
+          lunch: parseInt(localStorage.getItem("lunch")),
+          snack: parseInt(localStorage.getItem("snack")),
+          dinner: parseInt(localStorage.getItem("dinner")),
+        };
+
+        const url3 = "http://localhost:5293/api/meal/bookmeal";
+        axios.post(url3, meals);
+      } catch (error) {
+        alert("error in meal");
+      }
+      try {
+        //=====add payments=====
+        const payment = [
+          {
+            name: localStorage.getItem("name"),
+            amount: localStorage.getItem("totalamount"),
+            ticket_amount: localStorage.getItem("totalTicket"),
+            meal_amount: localStorage.getItem("totalMeal"),
+          },
+        ];
+        const url4 = "http://localhost:5293/api/payment/payments";
+        axios.post(url4, payment);
+      } catch (error) {
+        alert("error in payments");
+      }
+    } else if (tickettype === "student") {
+      try {
+        //=====add value to ticket table =====
+        const userdata = JSON.parse(localStorage.getItem("records1"));
+        const url = "http://localhost:5293/api/ticket/bookticket";
+        axios.post(url, userdata);
+      } catch (error) {
+        alert("error in ticket");
+      }
+      try {
+        //=====add contact to table=====
+        const contactdata = {
+          name: localStorage.getItem("name"),
+          email: localStorage.getItem("email"),
+          phone_no: localStorage.getItem("phone"),
+        };
+
+        const url1 = "http://localhost:5293/api/contact/contacts";
+        axios.post(url1, contactdata);
+      } catch (error) {
+        alert("error in contact");
+      }
+      try {
+        //=====add visit status=====
+        const visit = JSON.parse(localStorage.getItem("visit_stat"));
+
+        const url2 = "http://localhost:5293/api/visitinfo/visits";
+        axios.post(url2, visit);
+      } catch (error) {
+        alert("error in meal");
+      }
+      try {
+        //=====add meals=====
+        const meals = {
+          name: localStorage.getItem("name"),
+          breakfast: parseInt(localStorage.getItem("breakfast")),
+          lunch: parseInt(localStorage.getItem("lunch")),
+          snack: parseInt(localStorage.getItem("snack")),
+          dinner: parseInt(localStorage.getItem("dinner")),
+        };
+
+        const url3 = "http://localhost:5293/api/meal/bookmeal";
+        axios.post(url3, meals);
+      } catch (error) {
+        alert("error in meal");
+      }
+      try {
+        //=====add payments=====
+        const payment = [
+          {
+            name: localStorage.getItem("name"),
+            amount: localStorage.getItem("totalamount"),
+            ticket_amount: localStorage.getItem("totalTicket"),
+            meal_amount: localStorage.getItem("totalMeal"),
+          },
+        ];
+        const url4 = "http://localhost:5293/api/payment/payments";
+        axios.post(url4, payment);
+      } catch (error) {
+        alert("error in payments");
+      }
+      try {
+        //=====add college=====
+        const college = JSON.parse(localStorage.getItem("records2"));
+        const url4 = "http://localhost:5293/api/college/colleges";
+        axios.post(url4, college);
+      } catch (error) {
+        alert("error in payments");
+      }
     }
-
-    //console.log(userdata);
-
-    // const url = "http://localhost:5293/api/regularticket/bookregular";
-    // axios
-    //   .post(url, userdata)
-    //   .then(() => {
-    //     alert("regular data submitted successfully");
-    //   })
-    //   .catch((error) => {
-    //     alert(error.message);
-    //   });
-    // alert(`Payment successful! \n Thank you!`);
-
-    // navigate("/");
   };
 
   return (
@@ -302,60 +405,56 @@ const handleFormSubmit = (e) => {
         <h2>Payment Details</h2>
         <hr />
         <form ref={form} onSubmit={handleFormSubmit}>
-
-{/* Hidden field start*/}
-<input
-        type="hidden"
-        className="form-control"
-        name="email"
-        defaultValue={to_email}
-      />
-      <input
-        type="hidden"
-        className="form-control"
-        name="park_type"
-        defaultValue={park_type}
-      />
-      <input
-        type="hidden"
-        className="form-control"
-        name="date"
-        defaultValue={to_date}
-      />
-      <input
-        type="hidden"
-        className="form-control"
-        name="people_count"
-        defaultValue={people_count}
-      />
-      <input
-        type="hidden"
-        className="form-control"
-        name="no_breakfast"
-        defaultValue={no_breakfast}
-      />
-      
-      <input
-        type="hidden"
-        className="form-control"
-        name="no_lunch"
-        defaultValue={no_lunch}
-      />
-      <input
-        type="hidden"
-        className="form-control"
-        name="no_snacks"
-        defaultValue={no_snacks}
-      />
-      <input
-        type="hidden"
-        className="form-control"
-        name="no_dinner"
-        defaultValue={no_dinner}
-      />
-
-{/* Hidden field end */}
-
+          {/* Hidden field start*/}
+          <input
+            type="hidden"
+            className="form-control"
+            name="email"
+            defaultValue={to_email}
+          />
+          <input
+            type="hidden"
+            className="form-control"
+            name="park_type"
+            defaultValue={park_type}
+          />
+          <input
+            type="hidden"
+            className="form-control"
+            name="date"
+            defaultValue={to_date}
+          />
+          <input
+            type="hidden"
+            className="form-control"
+            name="people_count"
+            defaultValue={people_count}
+          />
+          <input
+            type="hidden"
+            className="form-control"
+            name="no_breakfast"
+            defaultValue={no_breakfast}
+          />
+          <input
+            type="hidden"
+            className="form-control"
+            name="no_lunch"
+            defaultValue={no_lunch}
+          />
+          <input
+            type="hidden"
+            className="form-control"
+            name="no_snacks"
+            defaultValue={no_snacks}
+          />
+          <input
+            type="hidden"
+            className="form-control"
+            name="no_dinner"
+            defaultValue={no_dinner}
+          />
+          {/* Hidden field end */}
           <p> Amount of Ticket: ₹{amountTicket} </p>
           <p> Amount of Meal: ₹{amountMeal} </p>
           <p>Total Amount: ₹{totalAmount}</p>

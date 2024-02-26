@@ -8,6 +8,9 @@ namespace DotNetCore.Models
     {
         [Key]
         public string name {  get; set; }
-        public double amount {  get; set; }
+        public int amount {  get; set; }
+        public int ticket_amount { get; set; }
+        public int meal_amount { get; set; }
+
     }
 }

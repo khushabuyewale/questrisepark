@@ -10,14 +10,19 @@ const Group = () => {
   const [age, setAge] = useState("");
   const [records, setRecords] = useState([]);
   const [records1, setRecords1] = useState([]);
+  const [visit_stat, setvisit_stat] = useState([]);
 
   const [recordCount, setRecordCount] = useState(1);
   const [showAlert, setShowAlert] = useState(false);
   const [totalAmount, setTotalAmount] = useState(0);
   const [type, setType] = useState(localStorage.getItem("type"));
   const [date, setDate] = useState(localStorage.getItem("date"));
+  localStorage.setItem("tickettype", "group");
 
   const addRecord = () => {
+    const newTotalAmount = recordCount * 800;
+    setTotalAmount(newTotalAmount);
+
     // Validation for the first entry
     if (recordCount === 1 && (!phone || !email || !name || !age)) {
       setShowAlert(true);
@@ -64,12 +69,11 @@ const Group = () => {
     // Add record to the state
     setRecords([...records, { id: recordCount, name, age }]);
     setRecords1([...records1, { name, age, date, type }]);
+    setvisit_stat([...visit_stat, { visited_status: "no" }]);
 
     // Increment record count
 
-    const newTotalAmount = recordCount * 800;
     setRecordCount(recordCount + 1);
-    setTotalAmount(newTotalAmount);
 
     // Clear input fields
 
@@ -95,7 +99,7 @@ const Group = () => {
 
   const removeRecord1 = (name) => {
     // Remove record from the state
-    const updatedRecords = records1.filter((record) => record.name !== name);
+    const updatedRecords = records1.filter((record1) => record1.name !== name);
 
     // Update the state
     setRecords1(updatedRecords);
@@ -116,6 +120,7 @@ const Group = () => {
     localStorage.setItem("records1", JSON.stringify(records1));
     localStorage.setItem("totalTicket", totalAmount);
     localStorage.setItem("ticketCount", recordCount - 1);
+    localStorage.setItem("visit_stat", JSON.stringify(visit_stat));
 
     // Logic for submitting the data, you can replace this with your actual submission logic
     console.log("Submitting data:", records);
@@ -279,7 +284,10 @@ const Group = () => {
                           borderRadius: "4px",
                           cursor: "pointer",
                         }}
-                        onClick={() => removeRecord(record.id)}
+                        onClick={() => {
+                          removeRecord(record.id);
+                          removeRecord1(record.name);
+                        }}
                       >
                         Remove
                       </button>

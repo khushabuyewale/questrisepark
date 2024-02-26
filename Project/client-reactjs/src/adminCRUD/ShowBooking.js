@@ -29,7 +29,7 @@ const ShowBooking = () => {
       try {
         // Assuming you have an API endpoint to fetch data
         const response = await fetch(
-          "http://localhost:5293/api/showticket/showtickets"
+          "http://localhost:5293/api/ticket/showtickets"
         );
         const result = await response.json();
 

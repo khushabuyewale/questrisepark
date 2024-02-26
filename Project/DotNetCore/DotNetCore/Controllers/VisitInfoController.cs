@@ -22,11 +22,11 @@ namespace DotNetCore.Controllers
             {
                 _context.visits.AddRange(visit);
                 await _context.SaveChangesAsync();
-                return Ok("Visited");
+                return Ok("visit status updated");
             }
 
             // Invalid credentials
-            return BadRequest("Not Visited");
+            return BadRequest("visit status not updated");
 
         }
 

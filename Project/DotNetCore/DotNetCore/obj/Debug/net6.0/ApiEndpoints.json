@@ -16,74 +16,58 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "DotNetCore.Controllers.CrudController",
-    "Method": "AddUser",
-    "RelativePath": "api/Crud/addrider",
+    "ContainingType": "DotNetCore.Controllers.AllViewController",
+    "Method": "ShowView",
+    "RelativePath": "api/AllView/all_view",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.CollegeController",
+    "Method": "CollegeInfo",
+    "RelativePath": "api/College/colleges",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "addRide",
-        "Type": "DotNetCore.Models.AddRides",
+        "Name": "college",
+        "Type": "System.Collections.Generic.List\u00601[[DotNetCore.Models.College, DotNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "DotNetCore.Controllers.CrudController",
-    "Method": "DeleteTicket",
-    "RelativePath": "api/Crud/delete/{id}",
+    "ContainingType": "DotNetCore.Controllers.ContactController",
+    "Method": "ContactInfo",
+    "RelativePath": "api/Contact/contacts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contact",
+        "Type": "DotNetCore.Models.Contact",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.DeleteBookingController",
+    "Method": "DeleteRide",
+    "RelativePath": "api/DeleteBooking/{name}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "priceid",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "id",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DotNetCore.Controllers.CrudController",
-    "Method": "UpdateMeal",
-    "RelativePath": "api/Crud/update/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "updatedelete",
-        "Type": "DotNetCore.Models.UpdateDelete",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DotNetCore.Controllers.GroupTicketController",
-    "Method": "BookGroup",
-    "RelativePath": "api/GroupTicket/bookgroup",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "groupTicket",
-        "Type": "DotNetCore.Models.GroupTicket",
+        "Name": "name",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -106,32 +90,257 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "DotNetCore.Controllers.RegularTicketController",
-    "Method": "BookRegular",
-    "RelativePath": "api/RegularTicket/bookregular",
-    "HttpMethod": "POST",
+    "ContainingType": "DotNetCore.Controllers.MealController",
+    "Method": "ShowMeals",
+    "RelativePath": "api/Meal/showmeals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.MealpriceController",
+    "Method": "UpdateMeal",
+    "RelativePath": "api/Mealprice/{name}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "regularTicket",
-        "Type": "System.Collections.Generic.List\u00601[[DotNetCore.Models.RegularTicket, DotNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "meal",
+        "Type": "DotNetCore.Models.MealPrice",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "DotNetCore.Controllers.StudentTicketController",
-    "Method": "BookStudent",
-    "RelativePath": "api/StudentTicket/bookstudent",
+    "ContainingType": "DotNetCore.Controllers.MealpriceController",
+    "Method": "PriceInfo",
+    "RelativePath": "api/Mealprice/priced",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "studentTicket",
-        "Type": "DotNetCore.Models.StudentTicket",
+        "Name": "price",
+        "Type": "System.Collections.Generic.List\u00601[[DotNetCore.Models.MealPrice, DotNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.PaymentController",
+    "Method": "PymentInfo",
+    "RelativePath": "api/Payment/payments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payment",
+        "Type": "System.Collections.Generic.List\u00601[[DotNetCore.Models.Payment, DotNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.PaymentController",
+    "Method": "ShowPayment",
+    "RelativePath": "api/Payment/showpayment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.RideController",
+    "Method": "DeleteRide",
+    "RelativePath": "api/Ride/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.RideController",
+    "Method": "UpdateRide",
+    "RelativePath": "api/Ride/{name}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ride",
+        "Type": "DotNetCore.Models.Rides",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.RideController",
+    "Method": "AddRide",
+    "RelativePath": "api/Ride/addride",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addRide",
+        "Type": "DotNetCore.Models.Rides",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.ShowMealpriceController",
+    "Method": "ShowRidesByName",
+    "RelativePath": "api/ShowMealprice/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.ShowRideController",
+    "Method": "ShowRides",
+    "RelativePath": "api/ShowRide/showrides",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.ShowTicketController",
+    "Method": "ShowTickets",
+    "RelativePath": "api/ShowTicket/showtickets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.ShowTicketpriceController",
+    "Method": "ShowRidesByName",
+    "RelativePath": "api/ShowTicketprice/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.TicketController",
+    "Method": "DeleteTicket",
+    "RelativePath": "api/Ticket/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.TicketController",
+    "Method": "BookTicket",
+    "RelativePath": "api/Ticket/bookticket",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ticket",
+        "Type": "System.Collections.Generic.List\u00601[[DotNetCore.Models.Ticket, DotNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.TicketController",
+    "Method": "ShowTickets",
+    "RelativePath": "api/Ticket/showtickets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.TicketpriceController",
+    "Method": "UpdateMeal",
+    "RelativePath": "api/Ticketprice/{name}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "tickets",
+        "Type": "DotNetCore.Models.TicketPrice",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.TicketpriceController",
+    "Method": "PriceInfo",
+    "RelativePath": "api/Ticketprice/priced",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "price",
+        "Type": "System.Collections.Generic.List\u00601[[DotNetCore.Models.TicketPrice, DotNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
@@ -164,6 +373,43 @@
       {
         "Name": "user",
         "Type": "DotNetCore.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.VisitInfoController",
+    "Method": "UpdateVisitor",
+    "RelativePath": "api/VisitInfo/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "visited",
+        "Type": "DotNetCore.Models.Visits",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore.Controllers.VisitInfoController",
+    "Method": "VisitInfo",
+    "RelativePath": "api/VisitInfo/visits",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "visit",
+        "Type": "System.Collections.Generic.List\u00601[[DotNetCore.Models.Visits, DotNetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],

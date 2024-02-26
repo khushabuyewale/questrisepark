@@ -10,11 +10,14 @@ const Regular = () => {
   const [age, setAge] = useState("");
   const [records, setRecords] = useState([]);
   const [records1, setRecords1] = useState([]);
+  const [visit_stat, setvisit_stat] = useState([]);
+
   const [recordCount, setRecordCount] = useState(1);
   const [showAlert, setShowAlert] = useState(false);
   const [totalAmount, setTotalAmount] = useState(0);
   const [type, setType] = useState(localStorage.getItem("type"));
   const [date, setDate] = useState(localStorage.getItem("date"));
+  localStorage.setItem("tickettype", "regular");
 
   const addRecord = () => {
     const newTotalAmount = recordCount * 900;
@@ -64,6 +67,7 @@ const Regular = () => {
     // Add record to the state
     setRecords([...records, { id: recordCount, name, age }]);
     setRecords1([...records1, { name, age, date, type }]);
+    setvisit_stat([...visit_stat, { visited_status: "no" }]);
 
     // Increment record count
     setRecordCount(recordCount + 1);
@@ -91,7 +95,7 @@ const Regular = () => {
 
   const removeRecord1 = (name) => {
     // Remove record from the state
-    const updatedRecords = records1.filter((record) => record.name !== name);
+    const updatedRecords = records1.filter((record1) => record1.name !== name);
 
     // Update the state
     setRecords1(updatedRecords);
@@ -112,6 +116,7 @@ const Regular = () => {
     localStorage.setItem("records1", JSON.stringify(records1));
     localStorage.setItem("totalTicket", totalAmount);
     localStorage.setItem("ticketCount", recordCount - 1);
+    localStorage.setItem("visit_stat", JSON.stringify(visit_stat));
 
     // Perform any other actions or navigation logic here
     // For now, just log a message and navigate to "/meal"
