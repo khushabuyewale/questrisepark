@@ -409,18 +409,15 @@ const handlePaymentFailClose = ()=>{
 {showPaymentSuccess && (
         <div
           style={{
-            position: "fixed",
-            top: "0",
-            left: "0",
-            right: "0",
-            bottom: "0",
+            position: "absolute",
+            top: '50%',
+            left: '50%',
             padding: "20px",
             margin: "20px",
             border: "2px solid #000",
             borderRadius: "8px",
             backgroundColor: "#fff",
             zIndex: "1000",
-            overflowY: "scroll",
           }}
         >
           <p>
@@ -432,35 +429,37 @@ const handlePaymentFailClose = ()=>{
             >
               Payment successful!
             </h1>
-            <h5>Thank you for booking</h5>
-            <h6>Please check your email for ticket.</h6>
+            <h5 style={{
+                textAlign: "center",
+              }}>Thank you for booking</h5>
+            <h6 style={{
+                textAlign: "center",
+              }}>Please check your email for ticket.</h6>
           </p>
-          <button onClick={handlePaymentSuccessClose}>Close</button>
+          <button style={{background: '#4CAF50',
+  color: 'white'}}  onClick={handlePaymentSuccessClose}>Close</button>
         </div>
       )}
 
 {ShowPaymentFail && (
         <div
           style={{
-            position: "fixed",
-            top: "0",
-            left: "0",
-            right: "0",
-            bottom: "0",
+            position: "absolute",
+            top: '50%',
+            left: '50%',
             padding: "20px",
             margin: "20px",
             border: "2px solid #000",
             borderRadius: "8px",
             backgroundColor: "#fff",
             zIndex: "1000",
-            overflowY: "scroll",
           }}
         >
           <p>
             <h1
               style={{
                 textAlign: "center",
-                color:'green',
+                color:'red',
               }}
             >
               Oops! something went wrong...
