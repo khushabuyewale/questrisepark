@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 const Regular = () => {
   const [phone, setPhone] = useState("");
@@ -11,7 +10,7 @@ const Regular = () => {
   const [age, setAge] = useState("");
   const [records, setRecords] = useState([]);
   const [records1, setRecords1] = useState([]);
-  const [recordCount, setRecordCount] = useState(0);
+  const [recordCount, setRecordCount] = useState(1);
   const [showAlert, setShowAlert] = useState(false);
   const [totalAmount, setTotalAmount] = useState(0);
   const [type, setType] = useState(localStorage.getItem("type"));
@@ -112,7 +111,7 @@ const Regular = () => {
     localStorage.setItem("phone", phone);
     localStorage.setItem("records1", JSON.stringify(records1));
     localStorage.setItem("totalTicket", totalAmount);
-    localStorage.setItem("ticketCount", recordCount);
+    localStorage.setItem("ticketCount", recordCount - 1);
 
     // Perform any other actions or navigation logic here
     // For now, just log a message and navigate to "/meal"

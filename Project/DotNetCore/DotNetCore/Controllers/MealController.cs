@@ -30,6 +30,20 @@ namespace DotNetCore.Controllers
 
         }
 
+        [HttpGet("showmeals")]
+        public IActionResult ShowMeals()
+        {
+            var allMeals = _context.meals.ToList();
+            if (allMeals != null)
+            {
+                return Ok(allMeals);
+
+            }
+            else
+            {
+                return BadRequest("No meals found");
+            }
+        }
 
 
     }
