@@ -40,12 +40,13 @@ const Pay = () => {
   const [no_snacks, setNoSnacks] = useState(localStorage.getItem("snack"));
   const [no_dinner, setNoDinner] = useState(localStorage.getItem("dinner"));
 
+  const [showPaymentSuccess, setShowPaymentSuccess] = useState(false);
+  const [ShowPaymentFail, setShowPaymentFail] = useState(false);
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     handlePayment(e);
     sendEmail(e);
-    alert("Booking successful! Check mail");
-    window.location.href = "/";
   };
 
   const sendEmail = (e) => {
@@ -58,13 +59,30 @@ const Pay = () => {
       .then(
         () => {
           console.log("SUCCESS!");
-          alert("Your message has been submited. Thank you!");
+          //alert("Your message has been submited. Thank you!");
+          handlePaymentSuccess();
         },
         (error) => {
           console.log("FAILED...", error.text);
         }
       );
   };
+const handlePaymentSuccess = ()=>{
+  setShowPaymentSuccess(true);
+}
+const handlePaymentSuccessClose = ()=>{
+  setShowPaymentSuccess(false);
+  window.location.href="/";
+}
+
+const handlePaymentFail = ()=>{
+  setShowPaymentFail(true);
+  window.location.href="/";
+}
+
+const handlePaymentFailClose = ()=>{
+  setShowPaymentFail(false);
+}
 
   const handleTermsClick = () => {
     setShowTermsPopup(true);
@@ -387,13 +405,80 @@ const Pay = () => {
         </div>
       )}
 
+
+{showPaymentSuccess && (
+        <div
+          style={{
+            position: "fixed",
+            top: "0",
+            left: "0",
+            right: "0",
+            bottom: "0",
+            padding: "20px",
+            margin: "20px",
+            border: "2px solid #000",
+            borderRadius: "8px",
+            backgroundColor: "#fff",
+            zIndex: "1000",
+            overflowY: "scroll",
+          }}
+        >
+          <p>
+            <h1
+              style={{
+                textAlign: "center",
+                color:'green',
+              }}
+            >
+              Payment successful!
+            </h1>
+            <h5>Thank you for booking</h5>
+            <h6>Please check your email for ticket.</h6>
+          </p>
+          <button onClick={handlePaymentSuccessClose}>Close</button>
+        </div>
+      )}
+
+{ShowPaymentFail && (
+        <div
+          style={{
+            position: "fixed",
+            top: "0",
+            left: "0",
+            right: "0",
+            bottom: "0",
+            padding: "20px",
+            margin: "20px",
+            border: "2px solid #000",
+            borderRadius: "8px",
+            backgroundColor: "#fff",
+            zIndex: "1000",
+            overflowY: "scroll",
+          }}
+        >
+          <p>
+            <h1
+              style={{
+                textAlign: "center",
+                color:'green',
+              }}
+            >
+              Oops! something went wrong...
+            </h1>
+          </p>
+          <button onClick={handlePaymentFailClose}>Close</button>
+        </div>
+      )}
+
+
+
       <div
         style={{
           color: "white",
           width: "480px",
           height: "530px",
-          margin: "20px auto", // Center the form horizontally
-          marginRight: "0", // Add margin to shift it to the right
+          margin: "20px auto",
+          marginRight: "0",
           padding: "20px",
           marginTop: "100px",
           borderRadius: "8px",
