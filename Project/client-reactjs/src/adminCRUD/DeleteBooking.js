@@ -50,7 +50,7 @@ const DeleteBooking = () => {
     const response = axios.delete(
       `http://localhost:5293/api/deletebooking/${name}`
     );
-    alert(response.data);
+    alert("Record deleted!");
     setData((prevData) =>
       prevData.map((row) =>
         row.name === name ? { ...row, deleted: true } : row

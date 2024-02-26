@@ -49,7 +49,7 @@ const DeleteRides = () => {
 
   const handleDelete = (id) => {
     const response = axios.delete(`http://localhost:5293/api/ride/${id}`);
-    alert(response.data);
+    alert("Ride deleted!");
     setData((prevData) =>
       prevData.map((row) => (row.id === id ? { ...row, deleted: true } : row))
     );
