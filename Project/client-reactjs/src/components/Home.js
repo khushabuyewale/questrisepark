@@ -185,6 +185,16 @@ const Home = () => {
               </Card.Body>
             </Card>
 
+            <Card style={{ marginBottom: '20px' }}>
+              <Card.Body>
+                <Card.Title>Ashutosh</Card.Title>
+                <StarRating rating={5} /> {/* Example rating: 5 */}
+                <Card.Text>
+                  Wow Its Amazing ! 
+                </Card.Text>
+              </Card.Body>
+            </Card>
+
             {/* Additional styling */}
             <br />
           </Container>
